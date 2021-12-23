@@ -1,0 +1,345 @@
+[
+    {
+        "name_covid": "tenerife",
+        "name": "Tenerife",
+        "name_es": "Tenerife",
+        "name_it": "Tenerife"
+    },
+    {
+        "name_covid": "la_palma",
+        "name": "La Palma",
+        "name_es": "La Palma",
+        "name_it": "La Palma"
+    },
+    {
+        "name_covid": "la_gomera",
+        "name": "La Gomera",
+        "name_es": "La Gomera",
+        "name_it": "La Gomera"
+    },
+    {
+        "name_covid": "lanzarote",
+        "name": "Lanzarote",
+        "name_es": "Lanzarote",
+        "name_it": "Lanzarote"
+    },
+    {
+        "name_covid": "fuerteventura",
+        "name": "Fuerteventura",
+        "name_es": "Fuerteventura",
+        "name_it": "Fuerteventura"
+    },
+    {
+        "name_covid": "el_hierro",
+        "name": "El Hierro",
+        "name_es": "El Hierro",
+        "name_it": "El Hierro"
+    },
+    {
+        "name_covid": "gran_canaria",
+        "name": "Gran Canaria",
+        "name_es": "Gran Canaria",
+        "name_it": "Gran Canaria"
+    },
+    {
+        "name_covid": "madrid",
+        "name": "Madrid",
+        "name_es": "Madrid",
+        "name_it": "Madrid"
+    },
+    {
+        "name_covid": "murcia",
+        "name": "Murcia",
+        "name_es": "Murcia",
+        "name_it": "Murcia"
+    },
+    {
+        "name_covid": "area_de_salud_de_caceres",
+        "name": "\u00c1rea de Salud de C\u00e1ceres",
+        "name_es": "\u00c1rea de Salud de C\u00e1ceres",
+        "name_it": "\u00c1rea de Salud de C\u00e1ceres"
+    },
+    {
+        "name_covid": "area_de_salud_de_badajoz",
+        "name": "\u00c1rea de Salud de Badajoz",
+        "name_es": "\u00c1rea de Salud de Badajoz",
+        "name_it": "\u00c1rea de Salud de Badajoz"
+    },
+    {
+        "name_covid": "almeria",
+        "name": "Almer\u00eda",
+        "name_es": "Almer\u00eda",
+        "name_it": "Almer\u00eda"
+    },
+    {
+        "name_covid": "cadiz",
+        "name": "C\u00e1diz",
+        "name_es": "C\u00e1diz",
+        "name_it": "C\u00e1diz"
+    },
+    {
+        "name_covid": "cordoba",
+        "name": "C\u00f3rdoba",
+        "name_es": "C\u00f3rdoba",
+        "name_it": "C\u00f3rdoba"
+    },
+    {
+        "name_covid": "granada",
+        "name": "Granada",
+        "name_es": "Granada",
+        "name_it": "Granada"
+    },
+    {
+        "name_covid": "huelva",
+        "name": "Huelva",
+        "name_es": "Huelva",
+        "name_it": "Huelva"
+    },
+    {
+        "name_covid": "jaen",
+        "name": "Ja\u00e9n",
+        "name_es": "Ja\u00e9n",
+        "name_it": "Ja\u00e9n"
+    },
+    {
+        "name_covid": "malaga",
+        "name": "M\u00e1laga",
+        "name_es": "M\u00e1laga",
+        "name_it": "M\u00e1laga"
+    },
+    {
+        "name_covid": "sevilla",
+        "name": "Sevilla",
+        "name_es": "Sevilla",
+        "name_it": "Sevilla"
+    },
+    {
+        "name_covid": "avila",
+        "name": "\u00c1vila",
+        "name_es": "\u00c1vila",
+        "name_it": "\u00c1vila"
+    },
+    {
+        "name_covid": "burgos",
+        "name": "Burgos",
+        "name_es": "Burgos",
+        "name_it": "Burgos"
+    },
+    {
+        "name_covid": "leon",
+        "name": "Le\u00f3n",
+        "name_es": "Le\u00f3n",
+        "name_it": "Le\u00f3n"
+    },
+    {
+        "name_covid": "palencia",
+        "name": "Palencia",
+        "name_es": "Palencia",
+        "name_it": "Palencia"
+    },
+    {
+        "name_covid": "salamanca",
+        "name": "Salamanca",
+        "name_es": "Salamanca",
+        "name_it": "Salamanca"
+    },
+    {
+        "name_covid": "segovia",
+        "name": "Segovia",
+        "name_es": "Segovia",
+        "name_it": "Segovia"
+    },
+    {
+        "name_covid": "soria",
+        "name": "Soria",
+        "name_es": "Soria",
+        "name_it": "Soria"
+    },
+    {
+        "name_covid": "valladolid",
+        "name": "Valladolid",
+        "name_es": "Valladolid",
+        "name_it": "Valladolid"
+    },
+    {
+        "name_covid": "zamora",
+        "name": "Zamora",
+        "name_es": "Zamora",
+        "name_it": "Zamora"
+    },
+    {
+        "name_covid": "alicante",
+        "name": "Alicante",
+        "name_es": "Alicante",
+        "name_it": "Alicante"
+    },
+    {
+        "name_covid": "castellon",
+        "name": "Castell\u00f3n",
+        "name_es": "Castell\u00f3n",
+        "name_it": "Castell\u00f3n"
+    },
+    {
+        "name_covid": "valencia",
+        "name": "Valencia",
+        "name_es": "Valencia",
+        "name_it": "Valencia"
+    },
+    {
+        "name_covid": "la_rioja",
+        "name": "La Rioja",
+        "name_es": "La Rioja",
+        "name_it": "La Rioja"
+    },
+    {
+        "name_covid": "melilla",
+        "name": "Melilla",
+        "name_es": "Melilla",
+        "name_it": "Melilla"
+    },
+    {
+        "name_covid": "cantabria",
+
+        "name": "Cantabria",
+        "name_es": "Cantabria",
+        "name_it": "Cantabria"
+    },
+    {
+        "name": "\u00c1lava",
+        "name_es": "\u00c1lava",
+        "name_it": "\u00c1lava"
+    },
+    {
+        "name_covid": "bizkaia",
+        "name": "Bizkaia",
+        "name_es": "Bizkaia",
+        "name_it": "Bizkaia"
+    },
+    {
+        "name_covid": "gipuzkoa",
+        "name": "Gipuzkoa",
+        "name_es": "Gipuzkoa",
+        "name_it": "Gipuzkoa"
+    },
+    {
+        "name_covid": "zaragoza",
+        "name": "Zaragoza",
+        "name_es": "Zaragoza",
+        "name_it": "Zaragoza"
+    },
+    {
+        "name_covid": "huesca",
+        "name": "Huesca",
+        "name_es": "Huesca",
+        "name_it": "Huesca"
+    },
+    {
+        "name_covid": "teruel",
+        "name": "Teruel",
+        "name_es": "Teruel",
+        "name_it": "Teruel"
+    },
+    {
+        "name_covid": "asturias",
+        "name": "Asturias",
+        "name_es": "Asturias",
+        "name_it": "Asturias"
+    },
+    {
+        "name_covid": "navarra",
+        "name": "Navarra",
+        "name_es": "Navarra",
+        "name_it": "Navarra"
+    },
+    {
+        "name_covid": "baleares",
+        "name": "Baleares",
+        "name_es": "Baleares",
+        "name_it": "Baleares"
+    },
+    {
+        "name_covid": "barcelona",
+        "name": "Barcelona",
+        "name_es": "Barcelona",
+        "name_it": "Barcelona"
+    },
+    {
+        "name_covid": "gerona",
+        "name": "Gerona",
+        "name_es": "Gerona",
+        "name_it": "Gerona"
+    },
+    {
+        "name_covid": "lerida",
+        "name": "L\u00e9rida",
+        "name_es": "L\u00e9rida",
+        "name_it": "L\u00e9rida"
+    },
+    {
+        "name_covid": "tarragona",
+        "name": "Tarragona",
+        "name_es": "Tarragona",
+        "name_it": "Tarragona"
+    },
+
+    {
+        "name_covid": "area_sanitaria_a_coruna",
+        "name": "\u00c1rea sanitaria A Coru\u00f1a",
+        "name_es": "\u00c1rea sanitaria A Coru\u00f1a",
+        "name_it": "\u00c1rea sanitaria A Coru\u00f1a"
+    },
+    {
+        "name_covid": "area_sanitaria_lugo",
+        "name": "\u00c1rea sanitaria Lugo",
+        "name_es": "\u00c1rea sanitaria Lugo",
+        "name_it": "\u00c1rea sanitaria Lugo"
+    },
+    {
+        "name_covid": "area_sanitaria_ourense",
+        "name": "\u00c1rea sanitaria Ourense",
+        "name_es": "\u00c1rea sanitaria Ourense",
+        "name_it": "\u00c1rea sanitaria Ourense"
+    },
+    {
+        "name_covid": "area_sanitaria_pontevedra",
+        "name": "\u00c1rea sanitaria Pontevedra",
+        "name_es": "\u00c1rea sanitaria Pontevedra",
+        "name_it": "\u00c1rea sanitaria Pontevedra"
+    },
+    {
+        "name_covid": "ciudad_real",
+        "name": "Ciudad Real",
+        "name_es": "Ciudad Real",
+        "name_it": "Ciudad Real"
+    },
+    {
+        "name_covid": "albacete",
+        "name": "Albacete",
+        "name_es": "Albacete",
+        "name_it": "Albacete"
+    },
+    {
+        "name_covid": "toledo",
+        "name": "Toledo",
+        "name_es": "Toledo",
+        "name_it": "Toledo"
+    },
+    {
+        "name_covid": "guadalajara",
+        "name": "Guadalajara",
+        "name_es": "Guadalajara",
+        "name_it": "Guadalajara"
+    },
+    {
+        "name_covid": "cuenca",
+        "name": "Cuenca",
+        "name_es": "Cuenca",
+        "name_it": "Cuenca"
+    },
+    {
+        "name_covid": "ceuta",
+        "name": "Ceuta",
+        "name_es": "Ceuta",
+        "name_it": "Ceuta"
+    }
+]

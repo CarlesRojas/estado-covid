@@ -1,0 +1,102 @@
+// #######################################
+//      VARIABLES
+// #######################################
+
+$background: rgb(20, 20, 20);
+$text: rgb(245, 245, 245);
+$fontSize: 18px;
+$link: rgba(0, 106, 177, 0.75);
+
+// #######################################
+//      FONTS
+// #######################################
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+// #######################################
+//      MAIN ELEMENTS
+// #######################################
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    overscroll-behavior: none;
+}
+
+html {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    font-size: $fontSize;
+    touch-action: none;
+}
+
+body {
+    user-select: none;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: $background;
+    color: $text;
+    font-family: "Montserrat", sans-serif;
+    touch-action: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+img,
+video {
+    display: block;
+}
+
+// Autofill color
+:-webkit-autofill,
+:-webkit-autofill:hover,
+:-webkit-autofill:focus {
+    transition: background-color 10000s;
+    width: inherit;
+    box-sizing: border-box;
+    border: 0px solid rgba(255, 255, 255, 0);
+    border-radius: 1000px;
+    padding: 0 10px;
+    -webkit-text-fill-color: white;
+}
+
+//Remove focus
+:focus {
+    outline: none;
+}
+::-moz-focus-inner {
+    border: 0;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    margin: 0;
+    -webkit-appearance: none;
+}
+
+/* Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+// #######################################
+//      APP
+// #######################################
+
+.app {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}

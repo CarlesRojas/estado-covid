@@ -1,0 +1,3073 @@
+[
+    {
+        "COD": "MMOV3214",
+        "Nombre": "Total Nacional. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 16473,
+                "Variable": {
+                    "Id": 349,
+                    "Nombre": "Total Nacional",
+                    "Codigo": "NAC"
+                },
+                "Nombre": "Total Nacional",
+                "Codigo": "00"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 4.7026208e7
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6593",
+        "Nombre": "Andalucía. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 8997,
+                "Variable": {
+                    "Id": 70,
+                    "Nombre": "Comunidades y Ciudades Autónomas",
+                    "Codigo": "CCAA"
+                },
+                "Nombre": "Andalucía",
+                "Codigo": "01"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 8414240.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6592",
+        "Nombre": "Aragón. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 8998,
+                "Variable": {
+                    "Id": 70,
+                    "Nombre": "Comunidades y Ciudades Autónomas",
+                    "Codigo": "CCAA"
+                },
+                "Nombre": "Aragón",
+                "Codigo": "02"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 1319291.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6591",
+        "Nombre": "Asturias, Principado de. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 8999,
+                "Variable": {
+                    "Id": 70,
+                    "Nombre": "Comunidades y Ciudades Autónomas",
+                    "Codigo": "CCAA"
+                },
+                "Nombre": "Asturias, Principado de",
+                "Codigo": "03"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 1022800.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6590",
+        "Nombre": "Balears, Illes. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 9000,
+                "Variable": {
+                    "Id": 70,
+                    "Nombre": "Comunidades y Ciudades Autónomas",
+                    "Codigo": "CCAA"
+                },
+                "Nombre": "Balears, Illes",
+                "Codigo": "04"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 1149460.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6589",
+        "Nombre": "Canarias. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 9001,
+                "Variable": {
+                    "Id": 70,
+                    "Nombre": "Comunidades y Ciudades Autónomas",
+                    "Codigo": "CCAA"
+                },
+                "Nombre": "Canarias",
+                "Codigo": "05"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 2153389.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6588",
+        "Nombre": "Cantabria. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 9002,
+                "Variable": {
+                    "Id": 70,
+                    "Nombre": "Comunidades y Ciudades Autónomas",
+                    "Codigo": "CCAA"
+                },
+                "Nombre": "Cantabria",
+                "Codigo": "06"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 581078.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6587",
+        "Nombre": "Castilla y León. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 9003,
+                "Variable": {
+                    "Id": 70,
+                    "Nombre": "Comunidades y Ciudades Autónomas",
+                    "Codigo": "CCAA"
+                },
+                "Nombre": "Castilla y León",
+                "Codigo": "07"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 2399548.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6586",
+        "Nombre": "Castilla - La Mancha. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 9004,
+                "Variable": {
+                    "Id": 70,
+                    "Nombre": "Comunidades y Ciudades Autónomas",
+                    "Codigo": "CCAA"
+                },
+                "Nombre": "Castilla - La Mancha",
+                "Codigo": "08"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 2032863.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6585",
+        "Nombre": "Cataluña. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 9005,
+                "Variable": {
+                    "Id": 70,
+                    "Nombre": "Comunidades y Ciudades Autónomas",
+                    "Codigo": "CCAA"
+                },
+                "Nombre": "Cataluña",
+                "Codigo": "09"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 7675217.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6584",
+        "Nombre": "Comunitat Valenciana. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 9006,
+                "Variable": {
+                    "Id": 70,
+                    "Nombre": "Comunidades y Ciudades Autónomas",
+                    "Codigo": "CCAA"
+                },
+                "Nombre": "Comunitat Valenciana",
+                "Codigo": "10"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 5003769.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6583",
+        "Nombre": "Extremadura. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 9007,
+                "Variable": {
+                    "Id": 70,
+                    "Nombre": "Comunidades y Ciudades Autónomas",
+                    "Codigo": "CCAA"
+                },
+                "Nombre": "Extremadura",
+                "Codigo": "11"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 1067710.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6582",
+        "Nombre": "Galicia. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 9008,
+                "Variable": {
+                    "Id": 70,
+                    "Nombre": "Comunidades y Ciudades Autónomas",
+                    "Codigo": "CCAA"
+                },
+                "Nombre": "Galicia",
+                "Codigo": "12"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 2699499.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6581",
+        "Nombre": "Madrid, Comunidad de. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 9009,
+                "Variable": {
+                    "Id": 70,
+                    "Nombre": "Comunidades y Ciudades Autónomas",
+                    "Codigo": "CCAA"
+                },
+                "Nombre": "Madrid, Comunidad de",
+                "Codigo": "13"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 6663394.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6580",
+        "Nombre": "Murcia, Región de. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 9010,
+                "Variable": {
+                    "Id": 70,
+                    "Nombre": "Comunidades y Ciudades Autónomas",
+                    "Codigo": "CCAA"
+                },
+                "Nombre": "Murcia, Región de",
+                "Codigo": "14"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 1493898.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6579",
+        "Nombre": "Navarra, Comunidad Foral de. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 9011,
+                "Variable": {
+                    "Id": 70,
+                    "Nombre": "Comunidades y Ciudades Autónomas",
+                    "Codigo": "CCAA"
+                },
+                "Nombre": "Navarra, Comunidad Foral de",
+                "Codigo": "15"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 654214.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6578",
+        "Nombre": "País Vasco. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 9012,
+                "Variable": {
+                    "Id": 70,
+                    "Nombre": "Comunidades y Ciudades Autónomas",
+                    "Codigo": "CCAA"
+                },
+                "Nombre": "País Vasco",
+                "Codigo": "16"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 2207776.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6577",
+        "Nombre": "Rioja, La. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 9013,
+                "Variable": {
+                    "Id": 70,
+                    "Nombre": "Comunidades y Ciudades Autónomas",
+                    "Codigo": "CCAA"
+                },
+                "Nombre": "Rioja, La",
+                "Codigo": "17"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 316798.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6576",
+        "Nombre": "Ceuta. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 9015,
+                "Variable": {
+                    "Id": 70,
+                    "Nombre": "Comunidades y Ciudades Autónomas",
+                    "Codigo": "CCAA"
+                },
+                "Nombre": "Ceuta",
+                "Codigo": "18"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 84777.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6575",
+        "Nombre": "Melilla. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 8995,
+                "Variable": {
+                    "Id": 70,
+                    "Nombre": "Comunidades y Ciudades Autónomas",
+                    "Codigo": "CCAA"
+                },
+                "Nombre": "Melilla",
+                "Codigo": "19"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 86487.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6555",
+        "Nombre": "Albacete. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 3,
+                "Variable": {
+                    "Id": 115,
+                    "Nombre": "Provincias",
+                    "Codigo": "PROV"
+                },
+                "Nombre": "Albacete",
+                "Codigo": "02"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 388167.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6554",
+        "Nombre": "Alicante/Alacant. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 4,
+                "Variable": {
+                    "Id": 115,
+                    "Nombre": "Provincias",
+                    "Codigo": "PROV"
+                },
+                "Nombre": "Alicante/Alacant",
+                "Codigo": "03"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 1858683.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6553",
+        "Nombre": "Almería. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 5,
+                "Variable": {
+                    "Id": 115,
+                    "Nombre": "Provincias",
+                    "Codigo": "PROV"
+                },
+                "Nombre": "Almería",
+                "Codigo": "04"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 716820.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6552",
+        "Nombre": "Araba/Álava. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 2,
+                "Variable": {
+                    "Id": 115,
+                    "Nombre": "Provincias",
+                    "Codigo": "PROV"
+                },
+                "Nombre": "Araba/Álava",
+                "Codigo": "01"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 331549.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6551",
+        "Nombre": "Asturias. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 33,
+                "Variable": {
+                    "Id": 115,
+                    "Nombre": "Provincias",
+                    "Codigo": "PROV"
+                },
+                "Nombre": "Asturias",
+                "Codigo": "33"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 1022800.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6550",
+        "Nombre": "Ávila. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 6,
+                "Variable": {
+                    "Id": 115,
+                    "Nombre": "Provincias",
+                    "Codigo": "PROV"
+                },
+                "Nombre": "Ávila",
+                "Codigo": "05"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 157640.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6549",
+        "Nombre": "Badajoz. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 7,
+                "Variable": {
+                    "Id": 115,
+                    "Nombre": "Provincias",
+                    "Codigo": "PROV"
+                },
+                "Nombre": "Badajoz",
+                "Codigo": "06"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 673559.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6548",
+        "Nombre": "Balears, Illes. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 8,
+                "Variable": {
+                    "Id": 115,
+                    "Nombre": "Provincias",
+                    "Codigo": "PROV"
+                },
+                "Nombre": "Balears, Illes",
+                "Codigo": "07"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 1149460.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6547",
+        "Nombre": "Barcelona. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 9,
+                "Variable": {
+                    "Id": 115,
+                    "Nombre": "Provincias",
+                    "Codigo": "PROV"
+                },
+                "Nombre": "Barcelona",
+                "Codigo": "08"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 5664579.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6546",
+        "Nombre": "Bizkaia. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 48,
+                "Variable": {
+                    "Id": 115,
+                    "Nombre": "Provincias",
+                    "Codigo": "PROV"
+                },
+                "Nombre": "Bizkaia",
+                "Codigo": "48"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 1152651.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6545",
+        "Nombre": "Burgos. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 10,
+                "Variable": {
+                    "Id": 115,
+                    "Nombre": "Provincias",
+                    "Codigo": "PROV"
+                },
+                "Nombre": "Burgos",
+                "Codigo": "09"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 356958.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6544",
+        "Nombre": "Cáceres. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 11,
+                "Variable": {
+                    "Id": 115,
+                    "Nombre": "Provincias",
+                    "Codigo": "PROV"
+                },
+                "Nombre": "Cáceres",
+                "Codigo": "10"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 394151.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6543",
+        "Nombre": "Cádiz. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 12,
+                "Variable": {
+                    "Id": 115,
+                    "Nombre": "Provincias",
+                    "Codigo": "PROV"
+                },
+                "Nombre": "Cádiz",
+                "Codigo": "11"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 1240155.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6542",
+        "Nombre": "Cantabria. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 39,
+                "Variable": {
+                    "Id": 115,
+                    "Nombre": "Provincias",
+                    "Codigo": "PROV"
+                },
+                "Nombre": "Cantabria",
+                "Codigo": "39"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 581078.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6541",
+        "Nombre": "Castellón/Castelló. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 13,
+                "Variable": {
+                    "Id": 115,
+                    "Nombre": "Provincias",
+                    "Codigo": "PROV"
+                },
+                "Nombre": "Castellón/Castelló",
+                "Codigo": "12"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 579962.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6540",
+        "Nombre": "Ciudad Real. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 14,
+                "Variable": {
+                    "Id": 115,
+                    "Nombre": "Provincias",
+                    "Codigo": "PROV"
+                },
+                "Nombre": "Ciudad Real",
+                "Codigo": "13"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 495761.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6539",
+        "Nombre": "Córdoba. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 15,
+                "Variable": {
+                    "Id": 115,
+                    "Nombre": "Provincias",
+                    "Codigo": "PROV"
+                },
+                "Nombre": "Córdoba",
+                "Codigo": "14"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 782979.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6538",
+        "Nombre": "Coruña, A. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 16,
+                "Variable": {
+                    "Id": 115,
+                    "Nombre": "Provincias",
+                    "Codigo": "PROV"
+                },
+                "Nombre": "Coruña, A",
+                "Codigo": "15"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 1119596.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6537",
+        "Nombre": "Cuenca. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 17,
+                "Variable": {
+                    "Id": 115,
+                    "Nombre": "Provincias",
+                    "Codigo": "PROV"
+                },
+                "Nombre": "Cuenca",
+                "Codigo": "16"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 196329.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6536",
+        "Nombre": "Gipuzkoa. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 21,
+                "Variable": {
+                    "Id": 115,
+                    "Nombre": "Provincias",
+                    "Codigo": "PROV"
+                },
+                "Nombre": "Gipuzkoa",
+                "Codigo": "20"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 723576.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6535",
+        "Nombre": "Girona. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 18,
+                "Variable": {
+                    "Id": 115,
+                    "Nombre": "Provincias",
+                    "Codigo": "PROV"
+                },
+                "Nombre": "Girona",
+                "Codigo": "17"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 771044.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6534",
+        "Nombre": "Granada. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 19,
+                "Variable": {
+                    "Id": 115,
+                    "Nombre": "Provincias",
+                    "Codigo": "PROV"
+                },
+                "Nombre": "Granada",
+                "Codigo": "18"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 914678.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6533",
+        "Nombre": "Guadalajara. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 20,
+                "Variable": {
+                    "Id": 115,
+                    "Nombre": "Provincias",
+                    "Codigo": "PROV"
+                },
+                "Nombre": "Guadalajara",
+                "Codigo": "19"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 257762.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6532",
+        "Nombre": "Huelva. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 22,
+                "Variable": {
+                    "Id": 115,
+                    "Nombre": "Provincias",
+                    "Codigo": "PROV"
+                },
+                "Nombre": "Huelva",
+                "Codigo": "21"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 521870.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6531",
+        "Nombre": "Huesca. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 23,
+                "Variable": {
+                    "Id": 115,
+                    "Nombre": "Provincias",
+                    "Codigo": "PROV"
+                },
+                "Nombre": "Huesca",
+                "Codigo": "22"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 220461.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6530",
+        "Nombre": "Jaén. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 24,
+                "Variable": {
+                    "Id": 115,
+                    "Nombre": "Provincias",
+                    "Codigo": "PROV"
+                },
+                "Nombre": "Jaén",
+                "Codigo": "23"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 633564.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6529",
+        "Nombre": "León. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 25,
+                "Variable": {
+                    "Id": 115,
+                    "Nombre": "Provincias",
+                    "Codigo": "PROV"
+                },
+                "Nombre": "León",
+                "Codigo": "24"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 460001.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6528",
+        "Nombre": "Lleida. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 26,
+                "Variable": {
+                    "Id": 115,
+                    "Nombre": "Provincias",
+                    "Codigo": "PROV"
+                },
+                "Nombre": "Lleida",
+                "Codigo": "25"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 434930.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6527",
+        "Nombre": "Lugo. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 28,
+                "Variable": {
+                    "Id": 115,
+                    "Nombre": "Provincias",
+                    "Codigo": "PROV"
+                },
+                "Nombre": "Lugo",
+                "Codigo": "27"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 329587.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6526",
+        "Nombre": "Madrid. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 29,
+                "Variable": {
+                    "Id": 115,
+                    "Nombre": "Provincias",
+                    "Codigo": "PROV"
+                },
+                "Nombre": "Madrid",
+                "Codigo": "28"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 6663394.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6525",
+        "Nombre": "Málaga. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 30,
+                "Variable": {
+                    "Id": 115,
+                    "Nombre": "Provincias",
+                    "Codigo": "PROV"
+                },
+                "Nombre": "Málaga",
+                "Codigo": "29"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 1661785.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6524",
+        "Nombre": "Murcia. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 31,
+                "Variable": {
+                    "Id": 115,
+                    "Nombre": "Provincias",
+                    "Codigo": "PROV"
+                },
+                "Nombre": "Murcia",
+                "Codigo": "30"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 1493898.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6523",
+        "Nombre": "Navarra. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 32,
+                "Variable": {
+                    "Id": 115,
+                    "Nombre": "Provincias",
+                    "Codigo": "PROV"
+                },
+                "Nombre": "Navarra",
+                "Codigo": "31"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 654214.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6522",
+        "Nombre": "Ourense. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 53,
+                "Variable": {
+                    "Id": 115,
+                    "Nombre": "Provincias",
+                    "Codigo": "PROV"
+                },
+                "Nombre": "Ourense",
+                "Codigo": "32"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 307651.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6521",
+        "Nombre": "Palencia. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 34,
+                "Variable": {
+                    "Id": 115,
+                    "Nombre": "Provincias",
+                    "Codigo": "PROV"
+                },
+                "Nombre": "Palencia",
+                "Codigo": "34"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 160980.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6520",
+        "Nombre": "Palmas, Las. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 35,
+                "Variable": {
+                    "Id": 115,
+                    "Nombre": "Provincias",
+                    "Codigo": "PROV"
+                },
+                "Nombre": "Palmas, Las",
+                "Codigo": "35"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 1120406.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6519",
+        "Nombre": "Pontevedra. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 36,
+                "Variable": {
+                    "Id": 115,
+                    "Nombre": "Provincias",
+                    "Codigo": "PROV"
+                },
+                "Nombre": "Pontevedra",
+                "Codigo": "36"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 942665.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6518",
+        "Nombre": "Rioja, La. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 27,
+                "Variable": {
+                    "Id": 115,
+                    "Nombre": "Provincias",
+                    "Codigo": "PROV"
+                },
+                "Nombre": "Rioja, La",
+                "Codigo": "26"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 316798.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6517",
+        "Nombre": "Salamanca. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 37,
+                "Variable": {
+                    "Id": 115,
+                    "Nombre": "Provincias",
+                    "Codigo": "PROV"
+                },
+                "Nombre": "Salamanca",
+                "Codigo": "37"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 330119.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6516",
+        "Nombre": "Santa Cruz de Tenerife. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 38,
+                "Variable": {
+                    "Id": 115,
+                    "Nombre": "Provincias",
+                    "Codigo": "PROV"
+                },
+                "Nombre": "Santa Cruz de Tenerife",
+                "Codigo": "38"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 1032983.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6515",
+        "Nombre": "Segovia. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 40,
+                "Variable": {
+                    "Id": 115,
+                    "Nombre": "Provincias",
+                    "Codigo": "PROV"
+                },
+                "Nombre": "Segovia",
+                "Codigo": "40"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 153129.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6514",
+        "Nombre": "Sevilla. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 41,
+                "Variable": {
+                    "Id": 115,
+                    "Nombre": "Provincias",
+                    "Codigo": "PROV"
+                },
+                "Nombre": "Sevilla",
+                "Codigo": "41"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 1942389.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6513",
+        "Nombre": "Soria. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 42,
+                "Variable": {
+                    "Id": 115,
+                    "Nombre": "Provincias",
+                    "Codigo": "PROV"
+                },
+                "Nombre": "Soria",
+                "Codigo": "42"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 88636.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6512",
+        "Nombre": "Tarragona. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 43,
+                "Variable": {
+                    "Id": 115,
+                    "Nombre": "Provincias",
+                    "Codigo": "PROV"
+                },
+                "Nombre": "Tarragona",
+                "Codigo": "43"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 804664.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6511",
+        "Nombre": "Teruel. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 44,
+                "Variable": {
+                    "Id": 115,
+                    "Nombre": "Provincias",
+                    "Codigo": "PROV"
+                },
+                "Nombre": "Teruel",
+                "Codigo": "44"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 134137.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6510",
+        "Nombre": "Toledo. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 45,
+                "Variable": {
+                    "Id": 115,
+                    "Nombre": "Provincias",
+                    "Codigo": "PROV"
+                },
+                "Nombre": "Toledo",
+                "Codigo": "45"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 694844.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6509",
+        "Nombre": "Valencia/València. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 46,
+                "Variable": {
+                    "Id": 115,
+                    "Nombre": "Provincias",
+                    "Codigo": "PROV"
+                },
+                "Nombre": "Valencia/València",
+                "Codigo": "46"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 2565124.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6508",
+        "Nombre": "Valladolid. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 47,
+                "Variable": {
+                    "Id": 115,
+                    "Nombre": "Provincias",
+                    "Codigo": "PROV"
+                },
+                "Nombre": "Valladolid",
+                "Codigo": "47"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 519546.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6507",
+        "Nombre": "Zamora. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 49,
+                "Variable": {
+                    "Id": 115,
+                    "Nombre": "Provincias",
+                    "Codigo": "PROV"
+                },
+                "Nombre": "Zamora",
+                "Codigo": "49"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 172539.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6506",
+        "Nombre": "Zaragoza. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 50,
+                "Variable": {
+                    "Id": 115,
+                    "Nombre": "Provincias",
+                    "Codigo": "PROV"
+                },
+                "Nombre": "Zaragoza",
+                "Codigo": "50"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 964693.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6505",
+        "Nombre": "Ceuta. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 51,
+                "Variable": {
+                    "Id": 115,
+                    "Nombre": "Provincias",
+                    "Codigo": "PROV"
+                },
+                "Nombre": "Ceuta",
+                "Codigo": "51"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 84777.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6504",
+        "Nombre": "Melilla. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 52,
+                "Variable": {
+                    "Id": 115,
+                    "Nombre": "Provincias",
+                    "Codigo": "PROV"
+                },
+                "Nombre": "Melilla",
+                "Codigo": "52"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 86487.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6503",
+        "Nombre": "Formentera. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 8609,
+                "Variable": {
+                    "Id": 20,
+                    "Nombre": "Islas",
+                    "Codigo": ""
+                },
+                "Nombre": "Formentera",
+                "Codigo": "07071"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 12111.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6502",
+        "Nombre": "Ibiza. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 8610,
+                "Variable": {
+                    "Id": 20,
+                    "Nombre": "Islas",
+                    "Codigo": ""
+                },
+                "Nombre": "Ibiza",
+                "Codigo": "07072"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 147914.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6501",
+        "Nombre": "Mallorca. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 8611,
+                "Variable": {
+                    "Id": 20,
+                    "Nombre": "Islas",
+                    "Codigo": ""
+                },
+                "Nombre": "Mallorca",
+                "Codigo": "07073"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 896038.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6500",
+        "Nombre": "Menorca. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 8612,
+                "Variable": {
+                    "Id": 20,
+                    "Nombre": "Islas",
+                    "Codigo": ""
+                },
+                "Nombre": "Menorca",
+                "Codigo": "07074"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 93397.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6499",
+        "Nombre": "Fuerteventura. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 8613,
+                "Variable": {
+                    "Id": 20,
+                    "Nombre": "Islas",
+                    "Codigo": ""
+                },
+                "Nombre": "Fuerteventura",
+                "Codigo": "35351"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 116886.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6498",
+        "Nombre": "Gran Canaria. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 8614,
+                "Variable": {
+                    "Id": 20,
+                    "Nombre": "Islas",
+                    "Codigo": ""
+                },
+                "Nombre": "Gran Canaria",
+                "Codigo": "35352"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 851231.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6497",
+        "Nombre": "Lanzarote. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 8615,
+                "Variable": {
+                    "Id": 20,
+                    "Nombre": "Islas",
+                    "Codigo": ""
+                },
+                "Nombre": "Lanzarote",
+                "Codigo": "35353"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 152289.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6496",
+        "Nombre": "Gomera, La. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 8616,
+                "Variable": {
+                    "Id": 20,
+                    "Nombre": "Islas",
+                    "Codigo": ""
+                },
+                "Nombre": "Gomera, La",
+                "Codigo": "38381"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 21503.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6495",
+        "Nombre": "Hierro, El. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 8617,
+                "Variable": {
+                    "Id": 20,
+                    "Nombre": "Islas",
+                    "Codigo": ""
+                },
+                "Nombre": "Hierro, El",
+                "Codigo": "38382"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 10968.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6494",
+        "Nombre": "Palma, La. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 8618,
+                "Variable": {
+                    "Id": 20,
+                    "Nombre": "Islas",
+                    "Codigo": ""
+                },
+                "Nombre": "Palma, La",
+                "Codigo": "38383"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 82671.0
+            }
+        ]
+    },
+    {
+        "COD": "MMOV6493",
+        "Nombre": "Tenerife. Personas. ",
+        "T3_Unidad": "Personas",
+        "T3_Escala": " ",
+        "MetaData": [
+            {
+                "Id": 20258,
+                "Variable": {
+                    "Id": 3,
+                    "Nombre": "Tipo de dato",
+                    "Codigo": ""
+                },
+                "Nombre": "Personas",
+                "Codigo": ""
+            },
+            {
+                "Id": 8619,
+                "Variable": {
+                    "Id": 20,
+                    "Nombre": "Islas",
+                    "Codigo": ""
+                },
+                "Nombre": "Tenerife",
+                "Codigo": "38384"
+            }
+        ],
+        "Data": [
+            {
+                "Fecha": "2019-01-01T00:00:00.000+01:00",
+                "T3_TipoDato": "Definitivo",
+                "T3_Periodo": "1/1",
+                "Anyo": 2019,
+                "Valor": 917841.0
+            }
+        ]
+    }
+]
