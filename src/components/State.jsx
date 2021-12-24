@@ -3,6 +3,8 @@ import { useSpring, animated } from "react-spring";
 import { useDrag } from "react-use-gesture";
 import { Utils } from "../contexts/Utils";
 
+const HIDDEN_PERCENTAGE = 0.8;
+
 export default function State() {
     const { lerp, invlerp } = useContext(Utils);
 
@@ -11,11 +13,11 @@ export default function State() {
     // #################################################
 
     const isHidden = useRef(true);
-    const [{ y }, spring] = useSpring(() => ({ y: "80%" }));
+    const [{ y }, spring] = useSpring(() => ({ y: `${HIDDEN_PERCENTAGE * 100}%` }));
 
     const hideContainer = () => {
         isHidden.current = true;
-        spring.start({ y: "80%" });
+        spring.start({ y: `${HIDDEN_PERCENTAGE * 100}%` });
     };
 
     const showContainer = () => {
@@ -47,8 +49,10 @@ export default function State() {
 
             // Update the position while the gesture is active
             else {
-                var displ = isHidden.current ? invlerp(-containerHeight, 0, my) : invlerp(0, containerHeight, my);
-                var percentageDispl = lerp(0, 80, displ);
+                var displ = isHidden.current
+                    ? invlerp(-containerHeight * HIDDEN_PERCENTAGE, 0, my)
+                    : invlerp(0, containerHeight * HIDDEN_PERCENTAGE, my);
+                var percentageDispl = lerp(0, HIDDEN_PERCENTAGE * 100, displ);
                 spring.start({ y: `${percentageDispl}%` });
             }
         },
