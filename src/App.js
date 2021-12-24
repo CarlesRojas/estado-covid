@@ -2,6 +2,8 @@ import React, { useState, useEffect, useContext } from "react";
 import { Data } from "./contexts/Data";
 import Map from "./components/Map";
 import CurrentLocation from "./components/CurrentLocation";
+import Button from "./components/Button";
+import State from "./components/State";
 
 export default function App() {
     const { dataLoaded } = useContext(Data);
@@ -24,6 +26,9 @@ export default function App() {
         <div className="app">
             {coords && dataLoaded && <Map coords={coords} />}
             <CurrentLocation />
+
+            <Button text={"Tengo Covid-19"} callback={() => {}} />
+            <State />
         </div>
     );
 }

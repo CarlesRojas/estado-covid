@@ -62,7 +62,7 @@ const UtilsProvider = (props) => {
     //      INTERPOLATIONS
     // ###################################################
 
-    // Clamp a value between a min and max
+    // Clamp a value between min and max
     const clamp = (a, min = 0, max = 1) => Math.min(max, Math.max(min, a));
 
     // Linear interpolation (0 <= t <= 1) -> Returns value between start and end
@@ -210,6 +210,22 @@ const UtilsProvider = (props) => {
             // eslint-disable-next-line react-hooks/exhaustive-deps
         }, []);
         return [{ ref }, bounds];
+    }
+
+    // Animate on click
+    function useCssAnimation(duration) {
+        const [animating, setAnimating] = useState(false);
+
+        const timeoutRef = useRef();
+
+        const trigger = () => {
+            setAnimating(true);
+
+            clearTimeout(timeoutRef);
+            setTimeout(() => setAnimating(false), duration);
+        };
+
+        return [animating, trigger];
     }
 
     // ###################################################
@@ -407,6 +423,7 @@ const UtilsProvider = (props) => {
                 // HOOKS
                 useForceUpdate,
                 useMeasure,
+                useCssAnimation,
 
                 // RANDOWM IDS
                 createUniqueID,

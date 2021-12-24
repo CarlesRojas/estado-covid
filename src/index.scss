@@ -2,10 +2,13 @@
 //      VARIABLES
 // #######################################
 
-$background: rgb(20, 20, 20);
-$text: rgb(245, 245, 245);
+$background: rgb(245, 245, 245);
+$text: rgb(20, 20, 20);
 $fontSize: 18px;
 $blue: rgb(0, 140, 255);
+
+$borderRadius: 0.5rem;
+$buttonHeight: 3.5rem;
 
 // #######################################
 //      FONTS
@@ -97,6 +100,8 @@ input[type="number"] {
 
 .app {
     position: relative;
+    display: flex;
+    flex-direction: column;
     height: 100%;
     width: 100%;
 }
@@ -118,22 +123,106 @@ input[type="number"] {
 // #######################################
 
 .currentLocation {
+    pointer-events: none;
     position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: calc(100% + 26px);
     width: 100%;
     top: 0;
     left: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    pointer-events: none;
-    touch-action: none;
 
     .marker {
-        width: 1.5rem;
-        min-width: 1.5rem;
-        max-width: 1.5rem;
         transform: translateY(-50%);
+        width: 1.5rem;
+        max-width: 1.5rem;
+        min-width: 1.5rem;
         color: $blue;
+    }
+}
+
+// #######################################
+//      CURRENT LOCATION
+// #######################################
+
+.button {
+    position: relative;
+    height: $buttonHeight;
+    max-height: $buttonHeight;
+    min-height: $buttonHeight;
+    padding: 0.4rem;
+
+    .content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        background-color: rgb(255, 94, 94);
+        border-radius: $borderRadius;
+        font-size: 1.1rem;
+        font-weight: 700;
+        text-transform: uppercase;
+
+        &.animating {
+            animation: click 0.3s infinite;
+        }
+
+        @keyframes click {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.02);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    }
+}
+
+// #######################################
+//      STATE
+// #######################################
+
+.state {
+    pointer-events: none;
+    position: relative;
+    flex-grow: 1;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 0 0.4rem 0.4rem 0.4rem;
+
+    .container {
+        pointer-events: all;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+    }
+
+    .handle {
+        pointer-events: none;
+        height: 0.3rem;
+        width: 5rem;
+        background-color: rgba(0, 0, 0, 0.2);
+        margin-bottom: 0.4rem;
+        border-radius: 0.4rem;
+    }
+
+    .data {
+        pointer-events: none;
+        flex-grow: 1;
+        width: 100%;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        background-color: $background;
+        opacity: 0.95;
+        border-radius: $borderRadius;
     }
 }
