@@ -195,7 +195,7 @@ input[type="number"] {
     width: 100%;
     top: 0;
     left: 0;
-    padding: 0 0.4rem 0.4rem 0.4rem;
+    padding: 0 0.4rem;
 
     .container {
         pointer-events: all;
@@ -223,6 +223,7 @@ input[type="number"] {
         box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
         background-color: $background;
         opacity: 0.95;
-        border-radius: $borderRadius;
+        border-top-left-radius: $borderRadius;
+        border-top-right-radius: $borderRadius;
     }
 }
