@@ -1,0 +1,116 @@
+[
+    {
+        "id": "canarias",
+        "name": "Canarias",
+        "name_es": "Canarias",
+        "name_it": "Canarias"
+    },
+    {
+        "id": "madrid",
+        "name": "Madrid",
+        "name_es": "Madrid",
+        "name_it": "Madrid"
+    },
+    {
+        "id": "murcia",
+        "name": "Murcia",
+        "name_es": "Murcia",
+        "name_it": "Murcia"
+    },
+    {
+        "id": "extremadura",
+        "name": "Extremadura",
+        "name_es": "Extremadura",
+        "name_it": "Extremadura"
+    },
+    {
+        "id": "andalucia",
+        "name": "Andalucía",
+        "name_es": "Andalucía",
+        "name_it": "Andalucía"
+    },
+    {
+        "id": "castilla_y_leon",
+        "name": "Castilla y León",
+        "name_es": "Castilla y León",
+        "name_it": "Castilla y León"
+    },
+    {
+        "id": "c_valenciana",
+        "name": "C. Valenciana",
+        "name_es": "C. Valenciana",
+        "name_it": "C. Valenciana"
+    },
+    {
+        "id": "la_rioja",
+        "name": "La Rioja",
+        "name_es": "La Rioja",
+        "name_it": "La Rioja"
+    },
+    {
+        "id": "melilla",
+        "name": "Melilla",
+        "name_es": "Melilla",
+        "name_it": "Melilla"
+    },
+    {
+        "id": "cantabria",
+        "name": "Cantabria",
+        "name_es": "Cantabria",
+        "name_it": "Cantabria"
+    },
+    {
+        "id": "pais_vasco",
+        "name": "País Vasco",
+        "name_es": "País Vasco",
+        "name_it": "País Vasco"
+    },
+    {
+        "id": "aragon",
+        "name": "Aragón",
+        "name_es": "Aragón",
+        "name_it": "Aragón"
+    },
+    {
+        "id": "asturias",
+        "name": "Asturias",
+        "name_es": "Asturias",
+        "name_it": "Asturias"
+    },
+    {
+        "id": "navarra",
+        "name": "Navarra",
+        "name_es": "Navarra",
+        "name_it": "Navarra"
+    },
+    {
+        "id": "baleares",
+        "name": "Baleares",
+        "name_es": "Baleares",
+        "name_it": "Baleares"
+    },
+    {
+        "id": "cataluna",
+        "name": "Cataluña",
+        "name_es": "Cataluña",
+        "name_it": "Cataluña"
+    },
+    {
+        "id": "galicia",
+        "name": "Galicia",
+        "name_es": "Galicia",
+        "name_it": "Galicia"
+    },
+    {
+        "id": "castilla-la_mancha",
+        "name": "Castilla-La Mancha",
+        "name_es": "Castilla-La Mancha",
+        "name_it": "Castilla-La Mancha"
+    },
+    {
+        "id": "ceuta",
+        "name": "Ceuta",
+        "name_es": "Ceuta",
+        "name_it": "Ceuta"
+    }
+]

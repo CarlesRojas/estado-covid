@@ -43,7 +43,7 @@
     },
     {
         "id": "07",
-        "name": "Balears, Illes",
+        "name": "Illes Balears",
         "population": 1149460,
         "id_covid": "baleares",
         "ca_id_covid": "baleares",
@@ -100,7 +100,7 @@
     },
     {
         "id": "15",
-        "name": "Coruña, A",
+        "name": "A Coruña",
         "population": 1119596,
         "id_covid": "area_sanitaria_a_coruna",
         "ca_id_covid": "galicia"
@@ -245,7 +245,7 @@
     },
     {
         "id": "35",
-        "name": "Palmas, Las",
+        "name": "Las Palmas",
         "population": 1120406,
         "id_covid": "la_palma",
         "ca_id_covid": "canarias"

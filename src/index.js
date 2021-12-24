@@ -1,4 +1,3 @@
-import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import "./index.scss";
@@ -13,11 +12,11 @@ import APIProvider from "./contexts/API";
 ReactDOM.render(
     <EventsProvider>
         <UtilsProvider>
-            <DataProvider>
-                <APIProvider>
+            <APIProvider>
+                <DataProvider>
                     <App />
-                </APIProvider>
-            </DataProvider>
+                </DataProvider>
+            </APIProvider>
         </UtilsProvider>
     </EventsProvider>,
     document.getElementById("root")

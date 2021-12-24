@@ -343,6 +343,45 @@ const UtilsProvider = (props) => {
         return new File([buffer], filename, { type: mimeType });
     };
 
+    // ###################################################
+    //      THROTTLE & DEBOUNCE
+    // ###################################################
+
+    const throttle = (func, limit, immediate) => {
+        var timeout;
+        let inThrottle;
+
+        return function () {
+            var context = this;
+            var args = arguments;
+
+            if (immediate || !inThrottle) {
+                func.apply(context, args);
+                inThrottle = true;
+
+                clearTimeout(timeout);
+                timeout = setTimeout(() => (inThrottle = false), limit);
+            }
+        };
+    };
+
+    const debounce = (func, wait, immediate) => {
+        var timeout;
+
+        return function () {
+            var context = this;
+            var args = arguments;
+
+            clearTimeout(timeout);
+            timeout = setTimeout(() => {
+                timeout = null;
+                if (!immediate) func.apply(context, args);
+            }, wait);
+
+            if (immediate && !timeout) func.apply(context, args);
+        };
+    };
+
     return (
         <Utils.Provider
             value={{
@@ -379,6 +418,10 @@ const UtilsProvider = (props) => {
                 // IMAGE
                 urltoFile,
                 cropAndResizeImage,
+
+                // THROTTLE & DEBOUNCE
+                throttle,
+                debounce,
             }}
         >
             {props.children}
