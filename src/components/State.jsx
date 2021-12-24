@@ -41,8 +41,8 @@ export default function State() {
 
             // Snap to hide or show
             if (!down) {
-                if (my > containerHeight * 0.5 || vy > 1) hideContainer();
-                else if (my < -containerHeight * 0.5 || vy < -1) showContainer();
+                if (my > containerHeight * 0.2 || vy > 1) hideContainer();
+                else if (my < -containerHeight * 0.2 || vy < -1) showContainer();
                 else if (isHidden.current) hideContainer();
                 else showContainer();
             }
