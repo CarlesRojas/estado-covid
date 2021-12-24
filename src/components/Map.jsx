@@ -13,7 +13,7 @@ const world = topojson.feature(topology, topology.objects.spainProvinces);
 
 export default function Map({ coords }) {
     const { debounce, invlerp } = useContext(Utils);
-    const { getLocationInfo } = useContext(API);
+    const { getLocationInfo, googleAPIKey } = useContext(API);
     const { covidDataProvinces, provinces, minAndMaxCasesPerCapita } = useContext(Data);
 
     // #################################################
@@ -91,7 +91,7 @@ export default function Map({ coords }) {
     return (
         <div className="map">
             <GoogleMapReact
-                bootstrapURLKeys={{ key: "googleAPIKey" }}
+                bootstrapURLKeys={{ key: googleAPIKey.current }}
                 yesIWantToUseGoogleMapApiInternals
                 onGoogleApiLoaded={({ map, maps }) => handleApiLoaded(map, maps)}
                 defaultCenter={coords}

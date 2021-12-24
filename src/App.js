@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Data } from "./contexts/Data";
+import { API } from "./contexts/API";
 import Map from "./components/Map";
 import CurrentLocation from "./components/CurrentLocation";
 import Button from "./components/Button";
@@ -7,6 +8,7 @@ import State from "./components/State";
 
 export default function App() {
     const { dataLoaded } = useContext(Data);
+    const { googleAPIKeyLoaded } = useContext(API);
 
     const [coords, setCoords] = useState(null);
 
@@ -24,7 +26,7 @@ export default function App() {
 
     return (
         <div className="app">
-            {coords && dataLoaded && <Map coords={coords} />}
+            {coords && googleAPIKeyLoaded && dataLoaded && <Map coords={coords} />}
             <CurrentLocation />
 
             <Button text={"Tengo Covid-19"} callback={() => {}} />
