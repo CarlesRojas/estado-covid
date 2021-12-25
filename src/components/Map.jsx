@@ -33,7 +33,7 @@ export default function Map({ coords }) {
 
         if (result.status !== "OK") return;
 
-        setCurrentLocation(result.results[0].address_components);
+        setCurrentLocation(result.results[0]);
     }, [map, getLocationInfo, setCurrentLocation]);
 
     // #################################################

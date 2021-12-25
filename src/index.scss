@@ -231,13 +231,15 @@ input[type="number"] {
     border-top-left-radius: $borderRadius;
     border-top-right-radius: $borderRadius;
 
-    .loading {
+    .header {
         position: relative;
         height: calc(20% - 0.4rem);
         width: 100%;
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
+        padding: 0.5rem 1rem;
 
         .icon {
             height: 40%;
@@ -257,6 +259,30 @@ input[type="number"] {
                     transform: rotate(360deg);
                 }
             }
+        }
+
+        .address {
+            text-align: center;
+            font-weight: 500;
+            font-size: 0.8rem;
+            opacity: 0.8;
+            padding-bottom: 0.2rem;
+        }
+
+        .alertLevel {
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            padding-bottom: 1rem;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-weight: 500;
+            font-size: 0.7rem;
+            opacity: 0.5;
+            padding: 0 2rem;
         }
     }
 }
