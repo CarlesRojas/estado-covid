@@ -4,7 +4,7 @@ import { API } from "./contexts/API";
 import Map from "./components/Map";
 import CurrentLocation from "./components/CurrentLocation";
 import Button from "./components/Button";
-import State from "./components/State";
+import Tab from "./components/Tab";
 
 export default function App() {
     const { dataLoaded } = useContext(Data);
@@ -30,7 +30,7 @@ export default function App() {
             <CurrentLocation />
 
             <Button text={"Tengo Covid-19"} callback={() => {}} />
-            <State />
+            <Tab />
         </div>
     );
 }

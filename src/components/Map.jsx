@@ -14,7 +14,7 @@ const world = topojson.feature(topology, topology.objects.spainProvinces);
 export default function Map({ coords }) {
     const { debounce, invlerp } = useContext(Utils);
     const { getLocationInfo, googleAPIKey } = useContext(API);
-    const { covidDataProvinces, provinces, minAndMaxCasesPerCapita } = useContext(Data);
+    const { covidDataProvinces, provinces, minAndMaxCasesPerCapita, setCurrentLocation } = useContext(Data);
 
     // #################################################
     //   MAP
@@ -30,8 +30,11 @@ export default function Map({ coords }) {
     const handleCenterChange = useCallback(async () => {
         const newCenter = map.getCenter();
         const result = await getLocationInfo({ lat: newCenter.lat(), lng: newCenter.lng() });
-        console.log(result);
-    }, [map, getLocationInfo]);
+
+        if (result.status !== "OK") return;
+
+        setCurrentLocation(result.results[0].address_components);
+    }, [map, getLocationInfo, setCurrentLocation]);
 
     // #################################################
     //   APPLY DATA COLORS
@@ -82,6 +85,7 @@ export default function Map({ coords }) {
         map.data.addGeoJson(world, { idPropertyName: "STATE" });
         map.data.setStyle(styleFeature);
         const centeChangedListener = map.addListener("center_changed", debounce(handleCenterChange, 1000));
+        handleCenterChange();
 
         return () => {
             maps.current.event.removeListener(centeChangedListener);
@@ -107,6 +111,7 @@ export default function Map({ coords }) {
                     rotateControl: false,
                     fullscreenControl: false,
                     keyboardShortcuts: false,
+                    gestureHandling: "greedy",
                 }}
             ></GoogleMapReact>
         </div>

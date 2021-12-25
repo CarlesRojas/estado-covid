@@ -44,7 +44,7 @@ const APIProvider = (props) => {
         try {
             // Fetch
             var rawResponse = await fetch(
-                `${GOOGLE_API_URL}geocode/json?latlng=${coords.lat},${coords.lng}&key=${googleAPIKey.current}&language=es&result_type=administrative_area_level_3|administrative_area_level_4`
+                `${GOOGLE_API_URL}geocode/json?latlng=${coords.lat},${coords.lng}&key=${googleAPIKey.current}&language=es&result_type=administrative_area_level_2|administrative_area_level_3|administrative_area_level_4`
             );
 
             // Get data from response

@@ -2,10 +2,11 @@ import React, { useRef, useContext } from "react";
 import { useSpring, animated } from "react-spring";
 import { useDrag } from "react-use-gesture";
 import { Utils } from "../contexts/Utils";
+import CovidData from "./CovidData";
 
 const HIDDEN_PERCENTAGE = 0.8;
 
-export default function State() {
+export default function Tab() {
     const { lerp, invlerp } = useContext(Utils);
 
     // #################################################
@@ -60,10 +61,10 @@ export default function State() {
     );
 
     return (
-        <div className="state">
+        <div className="tab">
             <animated.div className="container" ref={continerRef} {...gestureBind()} style={{ y }}>
                 <div className="handle"></div>
-                <div className="data"></div>
+                <CovidData />
             </animated.div>
         </div>
     );

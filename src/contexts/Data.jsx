@@ -46,6 +46,12 @@ const DataProvider = (props) => {
         getData();
     }, [getCovidData]);
 
+    // #################################################
+    //   CURRENT LOCATION
+    // #################################################
+
+    const [currentLocation, setCurrentLocation] = useState();
+
     return (
         <Data.Provider
             value={{
@@ -58,6 +64,10 @@ const DataProvider = (props) => {
                 covidDataProvinces,
                 minAndMaxCasesPerCapita,
                 dataLoaded,
+
+                // CURRENT PROVINCE
+                currentLocation,
+                setCurrentLocation,
             }}
         >
             {props.children}
