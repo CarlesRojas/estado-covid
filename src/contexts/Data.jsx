@@ -52,6 +52,12 @@ const DataProvider = (props) => {
 
     const [currentLocation, setCurrentLocation] = useState();
 
+    // #################################################
+    //   POPUP
+    // #################################################
+
+    const [popupContent, setPopupContent] = useState();
+
     return (
         <Data.Provider
             value={{
@@ -68,6 +74,10 @@ const DataProvider = (props) => {
                 // CURRENT PROVINCE
                 currentLocation,
                 setCurrentLocation,
+
+                // POPUP
+                popupContent,
+                setPopupContent,
             }}
         >
             {props.children}
