@@ -3,7 +3,7 @@ export const API = createContext();
 
 // API version
 const API_VERSION = "api_v1";
-const API_URL = "http://localhost:3100/"; // "https://estado-covid.herokuapp.com/"
+const API_URL = "https://estado-covid.herokuapp.com/"; // "http://localhost:3100/"
 const GOOGLE_API_URL = "https://maps.googleapis.com/maps/api/";
 const COVID_API_URL = "https://api.covid19tracking.narrativa.com/api/";
 
@@ -63,16 +63,19 @@ const APIProvider = (props) => {
 
     const getCovidData = async () => {
         try {
-            let today = new Date().toISOString().split("T")[0];
+            // let today = new Date().toISOString().split("T")[0];
+            let date = new Date();
+            date.setDate(date.getDate() - 0);
+            date = date.toISOString().split("T")[0];
 
             // Fetch
-            var rawResponse = await fetch(`${COVID_API_URL}${today}/country/spain`);
+            var rawResponse = await fetch(`${COVID_API_URL}${date}/country/spain`);
 
             // Get data from response
             const response = await rawResponse.json();
 
             // Cleanup response
-            const cleanResponse = response.dates[today].countries.Spain;
+            const cleanResponse = response.dates[date].countries.Spain;
 
             // Separate Data
             const spainData = (({ regions, ...rest }) => rest)(cleanResponse);
