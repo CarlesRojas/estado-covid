@@ -3,7 +3,7 @@ export const API = createContext();
 
 // API version
 const API_VERSION = "api_v1";
-const API_URL = "https://estado-covid.herokuapp.com/"; // "http://localhost:3100/"
+const API_URL = "http://localhost:3100/"; // "https://estado-covid.herokuapp.com/"
 const GOOGLE_API_URL = "https://maps.googleapis.com/maps/api/";
 const COVID_API_URL = "https://api.covid19tracking.narrativa.com/api/";
 
@@ -93,6 +93,270 @@ const APIProvider = (props) => {
     };
 
     // #################################################
+    //   REST API
+    // #################################################
+
+    const createUser = async (numberOfVaccines, provinceId, autonomicCommunityId) => {
+        // Post data
+        var postData = { numberOfVaccines, provinceId, autonomicCommunityId };
+
+        try {
+            // Fetch
+            var rawResponse = await fetch(`${API_URL}${API_VERSION}/createUser`, {
+                method: "post",
+                headers: {
+                    Accept: "application/json, text/plain, */*",
+                    "Content-Type": "application/json",
+                    "Access-Control-Allow-Origin": "*",
+                },
+                body: JSON.stringify(postData),
+            });
+
+            // Get data from response
+            const response = await rawResponse.json();
+
+            // Return response
+            return response;
+        } catch (error) {
+            return { error: `Error getting location info: ${error}` };
+        }
+    };
+
+    const getUserInfo = async (id) => {
+        // Post data
+        var postData = { id };
+
+        try {
+            // Fetch
+            var rawResponse = await fetch(`${API_URL}${API_VERSION}/getUserInfo`, {
+                method: "post",
+                headers: {
+                    Accept: "application/json, text/plain, */*",
+                    "Content-Type": "application/json",
+                    "Access-Control-Allow-Origin": "*",
+                },
+                body: JSON.stringify(postData),
+            });
+
+            // Get data from response
+            const response = await rawResponse.json();
+
+            // Return response
+            return response;
+        } catch (error) {
+            return { error: `Error getting location info: ${error}` };
+        }
+    };
+
+    const userCaughtCovid = async (id) => {
+        // Post data
+        var postData = { id };
+
+        try {
+            // Fetch
+            var rawResponse = await fetch(`${API_URL}${API_VERSION}/userCaughtCovid`, {
+                method: "post",
+                headers: {
+                    Accept: "application/json, text/plain, */*",
+                    "Content-Type": "application/json",
+                    "Access-Control-Allow-Origin": "*",
+                },
+                body: JSON.stringify(postData),
+            });
+
+            // Get data from response
+            const response = await rawResponse.json();
+
+            // Return response
+            return response;
+        } catch (error) {
+            return { error: `Error getting location info: ${error}` };
+        }
+    };
+
+    const userNoLongerHasCovid = async (id) => {
+        // Post data
+        var postData = { id };
+
+        try {
+            // Fetch
+            var rawResponse = await fetch(`${API_URL}${API_VERSION}/userNoLongerHasCovid`, {
+                method: "post",
+                headers: {
+                    Accept: "application/json, text/plain, */*",
+                    "Content-Type": "application/json",
+                    "Access-Control-Allow-Origin": "*",
+                },
+                body: JSON.stringify(postData),
+            });
+
+            // Get data from response
+            const response = await rawResponse.json();
+
+            // Return response
+            return response;
+        } catch (error) {
+            return { error: `Error getting location info: ${error}` };
+        }
+    };
+
+    const updateVaccines = async (id, numberOfVaccines) => {
+        // Post data
+        var postData = { id, numberOfVaccines };
+
+        try {
+            // Fetch
+            var rawResponse = await fetch(`${API_URL}${API_VERSION}/updateVaccines`, {
+                method: "post",
+                headers: {
+                    Accept: "application/json, text/plain, */*",
+                    "Content-Type": "application/json",
+                    "Access-Control-Allow-Origin": "*",
+                },
+                body: JSON.stringify(postData),
+            });
+
+            // Get data from response
+            const response = await rawResponse.json();
+
+            // Return response
+            return response;
+        } catch (error) {
+            return { error: `Error getting location info: ${error}` };
+        }
+    };
+
+    const updateLocation = async (id, provinceId, autonomicCommunityId) => {
+        // Post data
+        var postData = { id, provinceId, autonomicCommunityId };
+
+        try {
+            // Fetch
+            var rawResponse = await fetch(`${API_URL}${API_VERSION}/updateLocation`, {
+                method: "post",
+                headers: {
+                    Accept: "application/json, text/plain, */*",
+                    "Content-Type": "application/json",
+                    "Access-Control-Allow-Origin": "*",
+                },
+                body: JSON.stringify(postData),
+            });
+
+            // Get data from response
+            const response = await rawResponse.json();
+
+            // Return response
+            return response;
+        } catch (error) {
+            return { error: `Error getting location info: ${error}` };
+        }
+    };
+
+    const getprovinceCovidInfo = async (provinceId) => {
+        // Post data
+        var postData = { provinceId };
+
+        try {
+            // Fetch
+            var rawResponse = await fetch(`${API_URL}${API_VERSION}/getprovinceCovidInfo`, {
+                method: "post",
+                headers: {
+                    Accept: "application/json, text/plain, */*",
+                    "Content-Type": "application/json",
+                    "Access-Control-Allow-Origin": "*",
+                },
+                body: JSON.stringify(postData),
+            });
+
+            // Get data from response
+            const response = await rawResponse.json();
+
+            // Return response
+            return response;
+        } catch (error) {
+            return { error: `Error getting location info: ${error}` };
+        }
+    };
+
+    const getAutonomicCommunityCovidInfo = async (autonomicCommunityId) => {
+        // Post data
+        var postData = { autonomicCommunityId };
+
+        try {
+            // Fetch
+            var rawResponse = await fetch(`${API_URL}${API_VERSION}/getAutonomicCommunityCovidInfo`, {
+                method: "post",
+                headers: {
+                    Accept: "application/json, text/plain, */*",
+                    "Content-Type": "application/json",
+                    "Access-Control-Allow-Origin": "*",
+                },
+                body: JSON.stringify(postData),
+            });
+
+            // Get data from response
+            const response = await rawResponse.json();
+
+            // Return response
+            return response;
+        } catch (error) {
+            return { error: `Error getting location info: ${error}` };
+        }
+    };
+
+    const getHistoricProvinceCovidInfo = async (provinceId) => {
+        // Post data
+        var postData = { provinceId };
+
+        try {
+            // Fetch
+            var rawResponse = await fetch(`${API_URL}${API_VERSION}/getHistoricProvinceCovidInfo`, {
+                method: "post",
+                headers: {
+                    Accept: "application/json, text/plain, */*",
+                    "Content-Type": "application/json",
+                    "Access-Control-Allow-Origin": "*",
+                },
+                body: JSON.stringify(postData),
+            });
+
+            // Get data from response
+            const response = await rawResponse.json();
+
+            // Return response
+            return response;
+        } catch (error) {
+            return { error: `Error getting location info: ${error}` };
+        }
+    };
+
+    const getHistoricAutonomicCommunityCovidInfo = async (autonomicCommunityId) => {
+        // Post data
+        var postData = { autonomicCommunityId };
+
+        try {
+            // Fetch
+            var rawResponse = await fetch(`${API_URL}${API_VERSION}/getHistoricAutonomicCommunityCovidInfo`, {
+                method: "post",
+                headers: {
+                    Accept: "application/json, text/plain, */*",
+                    "Content-Type": "application/json",
+                    "Access-Control-Allow-Origin": "*",
+                },
+                body: JSON.stringify(postData),
+            });
+
+            // Get data from response
+            const response = await rawResponse.json();
+
+            // Return response
+            return response;
+        } catch (error) {
+            return { error: `Error getting location info: ${error}` };
+        }
+    };
+
+    // #################################################
     //   CONTECT MOUNT
     // #################################################
 
@@ -109,8 +373,20 @@ const APIProvider = (props) => {
                 googleAPIKey,
                 getLocationInfo,
 
-                //   COVID
+                // COVID
                 getCovidData,
+
+                // API
+                createUser,
+                getUserInfo,
+                userCaughtCovid,
+                userNoLongerHasCovid,
+                updateVaccines,
+                updateLocation,
+                getprovinceCovidInfo,
+                getAutonomicCommunityCovidInfo,
+                getHistoricProvinceCovidInfo,
+                getHistoricAutonomicCommunityCovidInfo,
             }}
         >
             {props.children}
