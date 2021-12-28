@@ -63,29 +63,45 @@ const APIProvider = (props) => {
 
     const getCovidData = async () => {
         try {
-            // let today = new Date().toISOString().split("T")[0];
-            let date = new Date();
-            date.setDate(date.getDate() - 0);
-            date = date.toISOString().split("T")[0];
+            let initialDate = new Date();
+            initialDate.setDate(initialDate.getDate() - 14);
+            initialDate = initialDate.toISOString().split("T")[0];
+
+            let finalDate = new Date();
+            finalDate = finalDate.toISOString().split("T")[0];
 
             // Fetch
-            var rawResponse = await fetch(`${COVID_API_URL}${date}/country/spain`);
+            var rawResponse = await fetch(
+                `${COVID_API_URL}/country/spain?date_from=${initialDate}&date_to=${finalDate}`
+            );
 
             // Get data from response
             const response = await rawResponse.json();
 
-            // Cleanup response
-            const cleanResponse = response.dates[date].countries.Spain;
+            const spainData = [];
+            const autonomicCommunitiesData = [];
+            const provincesData = [];
 
-            // Separate Data
-            const spainData = (({ regions, ...rest }) => rest)(cleanResponse);
-            const autonomicCommunitiesData = {};
-            const provincesData = {};
-            cleanResponse.regions.forEach((region) => {
-                autonomicCommunitiesData[region.id] = (({ sub_regions, ...rest }) => rest)(region);
-                if (region.sub_regions.length)
-                    region.sub_regions.forEach((subRegion) => (provincesData[subRegion.id] = subRegion));
-                else provincesData[region.id] = region;
+            Object.values(response.dates).forEach((data) => {
+                // Cleanup response
+                const cleanResponse = data.countries.Spain;
+
+                // Separate Data
+                spainData.push((({ regions, ...rest }) => rest)(cleanResponse));
+                autonomicCommunitiesData.push({});
+                provincesData.push({});
+
+                cleanResponse.regions.forEach((region) => {
+                    autonomicCommunitiesData[autonomicCommunitiesData.length - 1][region.id] = (({
+                        sub_regions,
+                        ...rest
+                    }) => rest)(region);
+                    if (region.sub_regions.length)
+                        region.sub_regions.forEach(
+                            (subRegion) => (provincesData[provincesData.length - 1][subRegion.id] = subRegion)
+                        );
+                    else provincesData[provincesData.length - 1][region.id] = region;
+                });
             });
 
             // Return response

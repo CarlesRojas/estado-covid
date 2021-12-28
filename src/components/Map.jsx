@@ -14,7 +14,7 @@ const world = topojson.feature(topology, topology.objects.spainProvinces);
 export default function Map({ coords }) {
     const { debounce, invlerp } = useContext(Utils);
     const { getLocationInfo, googleAPIKey } = useContext(API);
-    const { covidDataProvinces, provinces, minAndMaxCasesPerCapita, setCurrentLocation } = useContext(Data);
+    const { covidDataProvinces, provinces, minAndMaxCasesPerCapita, setCurrentLocation, date } = useContext(Data);
 
     // #################################################
     //   MAP
@@ -52,7 +52,8 @@ export default function Map({ coords }) {
                     invlerp(
                         minAndMaxCasesPerCapita.current.min,
                         minAndMaxCasesPerCapita.current.max,
-                        covidDataProvinces.current[provinceId].casesPerCapita
+                        covidDataProvinces.current[covidDataProvinces.current.length - 1 - date][provinceId]
+                            .casesPerCapita
                     )
                 )
                 .hex();
@@ -68,7 +69,7 @@ export default function Map({ coords }) {
                 backgroundBlendMode: "multiply",
             };
         },
-        [covidDataProvinces, invlerp, minAndMaxCasesPerCapita, provinces]
+        [covidDataProvinces, invlerp, minAndMaxCasesPerCapita, provinces, date]
     );
 
     // #################################################

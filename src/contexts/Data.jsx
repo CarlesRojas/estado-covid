@@ -21,30 +21,40 @@ const DataProvider = (props) => {
     const covidDataProvinces = useRef({});
     const minAndMaxCasesPerCapita = useRef({ min: Number.MAX_VALUE, max: Number.MIN_VALUE });
     const [dataLoaded, setDataLoaded] = useState(false);
+    const dataFetched = useRef(false);
 
     useEffect(() => {
         const getData = async () => {
+            dataFetched.current = true;
             const { spainData, autonomicCommunitiesData, provincesData } = await getCovidData();
 
             covidDataSpain.current = spainData;
             covidDataAutonomicCommunities.current = autonomicCommunitiesData;
             covidDataProvinces.current = provincesData;
 
-            // Calculate Cases per Capita
-            provinces.current.forEach(({ population, id_covid }) => {
-                const casesPerCapita = covidDataProvinces.current[id_covid].today_new_confirmed / population;
+            covidDataProvinces.current.forEach((dateData) => {
+                // Calculate Cases per Capita
+                provinces.current.forEach(({ population, id_covid }) => {
+                    const casesPerCapita = dateData[id_covid].today_confirmed / population;
 
-                covidDataProvinces.current[id_covid].casesPerCapita = casesPerCapita;
+                    dateData[id_covid].casesPerCapita = casesPerCapita;
 
-                minAndMaxCasesPerCapita.current.min = Math.min(minAndMaxCasesPerCapita.current.min, casesPerCapita);
-                minAndMaxCasesPerCapita.current.max = Math.max(minAndMaxCasesPerCapita.current.max, casesPerCapita);
+                    minAndMaxCasesPerCapita.current.min = Math.min(minAndMaxCasesPerCapita.current.min, casesPerCapita);
+                    minAndMaxCasesPerCapita.current.max = Math.max(minAndMaxCasesPerCapita.current.max, casesPerCapita);
+                });
             });
 
             setDataLoaded(true);
         };
 
-        getData();
+        if (!dataFetched.current) getData();
     }, [getCovidData]);
+
+    // #################################################
+    //   DATE SELECTOR
+    // #################################################
+
+    const [date, setDate] = useState(0);
 
     // #################################################
     //   CURRENT LOCATION
@@ -70,6 +80,10 @@ const DataProvider = (props) => {
                 covidDataProvinces,
                 minAndMaxCasesPerCapita,
                 dataLoaded,
+
+                // DATE SELECTOR
+                date,
+                setDate,
 
                 // CURRENT PROVINCE
                 currentLocation,
