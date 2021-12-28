@@ -1,6 +1,9 @@
 import React from "react";
 import { useTransition, animated } from "react-spring";
+
 export default function Popup({ children, visible, setVisible }) {
+    console.log("Render Popup");
+
     // #################################################
     //   TRANSITIONS
     // #################################################

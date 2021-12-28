@@ -1,5 +1,7 @@
 import React from "react";
 
 export default function InitialJourney() {
-    return <div classNames="initialJourney"></div>;
+    console.log("Render Initial Journey");
+
+    return <div className="initialJourney"></div>;
 }

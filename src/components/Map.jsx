@@ -12,6 +12,8 @@ import mapStyle from "../resources/maps/styles/style.json";
 const world = topojson.feature(topology, topology.objects.spainProvinces);
 
 export default function Map({ coords }) {
+    console.log("Render Map");
+
     const { debounce, invlerp } = useContext(Utils);
     const { getLocationInfo, googleAPIKey } = useContext(API);
     const { covidDataProvinces, provinces, minAndMaxCasesPerCapita, setCurrentLocation, date } = useContext(Data);

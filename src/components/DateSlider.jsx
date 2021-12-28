@@ -5,6 +5,8 @@ import { Data } from "../contexts/Data";
 import { Utils } from "../contexts/Utils";
 
 export default function DateSlider({ ready }) {
+    console.log("Date Slider");
+
     const { date, setDate } = useContext(Data);
     const { clamp } = useContext(Utils);
 

@@ -3,6 +3,8 @@ import classnames from "classnames";
 import { Utils } from "../contexts/Utils";
 
 export default function Button({ text, onClick }) {
+    console.log("Render Button");
+
     const { useCssAnimation } = useContext(Utils);
 
     const [animating, trigger] = useCssAnimation(300);

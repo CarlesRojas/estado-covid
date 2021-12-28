@@ -7,6 +7,8 @@ import CovidData from "./CovidData";
 const HIDDEN_PERCENTAGE = 0.7;
 
 export default function Tab() {
+    console.log("Render Tab");
+
     const { lerp, invlerp } = useContext(Utils);
 
     // #################################################

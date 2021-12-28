@@ -8,6 +8,8 @@ import Tab from "./Tab";
 import Popup from "./Popup";
 
 export default function Main() {
+    console.log("Render Main");
+
     // #################################################
     //   LOAD DATA & LOCATION
     // #################################################

@@ -17,6 +17,8 @@ const isSpain = (location) => {
 };
 
 export default function CovidData() {
+    console.log("Render Covid Data");
+
     const { currentLocation, covidDataProvinces, date } = useContext(Data);
 
     // #################################################
