@@ -4,42 +4,48 @@
         "name": "Álava",
         "population": 331549,
         "id_covid": "alava",
-        "ca_id_covid": "pais_vasco"
+        "ca_id_covid": "pais_vasco",
+        "google_name": "Álava"
     },
     {
         "id": "02",
         "name": "Albacete",
         "population": 388167,
         "id_covid": "albacete",
-        "ca_id_covid": "castilla-la_mancha"
+        "ca_id_covid": "castilla-la_mancha",
+        "google_name": "Albacete"
     },
     {
         "id": "03",
         "name": "Alicante",
         "population": 1858683,
         "id_covid": "alicante",
-        "ca_id_covid": "c_valenciana"
+        "ca_id_covid": "c_valenciana",
+        "google_name": "Alicante"
     },
     {
         "id": "04",
         "name": "Almería",
         "population": 716820,
         "id_covid": "almeria",
-        "ca_id_covid": "andalucia"
+        "ca_id_covid": "andalucia",
+        "google_name": "Almería"
     },
     {
         "id": "05",
         "name": "Ávila",
         "population": 157640,
         "id_covid": "avila",
-        "ca_id_covid": "castilla_y_leon"
+        "ca_id_covid": "castilla_y_leon",
+        "google_name": "Ávila"
     },
     {
         "id": "06",
         "name": "Badajoz",
         "population": 673559,
         "id_covid": "area_de_salud_de_badajoz",
-        "ca_id_covid": "extremadura"
+        "ca_id_covid": "extremadura",
+        "google_name": "Badajoz"
     },
     {
         "id": "07",
@@ -47,133 +53,152 @@
         "population": 1149460,
         "id_covid": "baleares",
         "ca_id_covid": "baleares",
-        "single": true
+        "single": true,
+        "google_name": "Islas Baleares"
     },
     {
         "id": "08",
         "name": "Barcelona",
         "population": 5664579,
         "id_covid": "barcelona",
-        "ca_id_covid": "cataluna"
+        "ca_id_covid": "cataluna",
+        "google_name": "Barcelona"
     },
     {
         "id": "09",
         "name": "Burgos",
         "population": 356958,
         "id_covid": "burgos",
-        "ca_id_covid": "castilla_y_leon"
+        "ca_id_covid": "castilla_y_leon",
+        "google_name": "Burgos"
     },
     {
         "id": "10",
         "name": "Cáceres",
         "population": 394151,
         "id_covid": "area_de_salud_de_caceres",
-        "ca_id_covid": "extremadura"
+        "ca_id_covid": "extremadura",
+        "google_name": "Cáceres"
     },
     {
         "id": "11",
         "name": "Cádiz",
         "population": 1240155,
         "id_covid": "cadiz",
-        "ca_id_covid": "andalucia"
+        "ca_id_covid": "andalucia",
+        "google_name": "Cádiz"
     },
     {
         "id": "12",
         "name": "Castellón",
         "population": 579962,
         "id_covid": "castellon",
-        "ca_id_covid": "c_valenciana"
+        "ca_id_covid": "c_valenciana",
+        "google_name": "Castellón"
     },
     {
         "id": "13",
         "name": "Ciudad Real",
         "population": 495761,
         "id_covid": "ciudad_real",
-        "ca_id_covid": "castilla-la_mancha"
+        "ca_id_covid": "castilla-la_mancha",
+        "google_name": "Ciudad Real"
     },
     {
         "id": "14",
         "name": "Córdoba",
         "population": 782979,
         "id_covid": "cordoba",
-        "ca_id_covid": "andalucia"
+        "ca_id_covid": "andalucia",
+        "google_name": "Córdoba"
     },
     {
         "id": "15",
         "name": "A Coruña",
         "population": 1119596,
         "id_covid": "area_sanitaria_a_coruna",
-        "ca_id_covid": "galicia"
+        "ca_id_covid": "galicia",
+        "google_name": "La Coruña"
     },
     {
         "id": "16",
         "name": "Cuenca",
         "population": 196329,
         "id_covid": "cuenca",
-        "ca_id_covid": "castilla-la_mancha"
+        "ca_id_covid": "castilla-la_mancha",
+        "google_name": "Cuenca"
     },
     {
         "id": "17",
         "name": "Girona",
         "population": 771044,
         "id_covid": "gerona",
-        "ca_id_covid": "cataluna"
+        "ca_id_covid": "cataluna",
+        "google_name": "Girona"
     },
     {
         "id": "18",
         "name": "Granada",
         "population": 914678,
         "id_covid": "granada",
-        "ca_id_covid": "andalucia"
+        "ca_id_covid": "andalucia",
+        "google_name": "Granada"
     },
     {
         "id": "19",
         "name": "Guadalajara",
         "population": 257762,
         "id_covid": "guadalajara",
-        "ca_id_covid": "castilla-la_mancha"
+        "ca_id_covid": "castilla-la_mancha",
+        "google_name": "Guadalajara"
     },
     {
         "id": "20",
         "name": "Gipuzkoa",
         "population": 723576,
         "id_covid": "gipuzkoa",
-        "ca_id_covid": "pais_vasco"
+        "ca_id_covid": "pais_vasco",
+        "google_name": "Gipuzkoa"
     },
     {
         "id": "21",
         "name": "Huelva",
         "population": 521870,
         "id_covid": "huelva",
-        "ca_id_covid": "andalucia"
+        "ca_id_covid": "andalucia",
+        "google_name": "Huelva"
     },
     {
         "id": "22",
         "name": "Huesca",
         "population": 220461,
         "id_covid": "huesca",
-        "ca_id_covid": "aragon"
+        "ca_id_covid": "aragon",
+        "google_name": "Huesca"
     },
     {
         "id": "23",
         "name": "Jaén",
         "population": 633564,
         "id_covid": "jaen",
-        "ca_id_covid": "andalucia"
+        "ca_id_covid": "andalucia",
+        "google_name": "Jaén"
     },
     {
         "id": "24",
         "name": "León",
         "population": 460001,
         "id_covid": "leon",
-        "ca_id_covid": "castilla_y_leon"
+        "ca_id_covid": "castilla_y_leon",
+        "google_name": "León"
     },
     {
         "id": "25",
         "name": "Lleida",
         "population": 434930,
         "id_covid": "lerida",
-        "ca_id_covid": "cataluna"
+        "ca_id_covid": "cataluna",
+        "google_name": "Lérida"
     },
     {
         "id": "26",
@@ -181,14 +206,16 @@
         "population": 316798,
         "id_covid": "la_rioja",
         "ca_id_covid": "la_rioja",
-        "single": true
+        "single": true,
+        "google_name": "La Rioja"
     },
     {
         "id": "27",
         "name": "Lugo",
         "population": 329587,
         "id_covid": "area_sanitaria_lugo",
-        "ca_id_covid": "galicia"
+        "ca_id_covid": "galicia",
+        "google_name": "Lugo"
     },
     {
         "id": "28",
@@ -196,14 +223,16 @@
         "population": 6663394,
         "id_covid": "madrid",
         "ca_id_covid": "madrid",
-        "single": true
+        "single": true,
+        "google_name": "Madrid"
     },
     {
         "id": "29",
         "name": "Málaga",
         "population": 1661785,
         "id_covid": "malaga",
-        "ca_id_covid": "andalucia"
+        "ca_id_covid": "andalucia",
+        "google_name": "Málaga"
     },
     {
         "id": "30",
@@ -211,7 +240,8 @@
         "population": 1493898,
         "id_covid": "murcia",
         "ca_id_covid": "murcia",
-        "single": true
+        "single": true,
+        "google_name": "Murcia"
     },
     {
         "id": "31",
@@ -219,14 +249,16 @@
         "population": 654214,
         "id_covid": "navarra",
         "ca_id_covid": "navarra",
-        "single": true
+        "single": true,
+        "google_name": "Navarra"
     },
     {
         "id": "32",
         "name": "Ourense",
         "population": 307651,
         "id_covid": "area_sanitaria_ourense",
-        "ca_id_covid": "galicia"
+        "ca_id_covid": "galicia",
+        "google_name": "Ourense"
     },
     {
         "id": "33",
@@ -234,42 +266,48 @@
         "population": 1022800,
         "id_covid": "asturias",
         "ca_id_covid": "asturias",
-        "single": true
+        "single": true,
+        "google_name": "Asturias"
     },
     {
         "id": "34",
         "name": "Palencia",
         "population": 160980,
         "id_covid": "palencia",
-        "ca_id_covid": "castilla_y_leon"
+        "ca_id_covid": "castilla_y_leon",
+        "google_name": "Palencia"
     },
     {
         "id": "35",
         "name": "Las Palmas",
         "population": 1120406,
         "id_covid": "la_palma",
-        "ca_id_covid": "canarias"
+        "ca_id_covid": "canarias",
+        "google_name": "Las Palmas"
     },
     {
         "id": "36",
         "name": "Pontevedra",
         "population": 942665,
         "id_covid": "area_sanitaria_pontevedra",
-        "ca_id_covid": "galicia"
+        "ca_id_covid": "galicia",
+        "google_name": "Pontevedra"
     },
     {
         "id": "37",
         "name": "Salamanca",
         "population": 330119,
         "id_covid": "salamanca",
-        "ca_id_covid": "castilla_y_leon"
+        "ca_id_covid": "castilla_y_leon",
+        "google_name": "Salamanca"
     },
     {
         "id": "38",
         "name": "Santa Cruz de Tenerife",
         "population": 1032983,
         "id_covid": "tenerife",
-        "ca_id_covid": "canarias"
+        "ca_id_covid": "canarias",
+        "google_name": "Santa Cruz de Tenerife"
     },
     {
         "id": "39",
@@ -277,84 +315,96 @@
         "population": 581078,
         "id_covid": "cantabria",
         "ca_id_covid": "cantabria",
-        "single": true
+        "single": true,
+        "google_name": "Cantabria"
     },
     {
         "id": "40",
         "name": "Segovia",
         "population": 153129,
         "id_covid": "segovia",
-        "ca_id_covid": "castilla_y_leon"
+        "ca_id_covid": "castilla_y_leon",
+        "google_name": "Segovia"
     },
     {
         "id": "41",
         "name": "Sevilla",
         "population": 1942389,
         "id_covid": "sevilla",
-        "ca_id_covid": "andalucia"
+        "ca_id_covid": "andalucia",
+        "google_name": "Sevilla"
     },
     {
         "id": "42",
         "name": "Soria",
         "population": 88636,
         "id_covid": "soria",
-        "ca_id_covid": "castilla_y_leon"
+        "ca_id_covid": "castilla_y_leon",
+        "google_name": "Soria"
     },
     {
         "id": "43",
         "name": "Tarragona",
         "population": 804664,
         "id_covid": "tarragona",
-        "ca_id_covid": "cataluna"
+        "ca_id_covid": "cataluna",
+        "google_name": "Tarragona"
     },
     {
         "id": "44",
         "name": "Teruel",
         "population": 134137,
         "id_covid": "teruel",
-        "ca_id_covid": "aragon"
+        "ca_id_covid": "aragon",
+        "google_name": "Teruel"
     },
     {
         "id": "45",
         "name": "Toledo",
         "population": 694844,
         "id_covid": "toledo",
-        "ca_id_covid": "castilla-la_mancha"
+        "ca_id_covid": "castilla-la_mancha",
+        "google_name": "Toledo"
     },
     {
         "id": "46",
         "name": "Valencia",
         "population": 2565124,
         "id_covid": "valencia",
-        "ca_id_covid": "c_valenciana"
+        "ca_id_covid": "c_valenciana",
+        "google_name": "Valencia"
     },
     {
         "id": "47",
         "name": "Valladolid",
         "population": 519546,
         "id_covid": "valladolid",
-        "ca_id_covid": "castilla_y_leon"
+        "ca_id_covid": "castilla_y_leon",
+        "google_name": "Valladolid"
     },
     {
         "id": "48",
         "name": "Bizkaia",
         "population": 1152651,
         "id_covid": "bizkaia",
-        "ca_id_covid": "pais_vasco"
+        "ca_id_covid": "pais_vasco",
+        "google_name": "Vizcaya"
     },
     {
         "id": "49",
         "name": "Zamora",
         "population": 172539,
         "id_covid": "zamora",
-        "ca_id_covid": "castilla_y_leon"
+        "ca_id_covid": "castilla_y_leon",
+        "google_name": "Zamora"
     },
     {
         "id": "50",
         "name": "Zaragoza",
         "population": 964693,
         "id_covid": "zaragoza",
-        "ca_id_covid": "aragon"
+        "ca_id_covid": "aragon",
+        "google_name": "Zaragoza"
     },
     {
         "id": "51",
@@ -362,7 +412,8 @@
         "population": 84777,
         "id_covid": "ceuta",
         "ca_id_covid": "ceuta",
-        "single": true
+        "single": true,
+        "google_name": "Ceuta"
     },
     {
         "id": "52",
@@ -370,6 +421,7 @@
         "population": 86487,
         "id_covid": "melilla",
         "ca_id_covid": "melilla",
-        "single": true
+        "single": true,
+        "google_name": "Melilla"
     }
 ]

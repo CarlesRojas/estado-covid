@@ -30,10 +30,9 @@ export default function Map({ coords }) {
     const handleCenterChange = useCallback(async () => {
         const newCenter = map.getCenter();
         const result = await getLocationInfo({ lat: newCenter.lat(), lng: newCenter.lng() });
+        if (result.status !== "OK" && result.status !== "ZERO_RESULTS") return;
 
-        if (result.status !== "OK") return;
-
-        setCurrentLocation(result.results[0]);
+        setCurrentLocation(result.results.length ? result.results[0] : false);
     }, [map, getLocationInfo, setCurrentLocation]);
 
     // #################################################
@@ -61,7 +60,7 @@ export default function Map({ coords }) {
             return {
                 clickable: false,
                 strokeWeight: 0.5,
-                strokeColor: "rgba(0, 0, 0, 0.05)",
+                strokeColor: "rgba(0, 0, 0, 1)",
                 zIndex: 1,
                 fillColor: color,
                 fillOpacity: 0.6,

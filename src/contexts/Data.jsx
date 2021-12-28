@@ -60,7 +60,7 @@ const DataProvider = (props) => {
     //   CURRENT LOCATION
     // #################################################
 
-    const [currentLocation, setCurrentLocation] = useState();
+    const [currentLocation, setCurrentLocation] = useState(null);
 
     // #################################################
     //   POPUP
