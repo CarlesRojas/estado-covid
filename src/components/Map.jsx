@@ -73,6 +73,15 @@ export default function Map({ coords }) {
     );
 
     // #################################################
+    //   UPDATE COLORS
+    // #################################################
+
+    useEffect(() => {
+        if (!map) return;
+        map.data.setStyle(styleFeature);
+    }, [map, date, styleFeature]);
+
+    // #################################################
     //   ON MAP LOADED
     // #################################################
 
@@ -81,8 +90,12 @@ export default function Map({ coords }) {
         setMap(map);
     };
 
+    const geoJsonApplied = useRef(false);
+
     useEffect(() => {
-        if (!map) return;
+        if (!map || geoJsonApplied.current) return;
+        geoJsonApplied.current = true;
+
         map.data.addGeoJson(world, { idPropertyName: "STATE" });
         map.data.setStyle(styleFeature);
         const centeChangedListener = map.addListener("center_changed", debounce(handleCenterChange, 1000));

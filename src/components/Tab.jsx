@@ -4,7 +4,7 @@ import { useDrag } from "react-use-gesture";
 import { Utils } from "../contexts/Utils";
 import CovidData from "./CovidData";
 
-const HIDDEN_PERCENTAGE = 0.8;
+const HIDDEN_PERCENTAGE = 0.7;
 
 export default function Tab() {
     const { lerp, invlerp } = useContext(Utils);

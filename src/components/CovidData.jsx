@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Data } from "../contexts/Data";
 import SVG from "react-inlinesvg";
+import DateSlider from "./DateSlider";
 
 import VirusIcon from "../resources/icons/virus.svg";
 
@@ -27,6 +28,8 @@ export default function CovidData() {
                 </div>
             );
         else {
+            console.log(currentLocation.address_components);
+
             data = (
                 <div className="header">
                     <p className="address">{currentLocation.formatted_address}</p>
@@ -37,5 +40,10 @@ export default function CovidData() {
         }
     }
 
-    return <div className="covidData">{data}</div>;
+    return (
+        <div className="covidData">
+            <DateSlider ready={currentLocation && currentLocation.address_components.length >= 4} />
+            {data}
+        </div>
+    );
 }
