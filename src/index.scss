@@ -107,6 +107,40 @@ input[type="number"] {
 }
 
 // #######################################
+//      LOADING
+// #######################################
+
+.loading {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .icon {
+        animation: spin 2s infinite;
+        width: 20%;
+        opacity: 0.2;
+
+        @keyframes spin {
+            0% {
+                animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+                transform: rotate(0);
+            }
+            50% {
+                animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+                transform: rotate(180deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    }
+}
+
+// #######################################
 //      MAIN
 // #######################################
 
@@ -325,16 +359,13 @@ input[type="number"] {
     padding: 0.5rem;
 
     .container {
-        pointer-events: none;
+        pointer-events: all;
         position: relative;
         width: 100%;
         height: 100%;
         background-color: rgba(0, 0, 0, 0.07);
         border-radius: ($borderRadius / 2);
-
-        &.ready {
-            pointer-events: all;
-        }
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
 
         .point {
             pointer-events: none;
@@ -344,6 +375,7 @@ input[type="number"] {
             width: (100% / 14);
             background-color: $red;
             border-radius: ($borderRadius / 2);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 
             .date {
                 height: 100%;

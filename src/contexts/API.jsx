@@ -1,4 +1,4 @@
-import React, { createContext, useRef, useEffect, useState } from "react";
+import React, { createContext, useRef } from "react";
 export const API = createContext();
 
 // API version
@@ -8,7 +8,6 @@ const GOOGLE_API_URL = "https://maps.googleapis.com/maps/api/";
 const COVID_API_URL = "https://api.covid19tracking.narrativa.com/api/";
 
 const APIProvider = (props) => {
-    const [googleAPIKeyLoaded, setGoogleAPIKeyLoaded] = useState(false);
     const googleAPIKey = useRef();
 
     // #################################################
@@ -31,7 +30,6 @@ const APIProvider = (props) => {
             const response = await rawResponse.json();
 
             googleAPIKey.current = response.googleAPIKey;
-            setGoogleAPIKeyLoaded(true);
 
             // Return response
             return response;
@@ -406,20 +404,12 @@ const APIProvider = (props) => {
         }
     };
 
-    // #################################################
-    //   CONTECT MOUNT
-    // #################################################
-
-    useEffect(() => {
-        getGoogleMapsAPIKey();
-    }, []);
-
     // Return the context
     return (
         <API.Provider
             value={{
                 // GOOGLE MAPS
-                googleAPIKeyLoaded,
+                getGoogleMapsAPIKey,
                 googleAPIKey,
                 getLocationInfo,
 

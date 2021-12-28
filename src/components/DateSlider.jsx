@@ -1,16 +1,17 @@
-import React, { useContext, useRef } from "react";
+import React, { useContext, useRef, memo } from "react";
 import classnames from "classnames";
 import { useDrag } from "react-use-gesture";
-import { Data } from "../contexts/Data";
 import { Utils } from "../contexts/Utils";
+import { GlobalState } from "../contexts/GlobalState";
+import useGlobalState from "../hooks/useGlobalState";
 
-export default function DateSlider({ ready }) {
-    console.log("Date Slider");
-
-    const { date, setDate } = useContext(Data);
+const DateSlider = memo(() => {
+    const { STATE } = useContext(GlobalState);
     const { clamp } = useContext(Utils);
 
     const containerRef = useRef();
+
+    const [date, setDate] = useGlobalState(STATE.date);
 
     // #################################################
     //   GESTURE
@@ -24,7 +25,8 @@ export default function DateSlider({ ready }) {
 
             const distFromLeft = clamp(x - containerBox.x, 0, containerBox.width);
             const snapValue = 13 - clamp(Math.floor(distFromLeft / unitWidth), 0, 13);
-            setDate(snapValue);
+
+            if (date !== snapValue) setDate(snapValue);
         },
         { filterTaps: true, axis: "x" }
     );
@@ -37,11 +39,13 @@ export default function DateSlider({ ready }) {
 
     return (
         <div className="dateSlider">
-            <div className={classnames("container", { ready })} {...gestureBind()} ref={containerRef}>
+            <div className="container" {...gestureBind()} ref={containerRef}>
                 <div className="point" style={{ right: `${right}px` }}>
                     <p className={classnames("date", { left: date < 7 })}>{currentDate}</p>
                 </div>
             </div>
         </div>
     );
-}
+});
+
+export default DateSlider;

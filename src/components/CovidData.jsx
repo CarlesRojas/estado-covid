@@ -1,25 +1,27 @@
-import React, { useContext, useCallback, useRef, useState, useEffect } from "react";
+import React, { useContext, useRef, useEffect } from "react";
 import { Data } from "../contexts/Data";
+import { GlobalState } from "../contexts/GlobalState";
+import useGlobalState from "../hooks/useGlobalState";
 import provincesData from "../resources/data/provinces.json";
-import SVG from "react-inlinesvg";
 import DateSlider from "./DateSlider";
+import SVG from "react-inlinesvg";
 
 import VirusIcon from "../resources/icons/virus.svg";
 
 const isSpain = (location) => {
     if (!location) return false;
-
     if (location.address_components.length === 3 && location.address_components[2].short_name !== "ES") return false;
-
     if (location.address_components.length > 3 && location.address_components[3].short_name !== "ES") return false;
-
     return true;
 };
 
 export default function CovidData() {
-    console.log("Render Covid Data");
+    // console.log("Render CovidData");
 
-    const { currentLocation, covidDataProvinces, date } = useContext(Data);
+    const { covidDataProvinces } = useContext(Data);
+    const { STATE } = useContext(GlobalState);
+    const [date] = useGlobalState(STATE.date);
+    const [currentLocation] = useGlobalState(STATE.currentLocation);
 
     // #################################################
     //   PROVINCES
@@ -31,27 +33,28 @@ export default function CovidData() {
     //   CURRENT DATA
     // #################################################
 
-    const [data, setData] = useState(null);
-
-    const getCovidData = useCallback(() => {
-        if (
-            !currentLocation ||
-            !("address_components" in currentLocation) ||
-            currentLocation.address_components.length < 2
-        )
-            return null;
-
-        for (let i = 0; i < provinces.current.length; i++) {
-            const element = provinces.current[i];
-
-            if (element.google_name === currentLocation.address_components[1].long_name)
-                return covidDataProvinces.current[covidDataProvinces.current.length - 1 - date][element.id_covid];
-        }
-    }, [covidDataProvinces, currentLocation, date]);
+    // const [data, setData] = useState(null);
+    const data = useRef(null);
+    const lastUsedDate = useRef();
 
     useEffect(() => {
-        setData(getCovidData());
-    }, [date, currentLocation, covidDataProvinces, getCovidData]);
+        if (!currentLocation || lastUsedDate.current === date) return;
+        lastUsedDate.current = date;
+
+        const getData = () => {
+            if (!("address_components" in currentLocation) || currentLocation.address_components.length < 2)
+                return null;
+
+            for (let i = 0; i < provinces.current.length; i++) {
+                const element = provinces.current[i];
+
+                if (element.google_name === currentLocation.address_components[1].long_name)
+                    return covidDataProvinces.current[covidDataProvinces.current.length - 1 - date][element.id_covid];
+            }
+        };
+
+        data.current = getData();
+    }, [date, currentLocation, covidDataProvinces]);
 
     // console.log(data);
 
@@ -87,7 +90,7 @@ export default function CovidData() {
 
     return (
         <div className="covidData">
-            <DateSlider ready={currentLocation && currentLocation.address_components.length >= 4} />
+            <DateSlider />
             {domContent}
         </div>
     );

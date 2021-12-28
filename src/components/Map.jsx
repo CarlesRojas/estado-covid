@@ -5,6 +5,8 @@ import chroma from "chroma-js";
 import { Utils } from "../contexts/Utils";
 import { API } from "../contexts/API";
 import { Data } from "../contexts/Data";
+import { GlobalState } from "../contexts/GlobalState";
+import useGlobalState from "../hooks/useGlobalState";
 
 import topology from "../resources/maps/spainProvinces.json";
 import mapStyle from "../resources/maps/styles/style.json";
@@ -12,17 +14,20 @@ import mapStyle from "../resources/maps/styles/style.json";
 const world = topojson.feature(topology, topology.objects.spainProvinces);
 
 export default function Map({ coords }) {
-    console.log("Render Map");
+    // console.log("Render Map");
 
+    const { STATE, set } = useContext(GlobalState);
     const { debounce, invlerp } = useContext(Utils);
     const { getLocationInfo, googleAPIKey } = useContext(API);
-    const { covidDataProvinces, provinces, minAndMaxCasesPerCapita, setCurrentLocation, date } = useContext(Data);
+    const { covidDataProvinces, provinces, minAndMaxCasesPerCapita } = useContext(Data);
+    const [date] = useGlobalState(STATE.date);
 
     // #################################################
     //   MAP
     // #################################################
 
-    const [map, setMap] = useState(null);
+    const [mapLoaded, setMapLoaded] = useState(false);
+    const map = useRef(null);
     const maps = useRef(null);
 
     // #################################################
@@ -30,12 +35,23 @@ export default function Map({ coords }) {
     // #################################################
 
     const handleCenterChange = useCallback(async () => {
-        const newCenter = map.getCenter();
+        const newCenter = map.current.getCenter();
         const result = await getLocationInfo({ lat: newCenter.lat(), lng: newCenter.lng() });
         if (result.status !== "OK" && result.status !== "ZERO_RESULTS") return;
 
-        setCurrentLocation(result.results.length ? result.results[0] : false);
-    }, [map, getLocationInfo, setCurrentLocation]);
+        set(STATE.currentLocation, result.results.length ? result.results[0] : false);
+    }, [getLocationInfo, set, STATE]);
+
+    useEffect(() => {
+        if (!map.current) return;
+
+        const centeChangedListener = map.current.addListener("center_changed", debounce(handleCenterChange, 1000));
+        handleCenterChange();
+
+        return () => {
+            maps.current.event.removeListener(centeChangedListener);
+        };
+    }, [mapLoaded, debounce, handleCenterChange]);
 
     // #################################################
     //   APPLY DATA COLORS
@@ -77,37 +93,32 @@ export default function Map({ coords }) {
     // #################################################
 
     useEffect(() => {
-        if (!map) return;
-        map.data.setStyle(styleFeature);
-    }, [map, date, styleFeature]);
+        if (map.current) map.current.data.setStyle(styleFeature);
+    }, [date, styleFeature]);
 
     // #################################################
     //   ON MAP LOADED
     // #################################################
 
-    const handleApiLoaded = (map, googleMaps) => {
+    const handleApiLoaded = (googleMap, googleMaps) => {
         maps.current = googleMaps;
-        setMap(map);
+        map.current = googleMap;
+        setMapLoaded(true);
     };
+
+    // #################################################
+    //   ADD GEO JSON
+    // #################################################
 
     const geoJsonApplied = useRef(false);
 
     useEffect(() => {
-        if (!map) return;
-
-        const centeChangedListener = map.addListener("center_changed", debounce(handleCenterChange, 1000));
-        handleCenterChange();
-
-        if (geoJsonApplied.current) return;
+        if (!map.current || geoJsonApplied.current) return;
         geoJsonApplied.current = true;
 
-        map.data.addGeoJson(world, { idPropertyName: "STATE" });
-        map.data.setStyle(styleFeature);
-
-        return () => {
-            maps.current.event.removeListener(centeChangedListener);
-        };
-    }, [map, handleCenterChange, debounce, styleFeature]);
+        map.current.data.addGeoJson(world, { idPropertyName: "STATE" });
+        map.current.data.setStyle(styleFeature);
+    }, [mapLoaded, handleCenterChange, debounce, styleFeature]);
 
     return (
         <div className="map">
