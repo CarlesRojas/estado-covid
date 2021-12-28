@@ -46,23 +46,22 @@ export default function Map({ coords }) {
             const provinceIndex = parseInt(feature.h.cod_prov) - 1;
             const provinceId = provinces.current[provinceIndex].id_covid;
 
-            const color = chromaScale
-                .current(
-                    invlerp(
-                        minAndMaxCasesPerCapita.current.min,
-                        minAndMaxCasesPerCapita.current.max,
-                        covidDataProvinces.current[covidDataProvinces.current.length - 1 - date][provinceId]
-                            .casesPerCapita
-                    )
+            const riskValue = Math.sqrt(
+                invlerp(
+                    0,
+                    minAndMaxCasesPerCapita.current.max,
+                    covidDataProvinces.current[covidDataProvinces.current.length - 1 - date][provinceId].casesPerCapita
                 )
-                .hex();
+            );
+
+            covidDataProvinces.current[covidDataProvinces.current.length - 1 - date][provinceId].riskValue = riskValue;
 
             return {
                 clickable: false,
                 strokeWeight: 0.5,
-                strokeColor: "rgba(0, 0, 0, 1)",
+                strokeColor: "rgba(0, 0, 0, 0.4)",
                 zIndex: 1,
-                fillColor: color,
+                fillColor: chromaScale.current(riskValue).hex(),
                 fillOpacity: 0.6,
                 visible: true,
                 backgroundBlendMode: "multiply",
@@ -92,13 +91,16 @@ export default function Map({ coords }) {
     const geoJsonApplied = useRef(false);
 
     useEffect(() => {
-        if (!map || geoJsonApplied.current) return;
+        if (!map) return;
+
+        const centeChangedListener = map.addListener("center_changed", debounce(handleCenterChange, 1000));
+        handleCenterChange();
+
+        if (geoJsonApplied.current) return;
         geoJsonApplied.current = true;
 
         map.data.addGeoJson(world, { idPropertyName: "STATE" });
         map.data.setStyle(styleFeature);
-        const centeChangedListener = map.addListener("center_changed", debounce(handleCenterChange, 1000));
-        handleCenterChange();
 
         return () => {
             maps.current.event.removeListener(centeChangedListener);

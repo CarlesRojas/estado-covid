@@ -51,7 +51,7 @@ export default function CovidData() {
         setData(getCovidData());
     }, [date, currentLocation, covidDataProvinces, getCovidData]);
 
-    console.log(data);
+    // console.log(data);
 
     // #################################################
     //   DOM CONTENT

@@ -35,7 +35,7 @@ const DataProvider = (props) => {
             covidDataProvinces.current.forEach((dateData) => {
                 // Calculate Cases per Capita
                 provinces.current.forEach(({ population, id_covid }) => {
-                    const casesPerCapita = dateData[id_covid].today_confirmed / population;
+                    const casesPerCapita = dateData[id_covid].today_new_confirmed / population;
 
                     dateData[id_covid].casesPerCapita = casesPerCapita;
 

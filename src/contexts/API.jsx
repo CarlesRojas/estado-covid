@@ -86,22 +86,53 @@ const APIProvider = (props) => {
                 // Cleanup response
                 const cleanResponse = data.countries.Spain;
 
-                // Separate Data
+                // Spain
                 spainData.push((({ regions, ...rest }) => rest)(cleanResponse));
                 autonomicCommunitiesData.push({});
                 provincesData.push({});
 
                 cleanResponse.regions.forEach((region) => {
+                    // Autonomic communities
                     autonomicCommunitiesData[autonomicCommunitiesData.length - 1][region.id] = (({
                         sub_regions,
                         ...rest
                     }) => rest)(region);
+
+                    // Provinces
                     if (region.sub_regions.length)
                         region.sub_regions.forEach(
                             (subRegion) => (provincesData[provincesData.length - 1][subRegion.id] = subRegion)
                         );
+                    // Provinces that are equal to the autonomic community
                     else provincesData[provincesData.length - 1][region.id] = region;
                 });
+            });
+
+            // Fix mistakes in the data -> Spain
+            var lastNewConfirmedCases = 0;
+            spainData.forEach((elem) => {
+                if (elem.today_confirmed === elem.today_new_confirmed) elem.today_new_confirmed = lastNewConfirmedCases;
+                else lastNewConfirmedCases = elem.today_new_confirmed;
+            });
+
+            // Fix mistakes in the data -> Autonomic Communities
+            lastNewConfirmedCases = {};
+            autonomicCommunitiesData.forEach((elem) => {
+                for (const [key, value] of Object.entries(elem)) {
+                    if (value.today_confirmed === value.today_new_confirmed)
+                        value.today_new_confirmed = key in lastNewConfirmedCases ? lastNewConfirmedCases[key] : 0;
+                    else lastNewConfirmedCases[key] = value.today_new_confirmed;
+                }
+            });
+
+            // Fix mistakes in the data -> Provinces
+            lastNewConfirmedCases = {};
+            provincesData.forEach((elem) => {
+                for (const [key, value] of Object.entries(elem)) {
+                    if (value.today_confirmed === value.today_new_confirmed)
+                        value.today_new_confirmed = key in lastNewConfirmedCases ? lastNewConfirmedCases[key] : 0;
+                    else lastNewConfirmedCases[key] = value.today_new_confirmed;
+                }
             });
 
             // Return response
