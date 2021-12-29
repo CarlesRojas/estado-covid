@@ -91,6 +91,7 @@ export default function CovidData({ headerHeight }) {
     // #################################################
 
     const [data, setData] = useState(null);
+    const lastProvince = useRef("");
 
     useEffect(() => {
         if (!currentLocation) return;
@@ -102,8 +103,10 @@ export default function CovidData({ headerHeight }) {
             for (let i = 0; i < provinces.current.length; i++) {
                 const element = provinces.current[i];
 
-                if (element.google_name === currentLocation.address_components[1].long_name)
+                if (element.google_name === currentLocation.address_components[1].long_name) {
+                    lastProvince.current = element;
                     return covidDataProvinces.current[covidDataProvinces.current.length - 1 - date][element.id_covid];
+                }
             }
         };
 
@@ -121,20 +124,32 @@ export default function CovidData({ headerHeight }) {
     // #################################################
 
     var domContent = (
-        <div className="headerContent center">
+        <div className="header center" style={{ height: `${headerHeight}px`, maxHeight: `${headerHeight}px` }}>
             <SVG className="icon" src={VirusIcon} />
         </div>
     );
 
+    console.log("");
+    console.log(data);
+    console.log(lastProvince.current);
+    console.log(currentLocation);
+
     if (currentLocation !== null) {
         if (isSpain(currentLocation))
             domContent = (
-                <div className="headerContent">
-                    <p className="subtitle">Nivel de Alerta</p>
+                <>
+                    <DateSlider />
+                    <p className="alerta">Nivel de Alerta</p>
                     <p className="alertLevel">{riskLevel in ALERT_LEVELS && ALERT_LEVELS[riskLevel].text}</p>
-                    <p className="address">{currentLocation.formatted_address}</p>
+                    <p className="address">{`${currentLocation.address_components[0].long_name}, ${lastProvince.current.name}`}</p>
                     {riskLevel in ALERT_LEVELS && (
-                        <div className="icons">
+                        <div
+                            className="icons"
+                            style={{
+                                gridTemplateColumns: `1fr 1fr ${riskLevel !== "low" ? "1fr" : ""}`,
+                                width: riskLevel !== "low" ? "100%" : "66%",
+                            }}
+                        >
                             {ALERT_LEVELS[riskLevel].icons.map((iconName, i) => (
                                 <div className="recomendation" key={i}>
                                     <SVG className="recomendationIcon" src={ICONS[iconName].icon} />
@@ -143,25 +158,19 @@ export default function CovidData({ headerHeight }) {
                             ))}
                         </div>
                     )}
-                </div>
+                </>
             );
         else
             domContent = (
-                <div className="headerContent">
-                    <p className="subtitle">Nivel de Alerta</p>
+                <>
+                    <DateSlider />
+                    <p className="alerta">Nivel de Alerta</p>
                     <p className="alertLevel">Sin Datos</p>
                     <p className="address">{currentLocation ? currentLocation.formatted_address : ""}</p>
                     <p className="subtitle">Desplázate sobre España para ver el estado del virus Covid-19</p>
-                </div>
+                </>
             );
     }
 
-    return (
-        <div className="covidData">
-            <div className="header" style={{ height: `${headerHeight}px`, maxHeight: `${headerHeight}px` }}>
-                <DateSlider />
-                {domContent}
-            </div>
-        </div>
-    );
+    return <div className="covidData">{domContent}</div>;
 }

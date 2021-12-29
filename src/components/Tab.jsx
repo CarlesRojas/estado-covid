@@ -2,14 +2,20 @@ import React, { useRef, useContext, useEffect, useState } from "react";
 import { useSpring, animated } from "react-spring";
 import { useDrag } from "react-use-gesture";
 import { Utils } from "../contexts/Utils";
+import classnames from "classnames";
 import CovidData from "./CovidData";
+import SVG from "react-inlinesvg";
 
-const HIDDEN_PERCENTAGE = 0.7;
+import UpIcon from "../resources/icons/up.svg";
+
+const HIDDEN_PERCENTAGE = 0.67;
 
 export default function Tab() {
     // console.log("Render Tab");
 
     const { lerp, invlerp } = useContext(Utils);
+
+    const [showArrow, setShowArrow] = useState(true);
 
     // #################################################
     //   ACTIONS
@@ -20,6 +26,7 @@ export default function Tab() {
 
     const hideContainer = () => {
         isHidden.current = true;
+        setShowArrow(true);
         spring.start({ y: `${HIDDEN_PERCENTAGE * 100}%` });
     };
 
@@ -36,9 +43,11 @@ export default function Tab() {
 
     // Vertical gesture
     const gestureBind = useDrag(
-        ({ event, down, vxvy: [, vy], movement: [, my] }) => {
+        ({ first, event, down, vxvy: [, vy], movement: [, my] }) => {
             // Stop event propagation
             event.stopPropagation();
+
+            if (first) setShowArrow(false);
 
             var containerHeight = continerRef.current.offsetHeight;
 
@@ -63,19 +72,18 @@ export default function Tab() {
     );
 
     const [headerheight, setHeaderheight] = useState(null);
-    const handleRef = useRef(null);
 
     useEffect(() => {
-        var handleHeight = handleRef.current.offsetHeight;
-        handleHeight += parseInt(window.getComputedStyle(handleRef.current).getPropertyValue("margin-bottom"));
-
-        setHeaderheight(continerRef.current.getBoundingClientRect().height * 0.3 - handleHeight);
+        setHeaderheight(continerRef.current.getBoundingClientRect().height * (1 - HIDDEN_PERCENTAGE));
     }, []);
 
     return (
         <div className="tab">
             <animated.div className="container" ref={continerRef} {...gestureBind()} style={{ y }}>
-                <div className="handle" ref={handleRef}></div>
+                <div className={classnames("upIconContainer", { hidden: !showArrow })}>
+                    <SVG className="upIcon" src={UpIcon} />
+                </div>
+
                 {headerheight && <CovidData headerHeight={headerheight} />}
             </animated.div>
         </div>

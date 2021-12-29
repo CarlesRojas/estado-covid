@@ -13,8 +13,7 @@ export default function App() {
     const { STATE, set } = useContext(GlobalState);
     const { getCookie, invlerp } = useContext(Utils);
     const { getCovidData, getGoogleMapsAPIKey, getUserInfo } = useContext(API);
-    const { provinces, covidDataSpain, covidDataAutonomicCommunities, covidDataProvinces, minAndMaxCasesPerCapita } =
-        useContext(Data);
+    const { provinces, covidDataSpain, covidDataAutonomicCommunities, covidDataProvinces } = useContext(Data);
 
     // #################################################
     //   SHOW APPROPIATE SCREEN

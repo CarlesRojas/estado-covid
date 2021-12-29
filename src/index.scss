@@ -354,25 +354,65 @@ input[type="number"] {
     width: 100%;
     top: 0;
     left: 0;
+    height: calc(100% - #{$buttonHeight});
+    min-height: calc(100% - #{$buttonHeight});
+    max-height: calc(100% - #{$buttonHeight});
     padding: 0 $defaultPadding;
 
     .container {
+        position: relative;
         pointer-events: all;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         height: 100%;
+        min-height: 100%;
+        max-height: 100%;
         width: 100%;
-    }
 
-    .handle {
-        pointer-events: none;
-        height: 0.3rem;
-        width: 5rem;
-        background-color: rgba(0, 0, 0, 0.2);
-        margin-bottom: $defaultPadding;
-        border-radius: 0.4rem;
+        .upIconContainer {
+            transition: opacity 0.2s ease-in-out;
+            pointer-events: none;
+            position: absolute;
+            top: 0;
+            transform: translateY(-100%);
+            left: 0;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0.5;
+
+            &.hidden {
+                opacity: 0;
+            }
+
+            .upIcon {
+                animation: jump 2s infinite;
+                width: 2rem;
+                min-width: 2rem;
+                max-width: 2rem;
+                height: 2rem;
+                min-height: 2rem;
+                max-height: 2rem;
+                margin: 0 auto;
+
+                @keyframes jump {
+                    0% {
+                        animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+                        transform: scaleX(1.5) translateY(6px);
+                    }
+                    50% {
+                        animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+                        transform: scaleX(1.5) translateY(12px);
+                    }
+                    100% {
+                        transform: scaleX(1.5) translateY(6px);
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -381,11 +421,15 @@ input[type="number"] {
 // #######################################
 
 .covidData {
+    height: 100;
     pointer-events: none;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
     width: 100%;
+    height: 100%;
+    min-height: 100%;
+    max-height: 100%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     background-color: rgba(245, 245, 245, 0.9);
     border-top-left-radius: $borderRadius;
@@ -397,74 +441,97 @@ input[type="number"] {
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         width: 100%;
 
-        .headerContent {
-            position: relative;
-            padding: 0.5rem 1rem;
+        .icon {
+            animation: spin 2s infinite;
+            height: 3.5rem;
+            opacity: 0.2;
+
+            @keyframes spin {
+                0% {
+                    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+                    transform: rotate(0);
+                }
+                50% {
+                    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+                    transform: rotate(180deg);
+                }
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+        }
+    }
+
+    .alerta {
+        opacity: 0.5;
+        padding: 0 2rem;
+        margin-top: $defaultPadding;
+        font-size: 0.7rem;
+        font-weight: 500;
+        text-align: center;
+    }
+
+    .address {
+        opacity: 0.8;
+        padding-bottom: 0.2rem;
+        font-size: 0.8rem;
+        font-weight: 500;
+        text-align: center;
+    }
+
+    .alertLevel {
+        padding-bottom: 0.4rem;
+        font-size: 1.2rem;
+        font-weight: 700;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .subtitle {
+        opacity: 0.5;
+        padding: 0 2rem;
+        font-size: 0.7rem;
+        font-weight: 500;
+        text-align: center;
+    }
+
+    .icons {
+        position: relative;
+        display: grid;
+        grid-gap: 1rem 0;
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-items: center;
+        align-items: center;
+        width: 100%;
+        margin: 1rem auto 0;
+
+        .recomendation {
             width: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
-            height: calc(100% - 2.7rem);
-            min-height: calc(100% - 2.7rem);
-            max-height: calc(100% - 2.7rem);
+            justify-content: center;
 
-            &.center {
-                justify-content: center;
-            }
-
-            .icon {
-                animation: spin 2s infinite;
-                height: 40%;
-                opacity: 0.2;
-
-                @keyframes spin {
-                    0% {
-                        animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-                        transform: rotate(0);
-                    }
-                    50% {
-                        animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-                        transform: rotate(180deg);
-                    }
-                    100% {
-                        transform: rotate(360deg);
-                    }
-                }
-            }
-
-            .address {
-                opacity: 0.8;
-                padding-bottom: 0.2rem;
-                font-size: 0.8rem;
-                font-weight: 500;
-                text-align: center;
-            }
-
-            .alertLevel {
-                padding-bottom: 0.4rem;
-                font-size: 1.2rem;
-                font-weight: 700;
-                text-align: center;
-                text-transform: uppercase;
-            }
-
-            .subtitle {
-                opacity: 0.5;
-                padding: 0 2rem;
-                font-size: 0.7rem;
-                font-weight: 500;
-                text-align: center;
-            }
-
-            .icons {
-                display: flex;
-                flex-wrap: wrap;
-                width: 100%;
-                flex-grow: 1;
+            .recomendationIcon {
+                width: 2.8rem;
+                min-width: 2.8rem;
+                max-width: 2.8rem;
+                height: 2.8rem;
+                min-height: 2.8rem;
+                max-height: 2.8rem;
+                opacity: 0.6;
                 padding: $defaultPadding;
-                background-color: rgba(0, 255, 221, 0.233);
+            }
+
+            .recomendationIconSubtitle {
+                opacity: 0.5;
+                padding: 0 0.5rem;
+                font-size: 0.6rem;
+                font-weight: 500;
+                text-align: center;
             }
         }
     }
