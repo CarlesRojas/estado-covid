@@ -150,6 +150,11 @@ input[type="number"] {
     flex-direction: column;
     height: 100%;
     width: 100%;
+
+    .mainButtons {
+        display: flex;
+        width: 100%;
+    }
 }
 
 // #######################################
@@ -167,10 +172,10 @@ input[type="number"] {
         position: relative;
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
         height: 100%;
         width: 100%;
         padding: 1.5rem 1rem 1rem 1rem;
-        justify-content: space-between;
     }
 }
 
@@ -211,7 +216,7 @@ input[type="number"] {
 }
 
 // #######################################
-//      CURRENT LOCATION
+//      BUTTON
 // #######################################
 
 .button {
@@ -220,6 +225,14 @@ input[type="number"] {
     max-height: $buttonHeight;
     min-height: $buttonHeight;
     padding: $defaultPadding;
+
+    &.grow {
+        flex-grow: 1;
+    }
+
+    &.disabled {
+        pointer-events: none;
+    }
 
     .content {
         display: flex;
@@ -233,22 +246,100 @@ input[type="number"] {
         font-size: 1.1rem;
         font-weight: 700;
         text-transform: uppercase;
-
-        @keyframes click {
-            0% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.02);
-            }
-            100% {
-                transform: scale(1);
-            }
-        }
+        text-align: center;
 
         &.animating {
             animation: click 0.3s infinite;
         }
+
+        &.disabled {
+            pointer-events: none;
+            color: rgba(0, 0, 0, 0.3);
+            background-color: rgb(179, 179, 179);
+        }
+    }
+
+    .icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: $buttonHeight - $borderRadius;
+        max-width: $buttonHeight - $borderRadius;
+        min-width: $buttonHeight - $borderRadius;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        background-color: $background;
+        border-radius: $borderRadius;
+        padding: $defaultPadding * 1.5;
+        color: rgba(0, 0, 0, 0.8);
+
+        &.animating {
+            animation: click 0.3s infinite;
+        }
+
+        &.disabled {
+            pointer-events: none;
+            color: rgba(0, 0, 0, 0.3);
+            background-color: rgb(179, 179, 179);
+        }
+    }
+
+    @keyframes click {
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.02);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+}
+
+// #######################################
+//      LABEL
+// #######################################
+
+.label {
+    position: relative;
+    height: $buttonHeight;
+    max-height: $buttonHeight;
+    min-height: $buttonHeight;
+    padding: $defaultPadding;
+
+    &.grow {
+        flex-grow: 1;
+    }
+
+    .content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        background-color: $red;
+        border-radius: $borderRadius;
+        font-size: 0.9rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: $buttonHeight - $borderRadius;
+        max-width: $buttonHeight - $borderRadius;
+        min-width: $buttonHeight - $borderRadius;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        background-color: $background;
+        border-radius: $borderRadius;
+        padding: $defaultPadding * 1.5;
+        color: rgba(0, 0, 0, 0.8);
     }
 }
 
@@ -501,13 +592,13 @@ input[type="number"] {
     }
 
     .error {
-        text-align: center;
         color: $red;
         opacity: 0;
+        margin: auto 3rem $defaultPadding;
         padding: 0.5rem 0 0 1rem;
         font-size: 0.8rem;
         font-weight: 600;
-        margin: auto 3rem $defaultPadding;
+        text-align: center;
 
         &.visible {
             opacity: 0.8;
@@ -516,12 +607,12 @@ input[type="number"] {
 
     .options {
         position: relative;
-        width: 100%;
-        padding: $defaultPadding;
-        margin: $defaultPadding 0;
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-gap: 1rem;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        width: 100%;
+        margin: $defaultPadding 0;
+        padding: $defaultPadding;
         justify-items: center;
 
         &.wide {
@@ -532,13 +623,13 @@ input[type="number"] {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 100%;
             height: 100%;
-            background-color: green;
-            padding: $defaultPadding;
-            border-radius: $borderRadius;
+            width: 100%;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+            background-color: green;
             background-color: rgba(0, 0, 0, 0.1);
+            border-radius: $borderRadius;
+            padding: $defaultPadding;
             font-size: 1.1rem;
             font-weight: 700;
             text-transform: uppercase;
@@ -550,11 +641,11 @@ input[type="number"] {
             }
 
             &::before {
-                content: "";
                 display: inline-block;
-                width: 1px;
                 height: 0;
+                width: 1px;
                 padding-bottom: calc(100% / (1 / 1));
+                content: "";
             }
 
             &.selected {

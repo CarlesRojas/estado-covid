@@ -2,6 +2,7 @@ import React, { useContext, useState, useCallback } from "react";
 import classnames from "classnames";
 import { API } from "../contexts/API";
 import { Utils } from "../contexts/Utils";
+import { GlobalState } from "../contexts/GlobalState";
 
 import Button from "./Button";
 
@@ -13,6 +14,7 @@ export default function InitialJourney({ setInitialJourneyComplete }) {
 
     const { createUser } = useContext(API);
     const { setCookie } = useContext(Utils);
+    const { STATE, set } = useContext(GlobalState);
 
     const [error, setError] = useState(false);
     const [numberOfVaccines, setNumberOfVaccines] = useState(VACCINES[0]);
@@ -26,10 +28,13 @@ export default function InitialJourney({ setInitialJourneyComplete }) {
             return;
         }
 
+        console.log("SET");
+        set(STATE.userInfo, response);
+
         setCookie("estado_covid_user_id", response._id, 365 * 50);
 
         setInitialJourneyComplete(true);
-    }, [createUser, numberOfVaccines, ageRange, setInitialJourneyComplete, setCookie]);
+    }, [createUser, numberOfVaccines, ageRange, setInitialJourneyComplete, setCookie, set, STATE]);
 
     return (
         <div className="initialJourney">

@@ -1,16 +1,18 @@
-import React, { useState, useContext, useEffect, useRef } from "react";
+import React, { useState, useContext, useEffect, useRef, useCallback } from "react";
 import Main from "./components/Main";
 import InitialJourney from "./components/InitialJourney";
 import Loading from "./components/Loading";
 import { Utils } from "./contexts/Utils";
 import { API } from "./contexts/API";
 import { Data } from "./contexts/Data";
+import { GlobalState } from "./contexts/GlobalState";
 
 export default function App() {
     // console.log("Render App");
 
+    const { STATE, set } = useContext(GlobalState);
     const { getCookie } = useContext(Utils);
-    const { getCovidData, getGoogleMapsAPIKey } = useContext(API);
+    const { getCovidData, getGoogleMapsAPIKey, getUserInfo } = useContext(API);
     const { provinces, covidDataSpain, covidDataAutonomicCommunities, covidDataProvinces, minAndMaxCasesPerCapita } =
         useContext(Data);
 
@@ -18,13 +20,26 @@ export default function App() {
     //   SHOW APPROPIATE SCREEN
     // #################################################
 
-    const [initialJourneyComplete, setInitialJourneyComplete] = useState(false);
+    const [initialJourneyComplete, setInitialJourneyComplete] = useState(null);
+
+    const getUser = useCallback(
+        async (id) => {
+            const response = await getUserInfo(id);
+            if ("error" in response) return;
+
+            console.log("SET");
+            set(STATE.userInfo, response);
+            setInitialJourneyComplete(true);
+        },
+        [getUserInfo, setInitialJourneyComplete, set, STATE]
+    );
 
     useEffect(() => {
         const userId = getCookie("estado_covid_user_id");
 
-        if (userId) setInitialJourneyComplete(true);
-    }, [getCookie]);
+        if (userId) getUser(userId);
+        else setInitialJourneyComplete(false);
+    }, [getCookie, getUser]);
 
     // #################################################
     //   GET COVID DATA
@@ -88,7 +103,7 @@ export default function App() {
     //   RENDER
     // #################################################
 
-    const initialJourney = !initialJourneyComplete && (
+    const initialJourney = initialJourneyComplete === false && (
         <InitialJourney setInitialJourneyComplete={setInitialJourneyComplete} />
     );
     const main = initialJourneyComplete && covidDataLoaded && googleAPILoaded && <Main />;

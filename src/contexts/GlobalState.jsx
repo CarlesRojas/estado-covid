@@ -5,6 +5,9 @@ const STATE = {
     date: "date",
     currentLocation: "currentLocation",
     covidPopupVisible: "covidPopupVisible",
+    infoPopupVisible: "infoPopupVisible",
+    vaccinesPopupVisible: "vaccinesPopupVisible",
+    userInfo: "userInfo",
 };
 
 const GlobalStateProvider = (props) => {
@@ -30,10 +33,11 @@ const GlobalStateProvider = (props) => {
             state.current[stateName].subbedFunctions.forEach(function (func) {
                 func(value);
             });
-        }
+        } else state.current[stateName] = { value, subbedFunctions: [] };
     };
 
     const get = (stateName) => {
+        if (stateName === STATE.userInfo) console.log(state.current[stateName]);
         if (state.current[stateName]) return state.current[stateName].value;
         return null;
     };

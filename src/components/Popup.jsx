@@ -1,13 +1,11 @@
-import React, { useContext } from "react";
+import React from "react";
 import { useTransition, animated } from "react-spring";
-import { GlobalState } from "../contexts/GlobalState";
 import useGlobalState from "../hooks/useGlobalState";
 
-export default function Popup({ children }) {
+export default function Popup({ children, globalStateVariable }) {
     // console.log("Render Popup");
 
-    const { STATE } = useContext(GlobalState);
-    const [visible, setVisible] = useGlobalState(STATE.covidPopupVisible);
+    const [visible, setVisible] = useGlobalState(globalStateVariable);
 
     // #################################################
     //   TRANSITIONS
