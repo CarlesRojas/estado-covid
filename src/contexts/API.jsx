@@ -222,7 +222,6 @@ const APIProvider = (props) => {
         }
     };
 
-    // TODO
     const userNoLongerHasCovid = async (id) => {
         // Post data
         var postData = { id };

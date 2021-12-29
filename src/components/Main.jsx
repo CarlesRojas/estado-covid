@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext, useCallback } from "react";
+import React, { useState, useEffect, useContext, useCallback, useRef } from "react";
 import Map from "./Map";
 import CurrentLocation from "./CurrentLocation";
 import Button from "./Button";
@@ -15,7 +15,7 @@ import VaccineIcon from "../resources/icons/vaccine.svg";
 export default function Main() {
     // console.log("Render Main");
 
-    const { userCaughtCovid, updateVaccines } = useContext(API);
+    const { userCaughtCovid, updateVaccines, userNoLongerHasCovid } = useContext(API);
     const { STATE, set } = useContext(GlobalState);
     const [userInfo, setUserInfo] = useGlobalState(STATE.userInfo);
 
@@ -47,8 +47,15 @@ export default function Main() {
         const response = await userCaughtCovid(userInfo._id);
         if (response.error) return;
 
-        setUserInfo({ ...userInfo, hasCovid: response.hasCovid });
+        setUserInfo({ ...userInfo, hasCovid: response.hasCovid, covidStartDate: response.covidStartDate });
     }, [set, STATE, userCaughtCovid, userInfo, setUserInfo]);
+
+    const handleUserNoLongerHasCovid = useCallback(async () => {
+        const response = await userNoLongerHasCovid(userInfo._id);
+        if (response.error) return;
+
+        setUserInfo({ ...userInfo, hasCovid: response.hasCovid, covidStartDate: response.covidStartDate });
+    }, [userNoLongerHasCovid, userInfo, setUserInfo]);
 
     const handleUserHasRecievedVaccine = useCallback(async () => {
         set(STATE.vaccinesPopupVisible, false);
@@ -64,12 +71,19 @@ export default function Main() {
     // #################################################
 
     let middleButton = <Button text={"Tengo Covid-19"} onClick={() => set(STATE.covidPopupVisible, true)} />;
-    middleButton =
-        userInfo && "hasCovid" in userInfo && userInfo.hasCovid ? (
-            <Label text={`Dias restantes confinado: ${10}`} />
-        ) : (
-            middleButton
-        );
+
+    const noLongerCovidDone = useRef(false);
+
+    if (userInfo && "hasCovid" in userInfo && userInfo.hasCovid) {
+        var today = new Date();
+        var covidDate = new Date(userInfo.covidStartDate);
+        var daysSinceCovid = Math.floor((today.getTime() - covidDate.getTime()) / (1000 * 3600 * 24));
+
+        if (daysSinceCovid >= 10 && !noLongerCovidDone.current) {
+            noLongerCovidDone.current = true;
+            handleUserNoLongerHasCovid();
+        } else middleButton = <Label text={`Dias restantes confinado: ${10 - daysSinceCovid}`} />;
+    }
 
     return (
         coords && (

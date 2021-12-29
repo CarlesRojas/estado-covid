@@ -63,11 +63,14 @@ export default function Map({ coords }) {
         [getLocationInfo, set, STATE, updateLocation, userInfo, provinces]
     );
 
+    const locationUpdated = useRef(false);
+
     useEffect(() => {
         if (!map.current) return;
 
         const centeChangedListener = map.current.addListener("center_changed", debounce(handleCenterChange, 1000));
-        handleCenterChange(true);
+        handleCenterChange(!locationUpdated.current);
+        locationUpdated.current = true;
 
         return () => {
             maps.current.event.removeListener(centeChangedListener);
