@@ -222,6 +222,7 @@ const APIProvider = (props) => {
         }
     };
 
+    // TODO
     const userNoLongerHasCovid = async (id) => {
         // Post data
         var postData = { id };
@@ -300,6 +301,7 @@ const APIProvider = (props) => {
         }
     };
 
+    // TODO
     const getprovinceCovidInfo = async (provinceId) => {
         // Post data
         var postData = { provinceId };
@@ -326,6 +328,7 @@ const APIProvider = (props) => {
         }
     };
 
+    // TODO
     const getAutonomicCommunityCovidInfo = async (autonomicCommunityId) => {
         // Post data
         var postData = { autonomicCommunityId };
@@ -352,6 +355,7 @@ const APIProvider = (props) => {
         }
     };
 
+    // TODO
     const getHistoricProvinceCovidInfo = async (provinceId) => {
         // Post data
         var postData = { provinceId };
@@ -378,6 +382,7 @@ const APIProvider = (props) => {
         }
     };
 
+    // TODO
     const getHistoricAutonomicCommunityCovidInfo = async (autonomicCommunityId) => {
         // Post data
         var postData = { autonomicCommunityId };

@@ -18,9 +18,10 @@ export default function Map({ coords }) {
 
     const { STATE, set } = useContext(GlobalState);
     const { debounce, invlerp } = useContext(Utils);
-    const { getLocationInfo, googleAPIKey } = useContext(API);
+    const { getLocationInfo, googleAPIKey, updateLocation } = useContext(API);
     const { covidDataProvinces, provinces, minAndMaxCasesPerCapita } = useContext(Data);
     const [date] = useGlobalState(STATE.date);
+    const [userInfo] = useGlobalState(STATE.userInfo);
 
     // #################################################
     //   MAP
@@ -34,19 +35,39 @@ export default function Map({ coords }) {
     //   UPDATE CENTER
     // #################################################
 
-    const handleCenterChange = useCallback(async () => {
-        const newCenter = map.current.getCenter();
-        const result = await getLocationInfo({ lat: newCenter.lat(), lng: newCenter.lng() });
-        if (result.status !== "OK" && result.status !== "ZERO_RESULTS") return;
+    const handleCenterChange = useCallback(
+        async (shouldUpdateLocation) => {
+            const newCenter = map.current.getCenter();
+            const result = await getLocationInfo({ lat: newCenter.lat(), lng: newCenter.lng() });
+            if (result.status !== "OK" && result.status !== "ZERO_RESULTS") return;
 
-        set(STATE.currentLocation, result.results.length ? result.results[0] : false);
-    }, [getLocationInfo, set, STATE]);
+            set(STATE.currentLocation, result.results.length ? result.results[0] : false);
+
+            if (result.results.length && shouldUpdateLocation) {
+                let provinceId = "";
+                let autonomicCommunityId = "";
+
+                for (let i = 0; i < provinces.current.length; i++) {
+                    const element = provinces.current[i];
+
+                    if (element.google_name === result.results[0].address_components[1].long_name) {
+                        provinceId = element.id_covid;
+                        autonomicCommunityId = element.ca_id_covid;
+                        break;
+                    }
+                }
+
+                await updateLocation(userInfo._id, provinceId, autonomicCommunityId);
+            }
+        },
+        [getLocationInfo, set, STATE, updateLocation, userInfo, provinces]
+    );
 
     useEffect(() => {
         if (!map.current) return;
 
         const centeChangedListener = map.current.addListener("center_changed", debounce(handleCenterChange, 1000));
-        handleCenterChange();
+        handleCenterChange(true);
 
         return () => {
             maps.current.event.removeListener(centeChangedListener);
