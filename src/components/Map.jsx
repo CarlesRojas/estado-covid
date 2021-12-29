@@ -17,9 +17,9 @@ export default function Map({ coords }) {
     // console.log("Render Map");
 
     const { STATE, set } = useContext(GlobalState);
-    const { debounce, invlerp } = useContext(Utils);
+    const { debounce } = useContext(Utils);
     const { getLocationInfo, googleAPIKey, updateLocation } = useContext(API);
-    const { covidDataProvinces, provinces, minAndMaxCasesPerCapita } = useContext(Data);
+    const { covidDataProvinces, provinces } = useContext(Data);
     const [date] = useGlobalState(STATE.date);
     const [userInfo] = useGlobalState(STATE.userInfo);
 
@@ -88,15 +88,8 @@ export default function Map({ coords }) {
             const provinceIndex = parseInt(feature.h.cod_prov) - 1;
             const provinceId = provinces.current[provinceIndex].id_covid;
 
-            const riskValue = Math.sqrt(
-                invlerp(
-                    0,
-                    minAndMaxCasesPerCapita.current.max,
-                    covidDataProvinces.current[covidDataProvinces.current.length - 1 - date][provinceId].casesPerCapita
-                )
-            );
-
-            covidDataProvinces.current[covidDataProvinces.current.length - 1 - date][provinceId].riskValue = riskValue;
+            const riskValue =
+                covidDataProvinces.current[covidDataProvinces.current.length - 1 - date][provinceId].riskValue;
 
             return {
                 clickable: false,
@@ -109,7 +102,7 @@ export default function Map({ coords }) {
                 backgroundBlendMode: "multiply",
             };
         },
-        [covidDataProvinces, invlerp, minAndMaxCasesPerCapita, provinces, date]
+        [covidDataProvinces, provinces, date]
     );
 
     // #################################################

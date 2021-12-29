@@ -11,7 +11,7 @@ export default function App() {
     // console.log("Render App");
 
     const { STATE, set } = useContext(GlobalState);
-    const { getCookie } = useContext(Utils);
+    const { getCookie, invlerp } = useContext(Utils);
     const { getCovidData, getGoogleMapsAPIKey, getUserInfo } = useContext(API);
     const { provinces, covidDataSpain, covidDataAutonomicCommunities, covidDataProvinces, minAndMaxCasesPerCapita } =
         useContext(Data);
@@ -56,15 +56,28 @@ export default function App() {
             covidDataAutonomicCommunities.current = autonomicCommunitiesData;
             covidDataProvinces.current = provincesData;
 
+            var minAndMaxCasesPerCapita = { min: Number.MAX_VALUE, max: Number.MIN_VALUE };
+
+            // Calculate Cases per Capita
             covidDataProvinces.current.forEach((dateData) => {
-                // Calculate Cases per Capita
                 provinces.current.forEach(({ population, id_covid }) => {
                     const casesPerCapita = dateData[id_covid].today_new_confirmed / population;
 
                     dateData[id_covid].casesPerCapita = casesPerCapita;
 
-                    minAndMaxCasesPerCapita.current.min = Math.min(minAndMaxCasesPerCapita.current.min, casesPerCapita);
-                    minAndMaxCasesPerCapita.current.max = Math.max(minAndMaxCasesPerCapita.current.max, casesPerCapita);
+                    minAndMaxCasesPerCapita.min = Math.min(minAndMaxCasesPerCapita.min, casesPerCapita);
+                    minAndMaxCasesPerCapita.max = Math.max(minAndMaxCasesPerCapita.max, casesPerCapita);
+                });
+            });
+
+            // Calculate Risk value
+            covidDataProvinces.current.forEach((dateData) => {
+                provinces.current.forEach(({ id_covid }) => {
+                    const riskValue = Math.sqrt(
+                        invlerp(0, minAndMaxCasesPerCapita.max, dateData[id_covid].casesPerCapita)
+                    );
+
+                    dateData[id_covid].riskValue = riskValue;
                 });
             });
 
@@ -72,14 +85,7 @@ export default function App() {
         };
 
         if (!covidDataFetched.current) getData();
-    }, [
-        getCovidData,
-        covidDataSpain,
-        covidDataAutonomicCommunities,
-        covidDataProvinces,
-        minAndMaxCasesPerCapita,
-        provinces,
-    ]);
+    }, [getCovidData, covidDataSpain, covidDataAutonomicCommunities, covidDataProvinces, provinces, invlerp]);
 
     // #################################################
     //   GET GOOGLE API KEY

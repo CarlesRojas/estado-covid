@@ -16,8 +16,6 @@ const DataProvider = (props) => {
     const covidDataSpain = useRef({});
     const covidDataAutonomicCommunities = useRef({});
     const covidDataProvinces = useRef({});
-    const minAndMaxCasesPerCapita = useRef({ min: Number.MAX_VALUE, max: Number.MIN_VALUE });
-
     return (
         <Data.Provider
             value={{
@@ -28,7 +26,6 @@ const DataProvider = (props) => {
                 covidDataSpain,
                 covidDataAutonomicCommunities,
                 covidDataProvinces,
-                minAndMaxCasesPerCapita,
             }}
         >
             {props.children}

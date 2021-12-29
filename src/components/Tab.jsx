@@ -1,4 +1,4 @@
-import React, { useRef, useContext } from "react";
+import React, { useRef, useContext, useEffect, useState } from "react";
 import { useSpring, animated } from "react-spring";
 import { useDrag } from "react-use-gesture";
 import { Utils } from "../contexts/Utils";
@@ -62,11 +62,21 @@ export default function Tab() {
         { filterTaps: true, axis: "y" }
     );
 
+    const [headerheight, setHeaderheight] = useState(null);
+    const handleRef = useRef(null);
+
+    useEffect(() => {
+        var handleHeight = handleRef.current.offsetHeight;
+        handleHeight += parseInt(window.getComputedStyle(handleRef.current).getPropertyValue("margin-bottom"));
+
+        setHeaderheight(continerRef.current.getBoundingClientRect().height * 0.3 - handleHeight);
+    }, []);
+
     return (
         <div className="tab">
             <animated.div className="container" ref={continerRef} {...gestureBind()} style={{ y }}>
-                <div className="handle"></div>
-                <CovidData />
+                <div className="handle" ref={handleRef}></div>
+                {headerheight && <CovidData headerHeight={headerheight} />}
             </animated.div>
         </div>
     );
