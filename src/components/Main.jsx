@@ -19,8 +19,6 @@ export default function Main() {
     const { STATE, set } = useContext(GlobalState);
     const [userInfo, setUserInfo] = useGlobalState(STATE.userInfo);
 
-    console.log(userInfo);
-
     // #################################################
     //   LOAD DATA & LOCATION
     // #################################################

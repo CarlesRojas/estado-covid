@@ -37,7 +37,6 @@ const GlobalStateProvider = (props) => {
     };
 
     const get = (stateName) => {
-        if (stateName === STATE.userInfo) console.log(state.current[stateName]);
         if (state.current[stateName]) return state.current[stateName].value;
         return null;
     };

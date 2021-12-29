@@ -28,7 +28,6 @@ export default function InitialJourney({ setInitialJourneyComplete }) {
             return;
         }
 
-        console.log("SET");
         set(STATE.userInfo, response);
 
         setCookie("estado_covid_user_id", response._id, 365 * 50);

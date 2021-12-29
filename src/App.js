@@ -27,7 +27,6 @@ export default function App() {
             const response = await getUserInfo(id);
             if ("error" in response) return;
 
-            console.log("SET");
             set(STATE.userInfo, response);
             setInitialJourneyComplete(true);
         },
