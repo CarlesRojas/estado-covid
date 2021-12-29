@@ -42,7 +42,7 @@ export default function Popup({ children }) {
             {contentTransition(
                 (styles, item) =>
                     item && (
-                        <animated.div className="container" style={styles}>
+                        <animated.div className="contentContainer" style={styles}>
                             {children}
                         </animated.div>
                     )

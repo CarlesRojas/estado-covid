@@ -221,9 +221,13 @@ const UtilsProvider = (props) => {
         const trigger = () => {
             setAnimating(true);
 
-            clearTimeout(timeoutRef);
-            setTimeout(() => setAnimating(false), duration);
+            clearTimeout(timeoutRef.current);
+            timeoutRef.current = setTimeout(() => setAnimating(false), duration);
         };
+
+        useEffect(() => {
+            return () => clearTimeout(timeoutRef.current);
+        }, []);
 
         return [animating, trigger];
     }

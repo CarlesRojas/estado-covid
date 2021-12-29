@@ -144,9 +144,9 @@ const APIProvider = (props) => {
     //   REST API
     // #################################################
 
-    const createUser = async (numberOfVaccines, provinceId, autonomicCommunityId) => {
+    const createUser = async (numberOfVaccines, ageRange) => {
         // Post data
-        var postData = { numberOfVaccines, provinceId, autonomicCommunityId };
+        var postData = { numberOfVaccines, ageRange };
 
         try {
             // Fetch

@@ -23,8 +23,7 @@ export default function App() {
     useEffect(() => {
         const userId = getCookie("estado_covid_user_id");
 
-        // ROJAS invert condition
-        if (!userId) setInitialJourneyComplete(true);
+        if (userId) setInitialJourneyComplete(true);
     }, [getCookie]);
 
     // #################################################
@@ -89,7 +88,9 @@ export default function App() {
     //   RENDER
     // #################################################
 
-    const initialJourney = !initialJourneyComplete && <InitialJourney />;
+    const initialJourney = !initialJourneyComplete && (
+        <InitialJourney setInitialJourneyComplete={setInitialJourneyComplete} />
+    );
     const main = initialJourneyComplete && covidDataLoaded && googleAPILoaded && <Main />;
     const loading = !initialJourney && !main && <Loading />;
 
