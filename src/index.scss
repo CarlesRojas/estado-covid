@@ -922,3 +922,70 @@ input[type="number"] {
         }
     }
 }
+
+// #######################################
+//      CONTENT CONTAINER
+// #######################################
+
+.onlyMobile {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    background: rgb(2, 255, 232);
+    background: linear-gradient(90deg, rgba(2, 255, 232, 1) 0%, rgba(132, 207, 94, 1) 100%);
+
+    .onlyMobileContainer {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 60%;
+        min-width: 40rem;
+        max-width: 60rem;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        background-color: rgba(255, 255, 255, 0.7);
+        border-radius: $borderRadius;
+        backdrop-filter: blur(10px);
+        padding: 2rem 4rem;
+
+        .icon {
+            width: 5rem;
+            min-width: 5rem;
+            max-width: 5rem;
+            height: 5rem;
+            min-height: 5rem;
+            max-height: 5rem;
+            z-index: 1;
+            margin: 4% 0 3% 0;
+            color: black;
+            opacity: 0.8;
+        }
+
+        .text {
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            width: 100%;
+            text-align: center;
+            margin: 0 0 3% 0;
+        }
+
+        .subtitle {
+            opacity: 0.5;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            width: 100%;
+            text-align: center;
+            margin: 0 0 3% 0;
+        }
+
+        .qrCode {
+            width: 13rem;
+        }
+    }
+}

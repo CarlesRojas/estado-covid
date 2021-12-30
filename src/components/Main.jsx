@@ -89,10 +89,6 @@ export default function Main() {
         var covidDate = new Date(userInfo.covidStartDate);
         var daysSinceCovid = Math.floor((today.getTime() - covidDate.getTime()) / (1000 * 3600 * 24));
 
-        console.log(today);
-        console.log(covidDate);
-        console.log(daysSinceCovid);
-
         if (daysSinceCovid >= 10 && !noLongerCovidDone.current) {
             noLongerCovidDone.current = true;
             handleUserNoLongerHasCovid();
