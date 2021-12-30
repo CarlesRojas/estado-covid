@@ -198,7 +198,7 @@ export default function CovidData({ headerHeight }) {
                             </div>
                         </div>
                     )}
-                    <div className="grow"></div>
+
                     {data && "source" in data && (
                         <div className="provider">
                             Datos proporcionados por <span>{data.source}</span> y{" "}

@@ -362,17 +362,17 @@ input[type="number"] {
     padding: 0 $defaultPadding;
 
     .locationIconContainer {
-        transition: opacity 0.2s ease-in-out;
         pointer-events: all;
         position: absolute;
-        opacity: 0.9;
+        transition: opacity 0.2s ease-in-out;
+        transform: translate($defaultPadding, -100%);
         top: 0;
         right: 0;
-        transform: translate($defaultPadding, -100%);
+        opacity: 0.9;
 
         &.hidden {
-            opacity: 0;
             pointer-events: none;
+            opacity: 0;
         }
     }
 
@@ -519,8 +519,8 @@ input[type="number"] {
         position: relative;
         display: grid;
         align-items: center;
-        grid-gap: 1rem 0;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 0;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr;
         width: 100%;
         margin: 1rem auto 0;
@@ -534,23 +534,23 @@ input[type="number"] {
             width: 100%;
 
             .recomendationIcon {
-                height: 2.8rem;
-                max-height: 2.8rem;
-                min-height: 2.8rem;
-                width: 2.8rem;
-                max-width: 2.8rem;
-                min-width: 2.8rem;
+                height: 2.5rem;
+                max-height: 2.5rem;
+                min-height: 2.5rem;
+                width: 2.5rem;
+                max-width: 2.5rem;
+                min-width: 2.5rem;
                 opacity: 0.6;
                 padding: $defaultPadding;
             }
 
             .recomendationIconSubtitle {
+                min-height: 2.5rem;
                 opacity: 0.5;
                 padding: 0 0.5rem;
                 font-size: 0.6rem;
                 font-weight: 500;
                 text-align: center;
-                min-height: 2.5rem;
             }
         }
     }
@@ -559,6 +559,7 @@ input[type="number"] {
         position: relative;
         display: flex;
         flex-direction: column;
+        flex-grow: 1;
         justify-content: space-between;
         width: calc(100% - 1rem);
         box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
@@ -571,27 +572,29 @@ input[type="number"] {
             position: relative;
             display: flex;
             flex-direction: column;
+            justify-content: space-around;
+            height: 100%;
             width: 100%;
 
             .numbers {
                 position: relative;
                 display: grid;
-                grid-template-columns: 1fr 1fr 1fr;
                 grid-gap: 1rem;
+                grid-template-columns: 1fr 1fr 1fr;
                 width: 100%;
 
                 .numberContainer {
                     position: relative;
-                    width: 100%;
-                    margin: 1rem 0;
                     min-height: 4.5rem;
+                    width: 100%;
+                    margin: 0.5rem 0;
 
                     .number {
                         opacity: 0.8;
+                        padding-bottom: 0.2rem;
                         font-size: 1rem;
                         font-weight: 600;
                         text-align: center;
-                        padding-bottom: 0.2rem;
                     }
 
                     .info {
@@ -603,10 +606,6 @@ input[type="number"] {
                 }
             }
         }
-    }
-
-    .grow {
-        flex-grow: 1;
     }
 
     .provider {
@@ -638,25 +637,26 @@ input[type="number"] {
 
 .graph {
     position: relative;
-    height: 10rem;
-    width: 100%;
-    padding: $defaultPadding;
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
+    max-height: 10rem;
+    width: 100%;
+    padding: $defaultPadding;
 
     .axisLabel {
+        transform: translateX(-1px);
         width: 50%;
         opacity: 0.2;
+        padding-bottom: 0.2rem;
         font-size: 0.6rem;
         font-weight: 800;
-        transform: translateX(-1px);
-        padding-bottom: 0.2rem;
 
         &.bottom {
             width: 100%;
-            text-align: right;
             padding-bottom: 0;
             padding-top: 0.2rem;
+            text-align: right;
         }
     }
 
@@ -664,32 +664,32 @@ input[type="number"] {
         position: relative;
         flex-grow: 1;
         width: 100%;
-        border-left: solid 2px rgba(0, 0, 0, 0.05);
         border-bottom: solid 2px rgba(0, 0, 0, 0.05);
+        border-left: solid 2px rgba(0, 0, 0, 0.05);
         padding-top: 1rem;
 
         .pointsContainer {
-            width: 100%;
-            height: 100%;
             display: grid;
-            grid-template-columns: repeat(14, minmax(0, 1fr));
             grid-gap: 0.2rem;
+            grid-template-columns: repeat(14, minmax(0, 1fr));
+            height: 100%;
+            width: 100%;
 
             .bar {
                 position: relative;
-                width: 100%;
                 // background-color: blue;
                 display: flex;
                 justify-content: center;
+                width: 100%;
 
                 .point {
                     position: absolute;
-                    width: 0.5rem;
-                    min-width: 0.5rem;
-                    max-width: 0.5rem;
                     height: 0.5rem;
-                    min-height: 0.5rem;
                     max-height: 0.5rem;
+                    min-height: 0.5rem;
+                    width: 0.5rem;
+                    max-width: 0.5rem;
+                    min-width: 0.5rem;
                     bottom: 0;
                     background-color: rgb(126, 126, 126);
                     // transform: translateY(100%);
@@ -701,12 +701,12 @@ input[type="number"] {
 
                     .max {
                         position: absolute;
+                        transform: translate(calc(-50% + 0.25rem), -100%);
                         opacity: 0.7;
+                        padding-bottom: 0.2rem;
                         font-size: 0.65rem;
                         font-weight: 600;
                         text-align: center;
-                        padding-bottom: 0.2rem;
-                        transform: translate(calc(-50% + 0.25rem), -100%);
                     }
                 }
             }
@@ -826,10 +826,10 @@ input[type="number"] {
     }
 
     h1 {
+        padding-bottom: $defaultPadding;
         font-size: 1.1rem;
         font-weight: 700;
         text-transform: uppercase;
-        padding-bottom: $defaultPadding;
     }
 
     h2 {
