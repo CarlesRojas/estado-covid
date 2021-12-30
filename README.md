@@ -1,4 +1,4 @@
-# Estado COVID-19
+# COVID-19
 
 Estado actualizado de la situación del virus COVID-19
 
