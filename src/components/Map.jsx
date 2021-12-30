@@ -5,6 +5,7 @@ import chroma from "chroma-js";
 import { Utils } from "../contexts/Utils";
 import { API } from "../contexts/API";
 import { Data } from "../contexts/Data";
+import { Events } from "../contexts/Events";
 import { GlobalState } from "../contexts/GlobalState";
 import useGlobalState from "../hooks/useGlobalState";
 
@@ -20,6 +21,8 @@ export default function Map({ coords }) {
     const { debounce } = useContext(Utils);
     const { getLocationInfo, googleAPIKey, updateLocation } = useContext(API);
     const { covidDataProvinces, provinces } = useContext(Data);
+    const { EVENT_LIST, sub, unsub } = useContext(Events);
+
     const [date] = useGlobalState(STATE.date);
     const [userInfo] = useGlobalState(STATE.userInfo);
 
@@ -76,6 +79,21 @@ export default function Map({ coords }) {
             maps.current.event.removeListener(centeChangedListener);
         };
     }, [mapLoaded, debounce, handleCenterChange]);
+
+    // #################################################
+    //   MOVE TO CURRENT LOCATION
+    // #################################################
+
+    const handleCenterOnCurrentLocation = useCallback(() => {
+        map.current.panTo(coords);
+    }, [coords]);
+
+    useEffect(() => {
+        sub(EVENT_LIST.ON_CENTER_ON_CURRENT_LOCATION, handleCenterOnCurrentLocation);
+        return () => {
+            unsub(EVENT_LIST.ON_CENTER_ON_CURRENT_LOCATION, handleCenterOnCurrentLocation);
+        };
+    }, [EVENT_LIST, sub, unsub, handleCenterOnCurrentLocation]);
 
     // #################################################
     //   APPLY DATA COLORS

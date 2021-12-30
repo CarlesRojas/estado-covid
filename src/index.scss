@@ -185,9 +185,9 @@ input[type="number"] {
 
 .map {
     position: absolute;
-    height: calc(100% + 26px);
+    height: calc(130% + 26px);
     width: 100%;
-    top: 0;
+    top: -30%;
     left: 0;
 }
 
@@ -203,7 +203,7 @@ input[type="number"] {
     justify-content: center;
     height: calc(100% + 26px);
     width: 100%;
-    top: 0;
+    top: -15%;
     left: 0;
 
     .marker {
@@ -360,6 +360,21 @@ input[type="number"] {
     top: 0;
     left: 0;
     padding: 0 $defaultPadding;
+
+    .locationIconContainer {
+        transition: opacity 0.2s ease-in-out;
+        pointer-events: all;
+        position: absolute;
+        opacity: 0.9;
+        top: 0;
+        right: 0;
+        transform: translate($defaultPadding, -100%);
+
+        &.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+    }
 
     .container {
         pointer-events: all;

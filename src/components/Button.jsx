@@ -3,7 +3,7 @@ import classnames from "classnames";
 import { Utils } from "../contexts/Utils";
 import SVG from "react-inlinesvg";
 
-export default function Button({ text, onClick, svg, style, styleButton, disabled }) {
+export default function Button({ text, onClick, svg, style, styleButton, disabled, extraClass }) {
     const { useCssAnimation } = useContext(Utils);
 
     const [animating, trigger] = useCssAnimation(300);
@@ -23,7 +23,11 @@ export default function Button({ text, onClick, svg, style, styleButton, disable
     ) : null;
 
     return (
-        <div className={classnames("button", { disabled }, { grow: text })} onClick={handleClick} style={style}>
+        <div
+            className={classnames("button", extraClass, { disabled }, { grow: text })}
+            onClick={handleClick}
+            style={style}
+        >
             {textContent}
             {svgContent}
         </div>

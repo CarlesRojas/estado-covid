@@ -2,7 +2,7 @@ import React, { createContext, useRef } from "react";
 export const Events = createContext();
 
 const EVENT_LIST = {
-    // ON_DEVICE_CHANGE: "onDeviceChange", // Payload: string with the new device
+    ON_CENTER_ON_CURRENT_LOCATION: "onCenterOnCurrentLocation",
 };
 
 const EventsProvider = (props) => {

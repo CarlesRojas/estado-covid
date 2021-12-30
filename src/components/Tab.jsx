@@ -2,11 +2,14 @@ import React, { useRef, useContext, useEffect, useState } from "react";
 import { useSpring, animated } from "react-spring";
 import { useDrag } from "react-use-gesture";
 import { Utils } from "../contexts/Utils";
+import { Events } from "../contexts/Events";
 import classnames from "classnames";
 import CovidData from "./CovidData";
 import SVG from "react-inlinesvg";
 
 import UpIcon from "../resources/icons/up.svg";
+import LocationIcon from "../resources/icons/location.svg";
+import Button from "./Button";
 
 const HIDDEN_PERCENTAGE = 0.67;
 
@@ -14,6 +17,7 @@ export default function Tab() {
     // console.log("Render Tab");
 
     const { lerp, invlerp } = useContext(Utils);
+    const { EVENT_LIST, emit } = useContext(Events);
 
     const [showArrow, setShowArrow] = useState(true);
 
@@ -80,6 +84,19 @@ export default function Tab() {
     return (
         <div className="tab">
             <animated.div className="container" ref={continerRef} {...gestureBind()} style={{ y }}>
+                {/* <div
+                    className={classnames("locationIconContainer", { hidden: !showArrow })}
+                    onClick={() => emit(EVENT_LIST.ON_CENTER_ON_CURRENT_LOCATION)}
+                >
+                    <SVG className="locationIcon" src={LocationIcon} />
+                </div> */}
+
+                <Button
+                    extraClass={`locationIconContainer ${!showArrow ? "hidden" : ""}`}
+                    onClick={() => emit(EVENT_LIST.ON_CENTER_ON_CURRENT_LOCATION)}
+                    svg={LocationIcon}
+                />
+
                 <div className={classnames("upIconContainer", { hidden: !showArrow })}>
                     <SVG className="upIcon" src={UpIcon} />
                 </div>
