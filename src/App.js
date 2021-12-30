@@ -55,17 +55,20 @@ export default function App() {
             covidDataAutonomicCommunities.current = autonomicCommunitiesData;
             covidDataProvinces.current = provincesData;
 
-            var minAndMaxCasesPerCapita = { min: Number.MAX_VALUE, max: Number.MIN_VALUE };
+            var minMaxNewCasesPerCapita = { min: Number.MAX_VALUE, max: Number.MIN_VALUE };
 
             // Calculate Cases per Capita
             covidDataProvinces.current.forEach((dateData) => {
                 provinces.current.forEach(({ population, id_covid }) => {
-                    const casesPerCapita = dateData[id_covid].today_new_confirmed / population;
+                    const newCasesPerCapita = dateData[id_covid].today_new_confirmed / population;
+                    const casesPerCapita = dateData[id_covid].today_confirmed / population;
 
+                    dateData[id_covid].newCasesPerCapita = newCasesPerCapita;
                     dateData[id_covid].casesPerCapita = casesPerCapita;
+                    dateData[id_covid].population = population;
 
-                    minAndMaxCasesPerCapita.min = Math.min(minAndMaxCasesPerCapita.min, casesPerCapita);
-                    minAndMaxCasesPerCapita.max = Math.max(minAndMaxCasesPerCapita.max, casesPerCapita);
+                    minMaxNewCasesPerCapita.min = Math.min(minMaxNewCasesPerCapita.min, newCasesPerCapita);
+                    minMaxNewCasesPerCapita.max = Math.max(minMaxNewCasesPerCapita.max, newCasesPerCapita);
                 });
             });
 
@@ -73,12 +76,27 @@ export default function App() {
             covidDataProvinces.current.forEach((dateData) => {
                 provinces.current.forEach(({ id_covid }) => {
                     const riskValue = Math.sqrt(
-                        invlerp(0, minAndMaxCasesPerCapita.max, dateData[id_covid].casesPerCapita)
+                        invlerp(0, minMaxNewCasesPerCapita.max, dateData[id_covid].newCasesPerCapita)
                     );
 
                     dateData[id_covid].riskValue = riskValue;
                 });
             });
+
+            // Calculate current active covid cases
+            for (let i = covidDataProvinces.current.length - 1; i > 10; i--) {
+                for (const key in covidDataProvinces.current[i]) {
+                    var activeCovidCases = 0;
+                    for (let j = 0; j < 10; j++) {
+                        const element = covidDataProvinces.current[i - j][key];
+                        activeCovidCases += element.today_new_confirmed;
+                    }
+
+                    covidDataProvinces.current[i][key].activeCovidCases = activeCovidCases;
+                    covidDataProvinces.current[i][key].activeCovidCasesPerCapita =
+                        activeCovidCases / covidDataProvinces.current[i][key].population;
+                }
+            }
 
             setCovidDataLoaded(true);
         };

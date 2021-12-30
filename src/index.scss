@@ -5,7 +5,7 @@
 $background: rgb(245, 245, 245);
 $text: rgb(20, 20, 20);
 $fontSize: 18px;
-$blue: rgb(0, 140, 255);
+$blue: rgb(0, 114, 207);
 $red: rgb(255, 94, 94);
 
 $borderRadius: 0.8rem;
@@ -226,6 +226,18 @@ input[type="number"] {
     min-height: $buttonHeight;
     padding: $defaultPadding;
 
+    @keyframes click {
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.02);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+
     &.grow {
         flex-grow: 1;
     }
@@ -243,10 +255,11 @@ input[type="number"] {
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
         background-color: $red;
         border-radius: $borderRadius;
+        padding: 0 $defaultPadding;
         font-size: 1.1rem;
         font-weight: 700;
-        text-transform: uppercase;
         text-align: center;
+        text-transform: uppercase;
 
         &.animating {
             animation: click 0.3s infinite;
@@ -254,8 +267,8 @@ input[type="number"] {
 
         &.disabled {
             pointer-events: none;
-            color: rgba(0, 0, 0, 0.3);
             background-color: rgb(179, 179, 179);
+            color: rgba(0, 0, 0, 0.3);
         }
     }
 
@@ -269,9 +282,9 @@ input[type="number"] {
         min-width: $buttonHeight - $borderRadius;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
         background-color: $background;
+        color: rgba(0, 0, 0, 0.8);
         border-radius: $borderRadius;
         padding: $defaultPadding * 1.5;
-        color: rgba(0, 0, 0, 0.8);
 
         &.animating {
             animation: click 0.3s infinite;
@@ -279,20 +292,8 @@ input[type="number"] {
 
         &.disabled {
             pointer-events: none;
-            color: rgba(0, 0, 0, 0.3);
             background-color: rgb(179, 179, 179);
-        }
-    }
-
-    @keyframes click {
-        0% {
-            transform: scale(1);
-        }
-        50% {
-            transform: scale(1.02);
-        }
-        100% {
-            transform: scale(1);
+            color: rgba(0, 0, 0, 0.3);
         }
     }
 }
@@ -321,10 +322,11 @@ input[type="number"] {
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
         background-color: $red;
         border-radius: $borderRadius;
+        padding: 0 $defaultPadding;
         font-size: 0.9rem;
         font-weight: 700;
-        text-transform: uppercase;
         text-align: center;
+        text-transform: uppercase;
     }
 
     .icon {
@@ -337,9 +339,9 @@ input[type="number"] {
         min-width: $buttonHeight - $borderRadius;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
         background-color: $background;
+        color: rgba(0, 0, 0, 0.8);
         border-radius: $borderRadius;
         padding: $defaultPadding * 1.5;
-        color: rgba(0, 0, 0, 0.8);
     }
 }
 
@@ -351,37 +353,37 @@ input[type="number"] {
     pointer-events: none;
     position: relative;
     flex-grow: 1;
+    height: calc(100% - #{$buttonHeight});
+    max-height: calc(100% - #{$buttonHeight});
+    min-height: calc(100% - #{$buttonHeight});
     width: 100%;
     top: 0;
     left: 0;
-    height: calc(100% - #{$buttonHeight});
-    min-height: calc(100% - #{$buttonHeight});
-    max-height: calc(100% - #{$buttonHeight});
     padding: 0 $defaultPadding;
 
     .container {
-        position: relative;
         pointer-events: all;
+        position: relative;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         height: 100%;
-        min-height: 100%;
         max-height: 100%;
+        min-height: 100%;
         width: 100%;
 
         .upIconContainer {
-            transition: opacity 0.2s ease-in-out;
             pointer-events: none;
             position: absolute;
-            top: 0;
-            transform: translateY(-100%);
-            left: 0;
-            width: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
+            transition: opacity 0.2s ease-in-out;
+            transform: translateY(-100%);
+            width: 100%;
+            top: 0;
+            left: 0;
             opacity: 0.5;
 
             &.hidden {
@@ -390,12 +392,12 @@ input[type="number"] {
 
             .upIcon {
                 animation: jump 2s infinite;
-                width: 2rem;
-                min-width: 2rem;
-                max-width: 2rem;
                 height: 2rem;
-                min-height: 2rem;
                 max-height: 2rem;
+                min-height: 2rem;
+                width: 2rem;
+                max-width: 2rem;
+                min-width: 2rem;
                 margin: 0 auto;
 
                 @keyframes jump {
@@ -421,15 +423,15 @@ input[type="number"] {
 // #######################################
 
 .covidData {
-    height: 100;
     pointer-events: none;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    width: 100%;
+    height: 100;
     height: 100%;
-    min-height: 100%;
     max-height: 100%;
+    min-height: 100%;
+    width: 100%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     background-color: rgba(245, 245, 245, 0.9);
     border-top-left-radius: $borderRadius;
@@ -467,8 +469,8 @@ input[type="number"] {
 
     .alerta {
         opacity: 0.5;
-        padding: 0 2rem;
         margin-top: $defaultPadding;
+        padding: 0 2rem;
         font-size: 0.7rem;
         font-weight: 500;
         text-align: center;
@@ -501,27 +503,28 @@ input[type="number"] {
     .icons {
         position: relative;
         display: grid;
+        align-items: center;
         grid-gap: 1rem 0;
         grid-template-columns: 1fr 1fr 1fr;
-        justify-items: center;
-        align-items: center;
+        grid-template-rows: 1fr 1fr;
         width: 100%;
         margin: 1rem auto 0;
+        justify-items: center;
 
         .recomendation {
-            width: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            width: 100%;
 
             .recomendationIcon {
-                width: 2.8rem;
-                min-width: 2.8rem;
-                max-width: 2.8rem;
                 height: 2.8rem;
-                min-height: 2.8rem;
                 max-height: 2.8rem;
+                min-height: 2.8rem;
+                width: 2.8rem;
+                max-width: 2.8rem;
+                min-width: 2.8rem;
                 opacity: 0.6;
                 padding: $defaultPadding;
             }
@@ -535,6 +538,85 @@ input[type="number"] {
             }
         }
     }
+
+    .data {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        justify-content: space-between;
+        width: calc(100% - 1rem);
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+        background-color: rgba(0, 0, 0, 0.05);
+        margin: 1rem 0.5rem 0.5rem;
+        border-radius: ($borderRadius / 2);
+        padding: 0.5rem;
+
+        .numGraphContainer {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+
+            .numbers {
+                position: relative;
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-gap: 1rem;
+                width: 100%;
+
+                .numberContainer {
+                    position: relative;
+                    width: 100%;
+                    margin: 1rem 0;
+
+                    .number {
+                        opacity: 0.8;
+                        font-size: 1rem;
+                        font-weight: 600;
+                        text-align: center;
+                        padding-bottom: 0.2rem;
+                    }
+
+                    .info {
+                        opacity: 0.5;
+                        font-size: 0.6rem;
+                        font-weight: 500;
+                        text-align: center;
+                    }
+                }
+            }
+
+            .graph {
+                height: 5rem;
+                width: 100%;
+                background-color: $background;
+                margin-bottom: 1rem;
+            }
+        }
+
+        .provider {
+            color: rgba(0, 0, 0, 0.5);
+            padding: 0 2rem;
+            font-size: 0.7rem;
+            font-weight: 500;
+            text-align: center;
+
+            span {
+                color: $text;
+                opacity: 0.8;
+                font-weight: 600;
+            }
+
+            a {
+                pointer-events: all;
+                color: $blue;
+                opacity: 0.8;
+                font-weight: 600;
+                text-decoration: none;
+            }
+        }
+    }
 }
 
 // #######################################
@@ -545,8 +627,8 @@ input[type="number"] {
     pointer-events: none;
     position: relative;
     height: 2.7rem;
-    min-height: 2.7rem;
     max-height: 2.7rem;
+    min-height: 2.7rem;
     width: 100%;
     padding: 0.5rem;
 
@@ -556,7 +638,7 @@ input[type="number"] {
         height: 100%;
         width: 100%;
         box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
-        background-color: rgba(0, 0, 0, 0.07);
+        background-color: rgba(0, 0, 0, 0.05);
         border-radius: ($borderRadius / 2);
 
         .point {
@@ -717,7 +799,6 @@ input[type="number"] {
             height: 100%;
             width: 100%;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-            background-color: green;
             background-color: rgba(0, 0, 0, 0.1);
             border-radius: $borderRadius;
             padding: $defaultPadding;

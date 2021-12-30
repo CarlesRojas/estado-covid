@@ -62,7 +62,7 @@ const APIProvider = (props) => {
     const getCovidData = async () => {
         try {
             let initialDate = new Date();
-            initialDate.setDate(initialDate.getDate() - 14);
+            initialDate.setDate(initialDate.getDate() - (14 + 10));
             initialDate = initialDate.toISOString().split("T")[0];
 
             let finalDate = new Date();

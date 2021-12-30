@@ -129,10 +129,14 @@ export default function CovidData({ headerHeight }) {
         </div>
     );
 
-    console.log("");
+    // console.log("");
     console.log(data);
-    console.log(lastProvince.current);
-    console.log(currentLocation);
+    // console.log(lastProvince.current);
+    // console.log(currentLocation);
+    console.log(date);
+    let currentDate = new Date();
+    currentDate.setDate(currentDate.getDate() - date);
+    currentDate = currentDate.toLocaleString("es-ES").split(" ")[0];
 
     if (currentLocation !== null) {
         if (isSpain(currentLocation))
@@ -156,6 +160,52 @@ export default function CovidData({ headerHeight }) {
                                     <p className="recomendationIconSubtitle">{ICONS[iconName].text}</p>
                                 </div>
                             ))}
+                        </div>
+                    )}
+
+                    {data && (
+                        <div className="data">
+                            <div className="numGraphContainer">
+                                <div className="numbers">
+                                    <div className="numberContainer">
+                                        <div className="number">{data.today_new_confirmed.toLocaleString("es-ES")}</div>
+                                        <div className="info">
+                                            {date === 0
+                                                ? `nuevos casos de Covid-19 en ${lastProvince.current.name} hoy`
+                                                : `nuevos casos de Covid-19 en ${lastProvince.current.name} el día ${currentDate}`}
+                                        </div>
+                                    </div>
+                                    <div className="numberContainer">
+                                        <div className="number">{data.activeCovidCases.toLocaleString("es-ES")}</div>
+                                        <div className="info">
+                                            {date === 0
+                                                ? `personas tienen Covid-19 en ${lastProvince.current.name} hoy`
+                                                : `personas tenían Covid-19 en ${lastProvince.current.name} el día ${currentDate}`}
+                                        </div>
+                                    </div>
+                                    <div className="numberContainer">
+                                        <div className="number">{`${(data.activeCovidCasesPerCapita * 100)
+                                            .toFixed(2)
+                                            .toLocaleString("es-ES")}%`}</div>
+                                        <div className="info">
+                                            {date === 0
+                                                ? `de la población de ${lastProvince.current.name} tiene Covid-19 hoy`
+                                                : `de la población de ${lastProvince.current.name} tenían Covid-19 el día ${currentDate}`}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="graph"></div>
+                            </div>
+
+                            {"source" in data && (
+                                <div className="provider">
+                                    Datos proporcionados por <span>{data.source}</span> y{" "}
+                                    <a href="https://covid19tracking.narrativa.com/" rel="noreferrer" target="_blank">
+                                        Narrativa
+                                    </a>
+                                    .
+                                </div>
+                            )}
                         </div>
                     )}
                 </>
