@@ -12,6 +12,14 @@ import useGlobalState from "../hooks/useGlobalState";
 import InfoIcon from "../resources/icons/info.svg";
 import VaccineIcon from "../resources/icons/vaccine.svg";
 
+const getVaccineText = (numOfVaccines) => {
+    var number = "primera";
+    if (numOfVaccines === 2) number = "segunda";
+    if (numOfVaccines === 3) number = "tercera";
+
+    return `Le han puesto la ${number} dosis de la vacuna?`;
+};
+
 export default function Main() {
     // console.log("Render Main");
 
@@ -199,10 +207,11 @@ export default function Main() {
 
                 <Popup globalStateVariable={STATE.vaccinesPopupVisible}>
                     <div className="scroll">
-                        <h1>Le han puesto otra dosis de la vacuna?</h1>
-                        <p>{`En caso afirmativo debería ser su ${
-                            userInfo && "numberOfVaccines" in userInfo ? userInfo.numberOfVaccines + 1 : "1"
-                        }a vacuna`}</p>
+                        <h1>
+                            {getVaccineText(
+                                userInfo && "numberOfVaccines" in userInfo ? userInfo.numberOfVaccines + 1 : 1
+                            )}
+                        </h1>
                     </div>
 
                     <Button text={"Si"} onClick={handleUserHasRecievedVaccine} />

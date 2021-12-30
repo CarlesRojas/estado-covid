@@ -13,6 +13,7 @@ import LockdownIcon from "../resources/icons/lockdown.svg";
 import MaskIcon from "../resources/icons/mask.svg";
 import NightIcon from "../resources/icons/night.svg";
 import QrIcon from "../resources/icons/qr.svg";
+import Graph from "./Graph";
 
 const isSpain = (location) => {
     if (!location) return false;
@@ -91,7 +92,7 @@ export default function CovidData({ headerHeight }) {
     // #################################################
 
     const [data, setData] = useState(null);
-    const lastProvince = useRef("");
+    const province = useRef("");
 
     useEffect(() => {
         if (!currentLocation) return;
@@ -104,7 +105,7 @@ export default function CovidData({ headerHeight }) {
                 const element = provinces.current[i];
 
                 if (element.google_name === currentLocation.address_components[1].long_name) {
-                    lastProvince.current = element;
+                    province.current = element;
                     return covidDataProvinces.current[covidDataProvinces.current.length - 1 - date][element.id_covid];
                 }
             }
@@ -129,11 +130,6 @@ export default function CovidData({ headerHeight }) {
         </div>
     );
 
-    // console.log("");
-    console.log(data);
-    // console.log(lastProvince.current);
-    // console.log(currentLocation);
-    console.log(date);
     let currentDate = new Date();
     currentDate.setDate(currentDate.getDate() - date);
     currentDate = currentDate.toLocaleString("es-ES").split(" ")[0];
@@ -145,7 +141,7 @@ export default function CovidData({ headerHeight }) {
                     <DateSlider />
                     <p className="alerta">Nivel de Alerta</p>
                     <p className="alertLevel">{riskLevel in ALERT_LEVELS && ALERT_LEVELS[riskLevel].text}</p>
-                    <p className="address">{`${currentLocation.address_components[0].long_name}, ${lastProvince.current.name}`}</p>
+                    <p className="address">{`${currentLocation.address_components[0].long_name}, ${province.current.name}`}</p>
                     {riskLevel in ALERT_LEVELS && (
                         <div
                             className="icons"
@@ -171,16 +167,16 @@ export default function CovidData({ headerHeight }) {
                                         <div className="number">{data.today_new_confirmed.toLocaleString("es-ES")}</div>
                                         <div className="info">
                                             {date === 0
-                                                ? `nuevos casos de Covid-19 en ${lastProvince.current.name} hoy`
-                                                : `nuevos casos de Covid-19 en ${lastProvince.current.name} el día ${currentDate}`}
+                                                ? `nuevos casos de Covid-19 en ${province.current.name} hoy`
+                                                : `nuevos casos de Covid-19 en ${province.current.name} el día ${currentDate}`}
                                         </div>
                                     </div>
                                     <div className="numberContainer">
                                         <div className="number">{data.activeCovidCases.toLocaleString("es-ES")}</div>
                                         <div className="info">
                                             {date === 0
-                                                ? `personas tienen Covid-19 en ${lastProvince.current.name} hoy`
-                                                : `personas tenían Covid-19 en ${lastProvince.current.name} el día ${currentDate}`}
+                                                ? `personas tienen Covid-19 en ${province.current.name} hoy`
+                                                : `personas tenían Covid-19 en ${province.current.name} el día ${currentDate}`}
                                         </div>
                                     </div>
                                     <div className="numberContainer">
@@ -189,23 +185,27 @@ export default function CovidData({ headerHeight }) {
                                             .toLocaleString("es-ES")}%`}</div>
                                         <div className="info">
                                             {date === 0
-                                                ? `de la población de ${lastProvince.current.name} tiene Covid-19 hoy`
-                                                : `de la población de ${lastProvince.current.name} tenían Covid-19 el día ${currentDate}`}
+                                                ? `de la población de ${province.current.name} tiene Covid-19 hoy`
+                                                : `de la población de ${province.current.name} tenían Covid-19 el día ${currentDate}`}
                                         </div>
                                     </div>
                                 </div>
-                                <div className="graph"></div>
+                                <Graph
+                                    provinceId={province.current.id_covid}
+                                    provinceName={province.current.name}
+                                    date={date}
+                                />
                             </div>
-
-                            {"source" in data && (
-                                <div className="provider">
-                                    Datos proporcionados por <span>{data.source}</span> y{" "}
-                                    <a href="https://covid19tracking.narrativa.com/" rel="noreferrer" target="_blank">
-                                        Narrativa
-                                    </a>
-                                    .
-                                </div>
-                            )}
+                        </div>
+                    )}
+                    <div className="grow"></div>
+                    {data && "source" in data && (
+                        <div className="provider">
+                            Datos proporcionados por <span>{data.source}</span> y{" "}
+                            <a href="https://covid19tracking.narrativa.com/" rel="noreferrer" target="_blank">
+                                Narrativa
+                            </a>
+                            .
                         </div>
                     )}
                 </>
