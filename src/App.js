@@ -24,7 +24,10 @@ export default function App() {
     const getUser = useCallback(
         async (id) => {
             const response = await getUserInfo(id);
-            if ("error" in response) return;
+            if (!response || "error" in response) {
+                setInitialJourneyComplete(false);
+                return;
+            }
 
             set(STATE.userInfo, response);
             setInitialJourneyComplete(true);
