@@ -6,6 +6,7 @@ import Label from "./Label";
 import Tab from "./Tab";
 import Popup from "./Popup";
 import { API } from "../contexts/API";
+import { Utils } from "../contexts/Utils";
 import { GlobalState } from "../contexts/GlobalState";
 import useGlobalState from "../hooks/useGlobalState";
 
@@ -23,6 +24,7 @@ const getVaccineText = (numOfVaccines) => {
 export default function Main() {
     // console.log("Render Main");
 
+    const { clamp } = useContext(Utils);
     const { userCaughtCovid, updateVaccines, userNoLongerHasCovid } = useContext(API);
     const { STATE, set } = useContext(GlobalState);
     const [userInfo, setUserInfo] = useGlobalState(STATE.userInfo);
@@ -87,10 +89,14 @@ export default function Main() {
         var covidDate = new Date(userInfo.covidStartDate);
         var daysSinceCovid = Math.floor((today.getTime() - covidDate.getTime()) / (1000 * 3600 * 24));
 
+        console.log(today);
+        console.log(covidDate);
+        console.log(daysSinceCovid);
+
         if (daysSinceCovid >= 10 && !noLongerCovidDone.current) {
             noLongerCovidDone.current = true;
             handleUserNoLongerHasCovid();
-        } else middleButton = <Label text={`Dias restantes confinado: ${10 - daysSinceCovid}`} />;
+        } else middleButton = <Label text={`Dias restantes confinado: ${clamp(10 - daysSinceCovid, 0, 10)}`} />;
     }
 
     return (
