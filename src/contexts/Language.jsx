@@ -254,8 +254,8 @@ const CATALAN = {
     main_vaccines_first: "primera",
     main_vaccines_second: "segona",
     main_vaccines_third: "tercera",
-    main_vaccines_text: (number) => `Li han posat la ${number} dosi de la vacuna?`,
-    main_language: "Trieu l'idioma:",
+    main_vaccines_text: (number) => `T'han posat la ${number} dosi de la vacuna?`,
+    main_language: "Tria l'idioma:",
 };
 
 const LanguageProvider = (props) => {
