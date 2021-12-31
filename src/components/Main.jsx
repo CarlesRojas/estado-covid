@@ -9,17 +9,16 @@ import { API } from "../contexts/API";
 import { Utils } from "../contexts/Utils";
 import { GlobalState } from "../contexts/GlobalState";
 import useGlobalState from "../hooks/useGlobalState";
-import classnames from "classnames";
 
 import LanguageIcon from "../resources/icons/lang.svg";
 import VaccineIcon from "../resources/icons/vaccine.svg";
 
-const getVaccineText = (numOfVaccines) => {
-    var number = "primera";
-    if (numOfVaccines === 2) number = "segunda";
-    if (numOfVaccines === 3) number = "tercera";
+const getVaccineText = (language, numOfVaccines) => {
+    var number = language.main_vaccines_first;
+    if (numOfVaccines === 2) number = language.main_vaccines_second;
+    if (numOfVaccines === 3) number = language.main_vaccines_third;
 
-    return `Le han puesto la ${number} dosis de la vacuna?`;
+    return language.main_vaccines_text(number);
 };
 
 export default function Main() {
@@ -35,18 +34,15 @@ export default function Main() {
     //   LANGUAGE
     // #################################################
 
-    const [selectedLanguage, setSelectedLanguage] = useState("SPANISH");
+    const [selectedLanguage, setSelectedLanguage] = useState(language.key);
 
     const handleLanguageSelected = (lang) => {
-        setSelectedLanguage(lang);
-        set(STATE.languagePopupVisible, false);
-    };
+        if (lang === language.key) return;
 
-    useEffect(() => {
-        if (LANGUAGES[selectedLanguage] === language.name) return;
-        console.log(LANGUAGES[selectedLanguage]);
-        setLanguage(LANGUAGES[selectedLanguage]);
-    }, [selectedLanguage, setLanguage, LANGUAGES, language]);
+        set(STATE.languagePopupVisible, false);
+        setSelectedLanguage(lang);
+        setLanguage(lang);
+    };
 
     // #################################################
     //   LOAD DATA & LOCATION
@@ -99,7 +95,7 @@ export default function Main() {
     //   RENDER
     // #################################################
 
-    let middleButton = <Button text={"¿Tiene Covid-19?"} onClick={() => set(STATE.covidPopupVisible, true)} />;
+    let middleButton = <Button text={language.main_covidButton} onClick={() => set(STATE.covidPopupVisible, true)} />;
 
     const noLongerCovidDone = useRef(false);
 
@@ -114,7 +110,7 @@ export default function Main() {
         } else
             middleButton = (
                 <Button
-                    text={`Dias restantes confinado: ${clamp(10 - daysSinceCovid, 0, 10)}`}
+                    text={language.main_lockdownDaysButton(clamp(10 - daysSinceCovid, 0, 10))}
                     onClick={() => set(STATE.infoPopupVisible, true)}
                 />
             );
@@ -145,46 +141,32 @@ export default function Main() {
 
                 <Popup globalStateVariable={STATE.covidPopupVisible}>
                     <div className="scroll">
-                        <h1>¿Tiene Covid-19?</h1>
-                        <p>Lea atentamente las siguientes pautas a seguir:</p>
+                        <h1>{language.main_popup_covidTitle}</h1>
+                        <p>{language.main_popup_0}</p>
 
-                        <h2>Quédese en casa excepto para recibir atención médica</h2>
-                        <p>
-                            La mayoría de las personas con COVID-19 padecen síntomas leves y pueden recuperarse en casa
-                            sin atención médica. No salga de su casa, excepto para recibir atención médica. No visite
-                            áreas públicas.
-                        </p>
-                        <p>Llame antes de recibir atención médica.</p>
-                        <h2>Sepárese de otras personas</h2>
-                        <p>
-                            En la medida de lo posible, permanezca en una habitación específica y lejos de otras
-                            personas y mascotas en su hogar. Si es posible, debe usar un baño separado. Si necesita
-                            estar cerca de otras personas o animales dentro o fuera de la casa, use una máscara.
-                        </p>
-                        <h2>Dígale a sus contactos cercanos que pueden haber estado expuestos al COVID-19.</h2>
-                        <p>
-                            Una persona infectada puede transmitir COVID-19 a partir de 48 horas (o 2 días) antes de que
-                            la persona presente algún síntoma o dé positivo en la prueba.
-                        </p>
-                        <h2>Controle sus síntomas.</h2>
-                        <p>Los síntomas más comunes de COVID-19 incluyen fiebre y tos.</p>
-                        <p>Si muestra alguno de estos signos, busque atención médica de emergencia de inmediato:</p>
+                        <h2>{language.main_popup_1}</h2>
+                        <p>{language.main_popup_2}</p>
+                        <p>{language.main_popup_3}</p>
+                        <h2>{language.main_popup_4}</h2>
+                        <p>{language.main_popup_5}</p>
+                        <h2>{language.main_popup_6}</h2>
+                        <p>{language.main_popup_7}</p>
+                        <h2>{language.main_popup_8}</h2>
+                        <p>{language.main_popup_9}</p>
+                        <p>{language.main_popup_10}</p>
                         <ul>
-                            <li>Dificultad para respirar.</li>
-                            <li>Dolor o presión persistente en el pecho.</li>
-                            <li>Estado nuevo de confusión</li>
-                            <li>Incapacidad para despertar o permanecer despierto.</li>
-                            <li>Piel, labios o alrededor de las uñas descoloridas.</li>
+                            <li>{language.main_popup_11}</li>
+                            <li>{language.main_popup_12}</li>
+                            <li>{language.main_popup_13}</li>
+                            <li>{language.main_popup_14}</li>
+                            <li>{language.main_popup_15}</li>
                         </ul>
-                        <p className="small">
-                            Esta lista no incluye todos los síntomas posibles. Llame a su médico por cualquier otro
-                            síntoma que sea grave o que le preocupe.
-                        </p>
+                        <p className="small">{language.main_popup_16}</p>
                     </div>
 
-                    <Button text={"Sí, tengo Covid-19"} onClick={handleUserHasCovid} />
+                    <Button text={language.main_popup_confirmCovid} onClick={handleUserHasCovid} />
                     <Button
-                        text={"Cancelar"}
+                        text={language.main_popup_cancel}
                         onClick={() => set(STATE.covidPopupVisible, false)}
                         styleButton={{ backgroundColor: "rgb(245, 245, 245)" }}
                     />
@@ -192,65 +174,52 @@ export default function Main() {
 
                 <Popup globalStateVariable={STATE.infoPopupVisible}>
                     <div className="scroll">
-                        <h1>Como actuar si tiene Covid-19</h1>
-                        <p>Lea atentamente las siguientes pautas a seguir:</p>
+                        <h1>{language.main_popup_infoTitle}</h1>
+                        <p>{language.main_popup_0}</p>
 
-                        <h2>Quédese en casa excepto para recibir atención médica</h2>
-                        <p>
-                            La mayoría de las personas con COVID-19 padecen síntomas leves y pueden recuperarse en casa
-                            sin atención médica. No salga de su casa, excepto para recibir atención médica. No visite
-                            áreas públicas.
-                        </p>
-                        <p>Llame antes de recibir atención médica.</p>
-                        <h2>Sepárese de otras personas</h2>
-                        <p>
-                            En la medida de lo posible, permanezca en una habitación específica y lejos de otras
-                            personas y mascotas en su hogar. Si es posible, debe usar un baño separado. Si necesita
-                            estar cerca de otras personas o animales dentro o fuera de la casa, use una máscara.
-                        </p>
-                        <h2>Dígale a sus contactos cercanos que pueden haber estado expuestos al COVID-19.</h2>
-                        <p>
-                            Una persona infectada puede transmitir COVID-19 a partir de 48 horas (o 2 días) antes de que
-                            la persona presente algún síntoma o dé positivo en la prueba.
-                        </p>
-                        <h2>Controle sus síntomas.</h2>
-                        <p>Los síntomas más comunes de COVID-19 incluyen fiebre y tos.</p>
-                        <p>Si muestra alguno de estos signos, busque atención médica de emergencia de inmediato:</p>
+                        <h2>{language.main_popup_1}</h2>
+                        <p>{language.main_popup_2}</p>
+                        <p>{language.main_popup_3}</p>
+                        <h2>{language.main_popup_4}</h2>
+                        <p>{language.main_popup_5}</p>
+                        <h2>{language.main_popup_6}</h2>
+                        <p>{language.main_popup_7}</p>
+                        <h2>{language.main_popup_8}</h2>
+                        <p>{language.main_popup_9}</p>
+                        <p>{language.main_popup_10}</p>
                         <ul>
-                            <li>Dificultad para respirar.</li>
-                            <li>Dolor o presión persistente en el pecho.</li>
-                            <li>Estado nuevo de confusión</li>
-                            <li>Incapacidad para despertar o permanecer despierto.</li>
-                            <li>Piel, labios o alrededor de las uñas descoloridas.</li>
+                            <li>{language.main_popup_11}</li>
+                            <li>{language.main_popup_12}</li>
+                            <li>{language.main_popup_13}</li>
+                            <li>{language.main_popup_14}</li>
+                            <li>{language.main_popup_15}</li>
                         </ul>
-                        <p className="small">
-                            Esta lista no incluye todos los síntomas posibles. Llame a su médico por cualquier otro
-                            síntoma que sea grave o que le preocupe.
-                        </p>
+                        <p className="small">{language.main_popup_16}</p>
                     </div>
 
-                    <Button text={"Cerrar"} onClick={() => set(STATE.infoPopupVisible, false)} />
+                    <Button text={language.main_popup_close} onClick={() => set(STATE.infoPopupVisible, false)} />
                 </Popup>
 
                 <Popup globalStateVariable={STATE.vaccinesPopupVisible}>
                     <div className="scroll">
                         <h1>
                             {getVaccineText(
+                                language,
                                 userInfo && "numberOfVaccines" in userInfo ? userInfo.numberOfVaccines + 1 : 1
                             )}
                         </h1>
                     </div>
 
-                    <Button text={"Si"} onClick={handleUserHasRecievedVaccine} />
+                    <Button text={language.main_popup_yes} onClick={handleUserHasRecievedVaccine} />
                     <Button
-                        text={"No"}
+                        text={language.main_popup_no}
                         onClick={() => set(STATE.vaccinesPopupVisible, false)}
                         styleButton={{ backgroundColor: "rgb(245, 245, 245)" }}
                     />
                 </Popup>
 
                 <Popup globalStateVariable={STATE.languagePopupVisible}>
-                    <h1>Elija el idioma:</h1>
+                    <h1>{language.main_language}</h1>
                     {Object.keys(LANGUAGES).map((elem) => (
                         <Button
                             key={elem}

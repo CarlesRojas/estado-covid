@@ -1,5 +1,6 @@
 import React, { useContext, useRef, useEffect, useState } from "react";
 import { Data } from "../contexts/Data";
+import { Language } from "../contexts/Language";
 import { GlobalState } from "../contexts/GlobalState";
 import useGlobalState from "../hooks/useGlobalState";
 import provincesData from "../resources/data/provinces.json";
@@ -25,44 +26,44 @@ const isSpain = (location) => {
 const ICONS = {
     distancing: {
         icon: DistancingIcon,
-        text: "Respete una distancia social de 2m.",
+        textCode: "covidData_icons_distancing",
     },
     gather: {
         icon: GatherIcon,
-        text: "No se reúna con más de 10 personas.",
+        textCode: "covidData_icons_gather",
     },
     lockdown: {
         icon: LockdownIcon,
-        text: "Quédese en casa siempre que sea posible.",
+        textCode: "covidData_icons_lockdown",
     },
     mask: {
         icon: MaskIcon,
-        text: "Lleve mascarilla siempre fuera de casa.",
+        textCode: "covidData_icons_mask",
     },
     night: {
         icon: NightIcon,
-        text: "Evite cualquier actividad nocturna.",
+        textCode: "covidData_icons_night",
     },
     qr: {
         icon: QrIcon,
-        text: "Pasaporte Covid-19 obligatorio en interiores.",
+        textCode: "covidData_icons_qr",
     },
 };
 
 const ALERT_LEVELS = {
     high: {
         max: 1,
-        text: "ALTO",
+        textCode: "covidData_alertLevel_hight",
         icons: ["lockdown", "gather", "qr", "night", "mask", "distancing"],
     },
     medium: {
         max: 0.6,
-        text: "MEDIO",
+        textCode: "covidData_alertLevel_medium",
         icons: ["gather", "qr", "night", "mask", "distancing"],
     },
     low: {
         max: 0.2,
-        text: "BAJO",
+        textCode: "covidData_alertLevel_low",
         icons: ["mask", "distancing"],
     },
 };
@@ -76,6 +77,7 @@ const getAlertLevel = (value) => {
 export default function CovidData({ headerHeight }) {
     // console.log("Render CovidData");
 
+    const { language } = useContext(Language);
     const { covidDataProvinces } = useContext(Data);
     const { STATE } = useContext(GlobalState);
     const [date] = useGlobalState(STATE.date);
@@ -132,15 +134,17 @@ export default function CovidData({ headerHeight }) {
 
     let currentDate = new Date();
     currentDate.setDate(currentDate.getDate() - date);
-    currentDate = currentDate.toLocaleString("es-ES").split(" ")[0];
+    currentDate = currentDate.toLocaleString(language.locale).split(" ")[0].split(",")[0];
 
     if (currentLocation !== null) {
         if (isSpain(currentLocation))
             domContent = (
                 <>
                     <DateSlider />
-                    <p className="alerta">Nivel de Alerta</p>
-                    <p className="alertLevel">{riskLevel in ALERT_LEVELS && ALERT_LEVELS[riskLevel].text}</p>
+                    <p className="alerta">{language.covidData_alerta}</p>
+                    <p className="alertLevel">
+                        {riskLevel in ALERT_LEVELS && language[ALERT_LEVELS[riskLevel].textCode]}
+                    </p>
                     <p className="address">{`${currentLocation.address_components[0].long_name}, ${province.current.name}`}</p>
                     {riskLevel in ALERT_LEVELS && (
                         <div
@@ -153,7 +157,7 @@ export default function CovidData({ headerHeight }) {
                             {ALERT_LEVELS[riskLevel].icons.map((iconName, i) => (
                                 <div className="recomendation" key={i}>
                                     <SVG className="recomendationIcon" src={ICONS[iconName].icon} />
-                                    <p className="recomendationIconSubtitle">{ICONS[iconName].text}</p>
+                                    <p className="recomendationIconSubtitle">{language[ICONS[iconName].textCode]}</p>
                                 </div>
                             ))}
                         </div>
@@ -164,32 +168,48 @@ export default function CovidData({ headerHeight }) {
                             <div className="numGraphContainer">
                                 <div className="numbers">
                                     <div className="numberContainer">
-                                        <div className="number">{data.today_new_confirmed.toLocaleString("es-ES")}</div>
+                                        <div className="number">
+                                            {data.today_new_confirmed.toLocaleString(language.locale)}
+                                        </div>
                                         <div className="info">
-                                            {date === 0
-                                                ? `nuevos casos de Covid-19 en ${province.current.name} hoy`
-                                                : `nuevos casos de Covid-19 en ${province.current.name} el día ${currentDate}`}
+                                            {!date || date === 0
+                                                ? language.covidData_numbers_newCasesToday(province.current.name)
+                                                : language.covidData_numbers_newCasesPast(
+                                                      province.current.name,
+                                                      currentDate
+                                                  )}
                                         </div>
                                     </div>
+
                                     <div className="numberContainer">
-                                        <div className="number">{data.activeCovidCases.toLocaleString("es-ES")}</div>
+                                        <div className="number">
+                                            {data.activeCovidCases.toLocaleString(language.locale)}
+                                        </div>
                                         <div className="info">
-                                            {date === 0
-                                                ? `personas tienen Covid-19 en ${province.current.name} hoy`
-                                                : `personas tenían Covid-19 en ${province.current.name} el día ${currentDate}`}
+                                            {!date || date === 0
+                                                ? language.covidData_numbers_casesToday(province.current.name)
+                                                : language.covidData_numbers_casesPast(
+                                                      province.current.name,
+                                                      currentDate
+                                                  )}
                                         </div>
                                     </div>
+
                                     <div className="numberContainer">
                                         <div className="number">{`${(data.activeCovidCasesPerCapita * 100)
                                             .toFixed(2)
-                                            .toLocaleString("es-ES")}%`}</div>
+                                            .toLocaleString(language.locale)}%`}</div>
                                         <div className="info">
-                                            {date === 0
-                                                ? `de la población de ${province.current.name} tiene Covid-19 hoy`
-                                                : `de la población de ${province.current.name} tenían Covid-19 el día ${currentDate}`}
+                                            {!date || date === 0
+                                                ? language.covidData_numbers_percentageToday(province.current.name)
+                                                : language.covidData_numbers_percentagePast(
+                                                      province.current.name,
+                                                      currentDate
+                                                  )}
                                         </div>
                                     </div>
                                 </div>
+
                                 <Graph
                                     provinceId={province.current.id_covid}
                                     provinceName={province.current.name}
@@ -201,7 +221,9 @@ export default function CovidData({ headerHeight }) {
 
                     {data && "source" in data && (
                         <div className="provider">
-                            Datos proporcionados por <span>{data.source}</span> y{" "}
+                            {language.covidData_provider}
+                            <span>{data.source}</span>
+                            {language.covidData_and}
                             <a href="https://covid19tracking.narrativa.com/" rel="noreferrer" target="_blank">
                                 Narrativa
                             </a>
@@ -214,10 +236,10 @@ export default function CovidData({ headerHeight }) {
             domContent = (
                 <>
                     <DateSlider />
-                    <p className="alerta">Nivel de Alerta</p>
-                    <p className="alertLevel">Sin Datos</p>
+                    <p className="alerta">{language.covidData_alerta}</p>
+                    <p className="alertLevel">{language.covidData_noData}</p>
                     <p className="address">{currentLocation ? currentLocation.formatted_address : ""}</p>
-                    <p className="subtitle">Desplázate sobre España para ver el estado del virus Covid-19</p>
+                    <p className="subtitle">{language.covidData_moveOverSpain}</p>
                 </>
             );
     }

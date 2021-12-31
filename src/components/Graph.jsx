@@ -1,9 +1,11 @@
 import React, { useContext } from "react";
 import classnames from "classnames";
 import { Data } from "../contexts/Data";
+import { Language } from "../contexts/Language";
 
 export default function Graph({ provinceId, provinceName, date }) {
     const { covidDataProvinces } = useContext(Data);
+    const { language } = useContext(Language);
 
     const realDate = date ? date : 0;
     const last14Days = covidDataProvinces.current.slice(-14);
@@ -17,21 +19,21 @@ export default function Graph({ provinceId, provinceName, date }) {
 
     return (
         <div className="graph">
-            <p className="axisLabel">{`% de la población de ${provinceName} que tiene Covid-19`}</p>
+            <p className="axisLabel">{language.graph_axisLabel(provinceName)}</p>
             <div className="graphContainer">
                 <div className="pointsContainer">
                     {data.map((elem, i) => (
                         <div className="bar" key={i} style={{ height: `${100 - (elem / maxData) * 100}%` }}>
                             <div className={classnames("point", { current: 13 - i === realDate })}>
                                 {13 - i === realDate ? (
-                                    <p className="max">{`${elem.toFixed(2).toLocaleString("es-ES")}%`}</p>
+                                    <p className="max">{`${elem.toFixed(2).toLocaleString(language.locale)}%`}</p>
                                 ) : null}
                             </div>
                         </div>
                     ))}
                 </div>
             </div>
-            <p className="axisLabel bottom">últimos 14 días</p>
+            <p className="axisLabel bottom">{language.graph_axisLabelBottom}</p>
         </div>
     );
 }

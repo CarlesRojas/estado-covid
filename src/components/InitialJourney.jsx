@@ -3,6 +3,7 @@ import classnames from "classnames";
 import { API } from "../contexts/API";
 import { Utils } from "../contexts/Utils";
 import { GlobalState } from "../contexts/GlobalState";
+import { Language } from "../contexts/Language";
 
 import Button from "./Button";
 
@@ -14,6 +15,7 @@ export default function InitialJourney({ setInitialJourneyComplete }) {
 
     const { createUser } = useContext(API);
     const { setCookie } = useContext(Utils);
+    const { language } = useContext(Language);
     const { STATE, set } = useContext(GlobalState);
 
     const [error, setError] = useState(false);
@@ -39,9 +41,9 @@ export default function InitialJourney({ setInitialJourneyComplete }) {
         <div className="initialJourney">
             <div className="contentContainer">
                 <div className="scroll">
-                    <h1>Cuéntanos un poco sobre ti.</h1>
+                    <h1>{language.initialJourney_title}</h1>
 
-                    <h2>¿Cuántas vacunas de Covid-19 has recibido?</h2>
+                    <h2>{language.initialJourney_vaccinesQuestion}</h2>
                     <div className="options">
                         {VACCINES.map((elem) => (
                             <div
@@ -54,7 +56,7 @@ export default function InitialJourney({ setInitialJourneyComplete }) {
                         ))}
                     </div>
 
-                    <h2>¿Cuál es tu rango de edad?</h2>
+                    <h2>{language.initialJourney_ageQuestion}</h2>
                     <div className="options wide">
                         {AGE_RANGES.map((elem) => (
                             <div
@@ -68,11 +70,8 @@ export default function InitialJourney({ setInitialJourneyComplete }) {
                     </div>
                 </div>
 
-                <div className={classnames("error", { visible: error })}>
-                    Ha ocurrido un error. Reinténtelo más tarde.
-                </div>
-
-                <Button text={"Continuar"} onClick={handleContinueClick} />
+                <div className={classnames("error", { visible: error })}>{language.initialJourney_error}</div>
+                <Button text={language.initialJourney_continue} onClick={handleContinueClick} />
             </div>
         </div>
     );

@@ -5,6 +5,7 @@ import Loading from "./components/Loading";
 import { Utils } from "./contexts/Utils";
 import { API } from "./contexts/API";
 import { Data } from "./contexts/Data";
+import { Language } from "./contexts/Language";
 import { GlobalState } from "./contexts/GlobalState";
 import { isMobileOnly } from "react-device-detect";
 import SVG from "react-inlinesvg";
@@ -16,6 +17,7 @@ export default function App() {
     // console.log("Render App");
 
     const { STATE, set } = useContext(GlobalState);
+    const { language } = useContext(Language);
     const { getCookie, invlerp } = useContext(Utils);
     const { getCovidData, getGoogleMapsAPIKey, getUserInfo } = useContext(API);
     const { provinces, covidDataSpain, covidDataAutonomicCommunities, covidDataProvinces } = useContext(Data);
@@ -144,11 +146,8 @@ export default function App() {
             <div className="onlyMobile">
                 <div className="onlyMobileContainer">
                     <SVG className="icon" src={LogoIcon} />
-                    <p className="text">La aplicación Covid-19 solo está disponible para móvil.</p>
-                    <p className="subtitle">
-                        Escanea este código QR para abrir-la en el móvil. Pedes añadirla la pantalla de inicio des de la
-                        configuración de tu navegador.
-                    </p>
+                    <p className="text">{language.app_onlyPhone_title}</p>
+                    <p className="subtitle">{language.app_onlyPhone_subtitle}</p>
                     <img src={QR} alt="" className="qrCode" />
                 </div>
             </div>

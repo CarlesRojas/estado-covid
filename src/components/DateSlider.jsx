@@ -2,12 +2,14 @@ import React, { useContext, useRef, memo } from "react";
 import classnames from "classnames";
 import { useDrag } from "react-use-gesture";
 import { Utils } from "../contexts/Utils";
+import { Language } from "../contexts/Language";
 import { GlobalState } from "../contexts/GlobalState";
 import useGlobalState from "../hooks/useGlobalState";
 
 const DateSlider = memo(() => {
     const { STATE } = useContext(GlobalState);
     const { clamp } = useContext(Utils);
+    const { language } = useContext(Language);
 
     const containerRef = useRef();
 
@@ -35,7 +37,7 @@ const DateSlider = memo(() => {
 
     let currentDate = new Date();
     currentDate.setDate(currentDate.getDate() - date);
-    currentDate = currentDate.toLocaleString("es-ES").split(" ")[0];
+    currentDate = currentDate.toLocaleString(language.locale).split(" ")[0].split(",")[0];
 
     return (
         <div className="dateSlider">
