@@ -1,5 +1,6 @@
 import React, { createContext, useState, useEffect, useContext } from "react";
 import { API } from "./API";
+import { Utils } from "./Utils";
 
 export const Language = createContext();
 
@@ -259,6 +260,7 @@ const CATALAN = {
 
 const LanguageProvider = (props) => {
     const { getLocationInfo, getGoogleMapsAPIKey } = useContext(API);
+    const { getCookie, setCookie } = useContext(Utils);
 
     // #################################################
     //   LANGUAGE
@@ -267,9 +269,16 @@ const LanguageProvider = (props) => {
     const [language, set] = useState(SPANISH);
 
     const setLanguage = (lang) => {
-        if (lang === SPANISH.key) set(SPANISH);
-        else if (lang === ENGLISH.key) set(ENGLISH);
-        else if (lang === CATALAN.key) set(CATALAN);
+        if (lang === SPANISH.key) {
+            set(SPANISH);
+            setCookie("estado_covid_langd", SPANISH.code, 365 * 50);
+        } else if (lang === ENGLISH.key) {
+            set(ENGLISH);
+            setCookie("estado_covid_langd", ENGLISH.code, 365 * 50);
+        } else if (lang === CATALAN.key) {
+            set(CATALAN);
+            setCookie("estado_covid_langd", CATALAN.code, 365 * 50);
+        }
     };
 
     // #################################################
@@ -278,7 +287,12 @@ const LanguageProvider = (props) => {
 
     useEffect(() => {
         const getLocation = async () => {
-            if (navigator.geolocation) {
+            const cookieLanguage = getCookie("estado_covid_langd");
+
+            if (cookieLanguage === SPANISH.code) set(SPANISH);
+            else if (cookieLanguage === ENGLISH.code) set(ENGLISH);
+            else if (cookieLanguage === CATALAN.code) set(CATALAN);
+            else if (navigator.geolocation) {
                 await getGoogleMapsAPIKey();
 
                 navigator.geolocation.getCurrentPosition(async ({ coords }) => {
@@ -301,7 +315,7 @@ const LanguageProvider = (props) => {
         };
 
         getLocation();
-    }, [getGoogleMapsAPIKey, getLocationInfo]);
+    }, [getGoogleMapsAPIKey, getLocationInfo, getCookie]);
 
     return (
         <Language.Provider
