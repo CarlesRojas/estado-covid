@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef, useCallback, useContext } from "rea
 import * as topojson from "topojson-client";
 import GoogleMapReact from "google-map-react";
 import chroma from "chroma-js";
+import { Language } from "../contexts/Language";
 import { Utils } from "../contexts/Utils";
 import { API } from "../contexts/API";
 import { Data } from "../contexts/Data";
@@ -19,12 +20,17 @@ export default function Map({ coords }) {
 
     const { STATE, set } = useContext(GlobalState);
     const { debounce } = useContext(Utils);
+    const { language } = useContext(Language);
     const { getLocationInfo, googleAPIKey, updateLocation } = useContext(API);
     const { covidDataProvinces, provinces } = useContext(Data);
     const { EVENT_LIST, sub, unsub } = useContext(Events);
 
     const [date] = useGlobalState(STATE.date);
     const [userInfo] = useGlobalState(STATE.userInfo);
+
+    // #################################################
+    //   LANGUAGE
+    // #################################################
 
     // #################################################
     //   MAP
@@ -41,7 +47,7 @@ export default function Map({ coords }) {
     const handleCenterChange = useCallback(
         async (shouldUpdateLocation) => {
             const newCenter = map.current.getCenter();
-            const result = await getLocationInfo({ lat: newCenter.lat(), lng: newCenter.lng() });
+            const result = await getLocationInfo({ lat: newCenter.lat(), lng: newCenter.lng() }, language.code);
             if (result.status !== "OK" && result.status !== "ZERO_RESULTS") return;
 
             set(STATE.currentLocation, result.results.length ? result.results[0] : false);
@@ -63,7 +69,7 @@ export default function Map({ coords }) {
                 await updateLocation(userInfo._id, provinceId, autonomicCommunityId);
             }
         },
-        [getLocationInfo, set, STATE, updateLocation, userInfo, provinces]
+        [getLocationInfo, set, STATE, updateLocation, userInfo, provinces, language]
     );
 
     const locationUpdated = useRef(false);
@@ -158,7 +164,7 @@ export default function Map({ coords }) {
     return (
         <div className="map">
             <GoogleMapReact
-                bootstrapURLKeys={{ key: googleAPIKey.current }}
+                bootstrapURLKeys={{ key: googleAPIKey.current, language: language.code, region: language.code }}
                 yesIWantToUseGoogleMapApiInternals
                 onGoogleApiLoaded={({ map, maps }) => handleApiLoaded(map, maps)}
                 defaultCenter={coords}

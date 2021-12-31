@@ -2,15 +2,16 @@ import React, { useState, useEffect, useContext, useCallback, useRef } from "rea
 import Map from "./Map";
 import CurrentLocation from "./CurrentLocation";
 import Button from "./Button";
-import Label from "./Label";
 import Tab from "./Tab";
 import Popup from "./Popup";
+import { Language } from "../contexts/Language";
 import { API } from "../contexts/API";
 import { Utils } from "../contexts/Utils";
 import { GlobalState } from "../contexts/GlobalState";
 import useGlobalState from "../hooks/useGlobalState";
+import classnames from "classnames";
 
-import InfoIcon from "../resources/icons/info.svg";
+import LanguageIcon from "../resources/icons/lang.svg";
 import VaccineIcon from "../resources/icons/vaccine.svg";
 
 const getVaccineText = (numOfVaccines) => {
@@ -24,10 +25,28 @@ const getVaccineText = (numOfVaccines) => {
 export default function Main() {
     // console.log("Render Main");
 
+    const { LANGUAGES, setLanguage, language } = useContext(Language);
     const { clamp } = useContext(Utils);
     const { userCaughtCovid, updateVaccines, userNoLongerHasCovid } = useContext(API);
     const { STATE, set } = useContext(GlobalState);
     const [userInfo, setUserInfo] = useGlobalState(STATE.userInfo);
+
+    // #################################################
+    //   LANGUAGE
+    // #################################################
+
+    const [selectedLanguage, setSelectedLanguage] = useState("SPANISH");
+
+    const handleLanguageSelected = (lang) => {
+        setSelectedLanguage(lang);
+        set(STATE.languagePopupVisible, false);
+    };
+
+    useEffect(() => {
+        if (LANGUAGES[selectedLanguage] === language.name) return;
+        console.log(LANGUAGES[selectedLanguage]);
+        setLanguage(LANGUAGES[selectedLanguage]);
+    }, [selectedLanguage, setLanguage, LANGUAGES, language]);
 
     // #################################################
     //   LOAD DATA & LOCATION
@@ -80,7 +99,7 @@ export default function Main() {
     //   RENDER
     // #################################################
 
-    let middleButton = <Button text={"Tengo Covid-19"} onClick={() => set(STATE.covidPopupVisible, true)} />;
+    let middleButton = <Button text={"¿Tiene Covid-19?"} onClick={() => set(STATE.covidPopupVisible, true)} />;
 
     const noLongerCovidDone = useRef(false);
 
@@ -92,7 +111,13 @@ export default function Main() {
         if (daysSinceCovid >= 10 && !noLongerCovidDone.current) {
             noLongerCovidDone.current = true;
             handleUserNoLongerHasCovid();
-        } else middleButton = <Label text={`Dias restantes confinado: ${clamp(10 - daysSinceCovid, 0, 10)}`} />;
+        } else
+            middleButton = (
+                <Button
+                    text={`Dias restantes confinado: ${clamp(10 - daysSinceCovid, 0, 10)}`}
+                    onClick={() => set(STATE.infoPopupVisible, true)}
+                />
+            );
     }
 
     return (
@@ -103,8 +128,8 @@ export default function Main() {
 
                 <div className="mainButtons">
                     <Button
-                        svg={InfoIcon}
-                        onClick={() => set(STATE.infoPopupVisible, true)}
+                        svg={LanguageIcon}
+                        onClick={() => set(STATE.languagePopupVisible, true)}
                         style={{ paddingRight: 0 }}
                     />
                     {middleButton}
@@ -120,7 +145,7 @@ export default function Main() {
 
                 <Popup globalStateVariable={STATE.covidPopupVisible}>
                     <div className="scroll">
-                        <h1>Que no cunda el pánico!</h1>
+                        <h1>¿Tiene Covid-19?</h1>
                         <p>Lea atentamente las siguientes pautas a seguir:</p>
 
                         <h2>Quédese en casa excepto para recibir atención médica</h2>
@@ -157,7 +182,7 @@ export default function Main() {
                         </p>
                     </div>
 
-                    <Button text={"Confirmar"} onClick={handleUserHasCovid} />
+                    <Button text={"Sí, tengo Covid-19"} onClick={handleUserHasCovid} />
                     <Button
                         text={"Cancelar"}
                         onClick={() => set(STATE.covidPopupVisible, false)}
@@ -167,7 +192,7 @@ export default function Main() {
 
                 <Popup globalStateVariable={STATE.infoPopupVisible}>
                     <div className="scroll">
-                        <h1>Como actuar si cree que tiene Covid-19</h1>
+                        <h1>Como actuar si tiene Covid-19</h1>
                         <p>Lea atentamente las siguientes pautas a seguir:</p>
 
                         <h2>Quédese en casa excepto para recibir atención médica</h2>
@@ -222,6 +247,19 @@ export default function Main() {
                         onClick={() => set(STATE.vaccinesPopupVisible, false)}
                         styleButton={{ backgroundColor: "rgb(245, 245, 245)" }}
                     />
+                </Popup>
+
+                <Popup globalStateVariable={STATE.languagePopupVisible}>
+                    <h1>Elija el idioma:</h1>
+                    {Object.keys(LANGUAGES).map((elem) => (
+                        <Button
+                            key={elem}
+                            extraClass={selectedLanguage === elem ? "selected" : ""}
+                            text={LANGUAGES[elem]}
+                            onClick={() => handleLanguageSelected(elem)}
+                            styleButton={{ backgroundColor: "rgb(245, 245, 245)" }}
+                        />
+                    ))}
                 </Popup>
             </div>
         )

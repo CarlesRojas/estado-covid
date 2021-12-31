@@ -19,7 +19,7 @@ export default function Tab() {
     const { lerp, invlerp } = useContext(Utils);
     const { EVENT_LIST, emit } = useContext(Events);
 
-    const [showArrow, setShowArrow] = useState(true);
+    const [showButtons, setShowButtons] = useState(true);
 
     // #################################################
     //   ACTIONS
@@ -30,12 +30,13 @@ export default function Tab() {
 
     const hideContainer = () => {
         isHidden.current = true;
-        setShowArrow(true);
+        setShowButtons(true);
         spring.start({ y: `${HIDDEN_PERCENTAGE * 100}%` });
     };
 
     const showContainer = () => {
         isHidden.current = false;
+        if (showButtons) setShowButtons(false);
         spring.start({ y: "0%" });
     };
 
@@ -51,7 +52,7 @@ export default function Tab() {
             // Stop event propagation
             event.stopPropagation();
 
-            if (first) setShowArrow(false);
+            if (first) setShowButtons(false);
 
             var containerHeight = continerRef.current.offsetHeight;
 
@@ -85,20 +86,20 @@ export default function Tab() {
         <div className="tab">
             <animated.div className="container" ref={continerRef} {...gestureBind()} style={{ y }}>
                 {/* <div
-                    className={classnames("locationIconContainer", { hidden: !showArrow })}
+                    className={classnames("locationIconContainer", { hidden: !showButtons })}
                     onClick={() => emit(EVENT_LIST.ON_CENTER_ON_CURRENT_LOCATION)}
                 >
                     <SVG className="locationIcon" src={LocationIcon} />
                 </div> */}
 
                 <Button
-                    extraClass={`locationIconContainer ${!showArrow ? "hidden" : ""}`}
+                    extraClass={`locationIconContainer ${!showButtons ? "hidden" : ""}`}
                     onClick={() => emit(EVENT_LIST.ON_CENTER_ON_CURRENT_LOCATION)}
                     svg={LocationIcon}
                 />
 
-                <div className={classnames("upIconContainer", { hidden: !showArrow })}>
-                    <SVG className="upIcon" src={UpIcon} />
+                <div className={classnames("upIconContainer", { hidden: !showButtons })}>
+                    <SVG className="upIcon" src={UpIcon} onClick={showContainer} />
                 </div>
 
                 {headerheight && <CovidData headerHeight={headerheight} />}

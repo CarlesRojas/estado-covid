@@ -246,6 +246,12 @@ input[type="number"] {
         pointer-events: none;
     }
 
+    &.selected {
+        .content {
+            background-color: $red !important;
+        }
+    }
+
     .content {
         display: flex;
         align-items: center;
@@ -414,6 +420,7 @@ input[type="number"] {
                 max-width: 2rem;
                 min-width: 2rem;
                 margin: 0 auto;
+                pointer-events: all;
 
                 @keyframes jump {
                     0% {

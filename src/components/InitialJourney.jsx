@@ -71,6 +71,7 @@ export default function InitialJourney({ setInitialJourneyComplete }) {
                 <div className={classnames("error", { visible: error })}>
                     Ha ocurrido un error. Reinténtelo más tarde.
                 </div>
+
                 <Button text={"Continuar"} onClick={handleContinueClick} />
             </div>
         </div>

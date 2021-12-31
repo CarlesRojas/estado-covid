@@ -6,6 +6,7 @@ const STATE = {
     currentLocation: "currentLocation",
     covidPopupVisible: "covidPopupVisible",
     infoPopupVisible: "infoPopupVisible",
+    languagePopupVisible: "languagePopupVisible",
     vaccinesPopupVisible: "vaccinesPopupVisible",
     userInfo: "userInfo",
 };

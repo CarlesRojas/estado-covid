@@ -15,6 +15,8 @@ const APIProvider = (props) => {
     // #################################################
 
     const getGoogleMapsAPIKey = async () => {
+        if (googleAPIKey.current) return;
+
         try {
             // Fetch
             var rawResponse = await fetch(`${API_URL}${API_VERSION}/getGoogleAPIKey`, {
@@ -38,11 +40,11 @@ const APIProvider = (props) => {
         }
     };
 
-    const getLocationInfo = async (coords) => {
+    const getLocationInfo = async (coords, language) => {
         try {
             // Fetch
             var rawResponse = await fetch(
-                `${GOOGLE_API_URL}geocode/json?latlng=${coords.lat},${coords.lng}&key=${googleAPIKey.current}&language=es&result_type=administrative_area_level_2|administrative_area_level_3|administrative_area_level_4`
+                `${GOOGLE_API_URL}geocode/json?latlng=${coords.lat},${coords.lng}&key=${googleAPIKey.current}&language=${language}&result_type=administrative_area_level_2|administrative_area_level_3|administrative_area_level_4`
             );
 
             // Get data from response
