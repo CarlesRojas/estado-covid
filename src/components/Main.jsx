@@ -10,7 +10,7 @@ import { Utils } from "../contexts/Utils";
 import { GlobalState } from "../contexts/GlobalState";
 import useGlobalState from "../hooks/useGlobalState";
 
-import LanguageIcon from "../resources/icons/lang.svg";
+import InfoIcon from "../resources/icons/info.svg";
 import VaccineIcon from "../resources/icons/vaccine.svg";
 
 const getVaccineText = (language, numOfVaccines) => {
@@ -124,8 +124,8 @@ export default function Main() {
 
                 <div className="mainButtons">
                     <Button
-                        svg={LanguageIcon}
-                        onClick={() => set(STATE.languagePopupVisible, true)}
+                        svg={InfoIcon}
+                        onClick={() => set(STATE.infoPopupVisible, true)}
                         style={{ paddingRight: 0 }}
                     />
                     {middleButton}
@@ -161,6 +161,7 @@ export default function Main() {
                             <li>{language.main_popup_14}</li>
                             <li>{language.main_popup_15}</li>
                         </ul>
+
                         <p className="small">{language.main_popup_16}</p>
                     </div>
 
@@ -170,6 +171,7 @@ export default function Main() {
                         onClick={() => set(STATE.covidPopupVisible, false)}
                         styleButton={{ backgroundColor: "rgb(245, 245, 245)" }}
                     />
+                    <p className="small">{language.anonymousData}</p>
                 </Popup>
 
                 <Popup globalStateVariable={STATE.infoPopupVisible}>
@@ -216,6 +218,7 @@ export default function Main() {
                         onClick={() => set(STATE.vaccinesPopupVisible, false)}
                         styleButton={{ backgroundColor: "rgb(245, 245, 245)" }}
                     />
+                    <p className="small">{language.anonymousData}</p>
                 </Popup>
 
                 <Popup globalStateVariable={STATE.languagePopupVisible}>

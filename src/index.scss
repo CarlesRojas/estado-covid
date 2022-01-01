@@ -261,8 +261,9 @@ input[type="number"] {
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
         background-color: $red;
         border-radius: $borderRadius;
-        padding: 0 $defaultPadding;
+        padding: 0 $defaultPadding * 2;
         font-size: 1.1rem;
+        line-height: 1.05rem;
         font-weight: 700;
         text-align: center;
         text-transform: uppercase;
@@ -371,10 +372,16 @@ input[type="number"] {
         pointer-events: all;
         position: absolute;
         transition: opacity 0.2s ease-in-out;
-        transform: translate($defaultPadding, -100%);
+        transform: translate(-$defaultPadding, -100%);
         top: 0;
-        right: 0;
+        left: 0;
         opacity: 0.9;
+
+        &.right {
+            transform: translate($defaultPadding, -100%);
+            left: unset;
+            right: 0;
+        }
 
         &.hidden {
             pointer-events: none;
@@ -421,18 +428,19 @@ input[type="number"] {
                 min-width: 2rem;
                 margin: 0 auto;
                 pointer-events: all;
+                padding: $defaultPadding;
 
                 @keyframes jump {
                     0% {
                         animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-                        transform: scaleX(1.5) translateY(6px);
+                        transform: scaleX(1.5) translateY(-2px);
                     }
                     50% {
                         animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-                        transform: scaleX(1.5) translateY(12px);
+                        transform: scaleX(1.5) translateY(4px);
                     }
                     100% {
-                        transform: scaleX(1.5) translateY(6px);
+                        transform: scaleX(1.5) translateY(-2px);
                     }
                 }
             }

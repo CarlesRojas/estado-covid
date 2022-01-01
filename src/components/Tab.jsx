@@ -3,12 +3,14 @@ import { useSpring, animated } from "react-spring";
 import { useDrag } from "react-use-gesture";
 import { Utils } from "../contexts/Utils";
 import { Events } from "../contexts/Events";
+import { GlobalState } from "../contexts/GlobalState";
 import classnames from "classnames";
 import CovidData from "./CovidData";
 import SVG from "react-inlinesvg";
 
 import UpIcon from "../resources/icons/up.svg";
 import LocationIcon from "../resources/icons/location.svg";
+import LanguageIcon from "../resources/icons/lang.svg";
 import Button from "./Button";
 
 const HIDDEN_PERCENTAGE = 0.67;
@@ -18,6 +20,7 @@ export default function Tab() {
 
     const { lerp, invlerp } = useContext(Utils);
     const { EVENT_LIST, emit } = useContext(Events);
+    const { STATE, set } = useContext(GlobalState);
 
     const [showButtons, setShowButtons] = useState(true);
 
@@ -85,15 +88,14 @@ export default function Tab() {
     return (
         <div className="tab">
             <animated.div className="container" ref={continerRef} {...gestureBind()} style={{ y }}>
-                {/* <div
-                    className={classnames("locationIconContainer", { hidden: !showButtons })}
-                    onClick={() => emit(EVENT_LIST.ON_CENTER_ON_CURRENT_LOCATION)}
-                >
-                    <SVG className="locationIcon" src={LocationIcon} />
-                </div> */}
-
                 <Button
                     extraClass={`locationIconContainer ${!showButtons ? "hidden" : ""}`}
+                    onClick={() => set(STATE.languagePopupVisible, true)}
+                    svg={LanguageIcon}
+                />
+
+                <Button
+                    extraClass={`locationIconContainer right ${!showButtons ? "hidden" : ""}`}
                     onClick={() => emit(EVENT_LIST.ON_CENTER_ON_CURRENT_LOCATION)}
                     svg={LocationIcon}
                 />

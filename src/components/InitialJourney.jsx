@@ -68,6 +68,8 @@ export default function InitialJourney({ setInitialJourneyComplete }) {
                             </div>
                         ))}
                     </div>
+
+                    <p className="small">{language.anonymousData}</p>
                 </div>
 
                 <div className={classnames("error", { visible: error })}>{language.initialJourney_error}</div>

@@ -172,7 +172,7 @@ export default function Map({ coords }) {
                 options={{
                     styles: mapStyle,
                     minZoom: 5,
-                    maxZoom: 9,
+                    maxZoom: 11,
                     zoomControl: false,
                     mapTypeControl: false,
                     scaleControl: false,

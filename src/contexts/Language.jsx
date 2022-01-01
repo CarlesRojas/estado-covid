@@ -91,6 +91,9 @@ const SPANISH = {
     main_vaccines_third: "tercera",
     main_vaccines_text: (number) => `Le han puesto la ${number} dosis de la vacuna?`,
     main_language: "Elija el idioma:",
+
+    // ANONYMOUS DATA
+    anonymousData: "Todos los datos se almacenan de forma anónima, sin posibilidad de identificar al usuario.",
 };
 
 const ENGLISH = {
@@ -173,6 +176,9 @@ const ENGLISH = {
     main_vaccines_third: "third",
     main_vaccines_text: (number) => `Have you received the ${number} dose of the vaccine?`,
     main_language: "Choose the language:",
+
+    // ANONYMOUS DATA
+    anonymousData: "All data is stored anonymously, without the possibility to identify the user.",
 };
 
 const CATALAN = {
@@ -256,6 +262,9 @@ const CATALAN = {
     main_vaccines_third: "tercera",
     main_vaccines_text: (number) => `T'han posat la ${number} dosi de la vacuna?`,
     main_language: "Tria l'idioma:",
+
+    // ANONYMOUS DATA
+    anonymousData: "Totes les dades s'emmagatzemen de forma anònima, sense possibilitat d'identificar l'usuari.",
 };
 
 const LanguageProvider = (props) => {
