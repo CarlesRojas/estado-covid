@@ -1,0 +1,6 @@
+[{
+        "relation": ["delegate_permission/common.handle_all_urls"],
+        "target" : { "namespace": "android_app", "package_name": "app.netlify.estado_covid.covid19",
+                     "sha256_cert_fingerprints": ["5C:BF:94:8A:B8:7D:BF:64:B8:B2:56:17:1F:BE:11:41:F9:82:F0:48:E8:C5:6E:9B:0D:4B:97:AB:C8:09:FC:70"] }
+      }
+]
