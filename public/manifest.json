@@ -38,36 +38,42 @@
             "src": "screenshot1.webp",
             "sizes": "1528x720",
             "type": "image/webp",
+            "platform": "narrow",
             "label": "Mapa y nivel de alerta del virus Covid-19."
         },
         {
             "src": "screenshot2.webp",
             "sizes": "1528x720",
             "type": "image/webp",
+            "platform": "narrow",
             "label": "Datos y guías sobre el estado del Covid-19."
         },
         {
             "src": "screenshot3.webp",
             "sizes": "1528x720",
             "type": "image/webp",
+            "platform": "narrow",
             "label": "Estado de vacunación y edad del usuario."
         },
         {
             "src": "screenshot4.webp",
             "sizes": "1528x720",
             "type": "image/webp",
+            "platform": "narrow",
             "label": "Pautas a seguir en caso de contraer Covid-19."
         },
         {
             "src": "screenshot5.webp",
             "sizes": "1528x720",
             "type": "image/webp",
+            "platform": "narrow",
             "label": "Estado del virus Covid-19 en tu ubicación."
         },
         {
             "src": "screenshot6.webp",
             "sizes": "1528x720",
             "type": "image/webp",
+            "platform": "narrow",
             "label": "Ventana para actualizar el estado de vacunación del usuario."
         }
     ],
