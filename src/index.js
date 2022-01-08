@@ -1,6 +1,7 @@
 import ReactDOM from "react-dom";
 import App from "./App";
 import "./index.scss";
+import * as serviceWorker from "./serviceWorker";
 
 // Contexts
 import LanguageProvider from "./contexts/Language";
@@ -27,3 +28,6 @@ ReactDOM.render(
     </EventsProvider>,
     document.getElementById("root")
 );
+
+// Register service worker
+serviceWorker.register();
